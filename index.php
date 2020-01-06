@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Password</label>
+                    <label>Layanan</label>
                     <input type="text" class="form-control" placeholder="Masukkan Layanan" name="" required>
                 </div>
 

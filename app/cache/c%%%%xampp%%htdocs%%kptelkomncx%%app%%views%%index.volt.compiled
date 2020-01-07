@@ -94,7 +94,7 @@
             </nav>
 
             <div>
-            <form action="{{ url("storelogin") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form action="<?= $this->url->get('storelogin') ?>" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
 
                 <div class="form-group">
                     <label>Nama CC</label>
@@ -102,8 +102,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Layanan</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Layanan" name="" required>
+                    <label>Nama Pekerjaan</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Nama Pekerjaan" name="" required>
                 </div>
 
                 <div class="form-group">
@@ -112,12 +112,34 @@
                 </div>
 
                 <div class="form-group">
+                    <label style="margin-top: 0px;">Nilai NRC</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nilai NRC" name="" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nilai MRC</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nilai MRC" name="" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Status NCX</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Status NCX" name="" required>
+                </div>
+
+                <div class="form-group">
                     <label>No Quote</label>
                     <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="" required>
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label>No Agreement</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Nomor Agreement" name="" required>
+                </div>
+
+            
+
+                <div>
+                    <label>Tipe Order</label>
                 </div>
 
                 <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
@@ -125,6 +147,11 @@
                   <option value="1">Connectivity</option>
                   <option value="2">CPE</option>
                 </select>
+
+                <!-- <div class="form-group">
+                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div> -->
 
 
 
@@ -139,8 +166,15 @@
                     <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="" required>
                 </div>
 
-                    <label>BASO</label>
-                    <input type="file" placeholder="Masukkan Nomor Order" name="" required>
+                <div>
+                    <label style="margin-top: 20px;">BASO</label>
+                </div>
+
+                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                  <option value="0"></option>
+                  <option value="1">OK</option>
+                  <option value="2">Belum OK</option>
+                </select> 
                 
                 <div>
                     <label style="margin-top: 25px;">Termin/Non Termin</label>
@@ -151,6 +185,8 @@
                   <option value="1">Termin</option>
                   <option value="2">Non Termin</option>
                 </select>
+
+                <!--  Kalau Termin -->
 
                 <div class="form-group">
                     <label style="margin-top: 20px;">Billing NOL</label>
@@ -183,11 +219,30 @@
                   <option value="2">Belum OK</option>
                 </select> 
 
+                <div>
+                    <label style="margin-top: 20px;">Billing Complete</label>
+                    <input type="date" class="form-control" name="tanggal" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+
+
+               <!--  Kalau Non Termin -->
 
                 <div>
                     <label style="margin-top: 20px;">Billing Complete</label>
                     <input type="date" class="form-control" name="tanggal" required>
                 </div>
+
+                <div class="form-group">
+                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+
+                <!-- -- -->
 
 
                 <!-- CPE -->
@@ -287,8 +342,15 @@
                   <option value="2">Belum OK</option>
                 </select> 
 
-                <label style="margin-top: 20px;">BASO</label>
-                <input type="file" placeholder="Masukkan Nomor Order" name="" required>
+                <div>
+                    <label style="margin-top: 20px;">BASO</label>
+                </div>
+
+                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                  <option value="0"></option>
+                  <option value="1">OK</option>
+                  <option value="2">Belum OK</option>
+                </select> 
 
                 <div>
                     <label style="margin-top: 25px;">Termin/Non Termin</label>
@@ -300,13 +362,15 @@
                   <option value="2">Non Termin</option>
                 </select>
 
+                <!--  Kalau Termin -->
+
                 <div class="form-group">
                     <label style="margin-top: 20px;">Billing NOL</label>
                     <input type="date" class="form-control" name="tanggal" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Asset</label>
+                    <label style="margin-top: 20px;">Asset</label>
                     <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="" required>
                 </div>       
 
@@ -331,37 +395,37 @@
                   <option value="2">Belum OK</option>
                 </select> 
 
+                <div>
+                    <label style="margin-top: 20px;">Billing Complete</label>
+                    <input type="date" class="form-control" name="tanggal" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+
+                <!-- Kalau Non Termin -->
 
                 <div>
                     <label style="margin-top: 20px;">Billing Complete</label>
                     <input type="date" class="form-control" name="tanggal" required>
                 </div>
 
-
-                <!-- No Agreement End -->
-                <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">No Agreement Berakhir</h3>
-
-
                 <div class="form-group">
-                    <label style="margin-top: 20px;">Nilai NRC</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nilai NRC" name="" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Nilai MRC</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nilai MRC" name="" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Status NCX</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Status NCX" name="" required>
-                </div>
-
-
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Kendala</label>
+                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
                     <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
                 </div>
+
+
+                <!-- End -->
+
+
+
+                <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">No Agreement Berakhir</h3>
+
+ -->
+                
 
                 <button value = "" style="margin-top: 40px; margin-bottom: 30px;" type="submit" class="btn btn-primary">Selesai</button>
             </form>

@@ -186,7 +186,7 @@
                 <!-- Connectivity -->
 
     <div id="dvPassport" style="display: none">
-                <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">Connectivity</h3>
+                <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">Connectivity</h3> -->
 
 
                 <div class="form-group">
@@ -195,7 +195,7 @@
                 </div>
 
                 <div>
-                    <label style="margin-top: 20px;">BASO</label>
+                    <label style="margin-top: 10px;">BASO</label>
                 </div>
 
                 <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
@@ -282,7 +282,7 @@
                 <!-- CPE -->
   <div id="dvPassport2" style="display: none">
 
-                <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">CPE</h3>
+                <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">CPE</h3> -->
 
                 <div>
                     <label style="margin-top: 20px;">DOK P6</label>

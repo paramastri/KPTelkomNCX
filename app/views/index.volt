@@ -152,6 +152,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
                     <label>No Quote</label>
                     <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="" required>
                 </div>
@@ -175,10 +180,6 @@
                   <option value="2">CPE</option>
                 </select>
 
-                <!-- <div class="form-group">
-                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
-                </div> -->
 
                  <div id="div0" style="display: none;"></div>
 
@@ -254,10 +255,7 @@
                     <input type="date" class="form-control" name="tanggal" required>
                 </div>
 
-                <div class="form-group">
-                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
-                </div>
+  
             </div>
 
 
@@ -269,10 +267,7 @@
                     <input type="date" class="form-control" name="tanggal" required>
                 </div>
 
-                <div class="form-group">
-                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
-                </div>
+ 
             </div>
         </div>
 
@@ -437,10 +432,6 @@
                     <input type="date" class="form-control" name="tanggal" required>
                 </div>
 
-                <div class="form-group">
-                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
-                </div>
         </div>
 
                 <!-- Kalau Non Termin -->
@@ -450,10 +441,6 @@
                     <input type="date" class="form-control" name="tanggal" required>
                 </div>
 
-                <div class="form-group">
-                    <label style="margin-top: 20px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" required></textarea>
-                </div>
 </div>
 
 

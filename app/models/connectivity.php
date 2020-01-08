@@ -1,6 +1,6 @@
 <?php
 use Phalcon\Mvc\Model;
-class ncx extends Model{
+class connectivity extends Model{
 	public $id;
 	public $no_order_con; 
 	public $baso_con;

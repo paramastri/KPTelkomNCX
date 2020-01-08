@@ -1,6 +1,6 @@
 <?php
 use Phalcon\Mvc\Model;
-class ncx extends Model{
+class cpe extends Model{
 	public $id;
 	public $id_ncx;
 	public $dok_p6;

@@ -27,7 +27,7 @@ class IndexController extends Controller
 
     public function listdataAction()
     {
-        $listdatas = ncx::find(['order' => 'nomor DESC']);
+        $listdatas = ncx::find();
         $data = array();
 
         foreach ($listdatas as $listdata)
@@ -52,7 +52,7 @@ class IndexController extends Controller
 
     public function listAction()
     {
-        $this->view->data = $array;
+
     }
 
 }

@@ -139,12 +139,10 @@
             placeholder: "Tidak Ada Data",
             columns: [
                 {title: "No", field: "no", formatter: "rownum", width: 10},
-                {title: "Tanggal", field: "tanggal"},
-                {title: "No Surat", field: "no_surat"},
-                {title: "Nama Surat", field: "nama_surat"},
-                {title: "Jenis Surat", field: "jenis_surat"},
-                {title: "Status Unggah", field: "status"},
-                {title: "Verifikasi", field: "verifikasi"},
+                {title: "Nama CC", field: "nama_cc"},
+                {title: "Nama Pekerjaan", field: "nama_pekerjaan"},
+                {title: "Mitra", field: "mitra"},
+                {title: "Progres", field: "progres"},
                 {
                     title: "Lihat Detail", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",

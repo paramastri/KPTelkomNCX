@@ -9,6 +9,7 @@ class ncx extends Model
 	public $nilai_nrc;
 	public $nilai_mrc;
 	public $status_ncx;
+	public $kendala;
 	public $no_quote;
 	public $no_agreement;
 	public $tipe_order;
@@ -16,11 +17,11 @@ class ncx extends Model
 	public $baso_con;
 	public $jenis_termin_con; 
 	public $billing_nol_con;
-	public $billcom_con; 
+	public $billcom_con_nonter;
+	public $billcom_con_termin; 
 	public $asset_con;
 	public $approval_sm_con; 
 	public $approval_ubc_con;
-	public $kendala_con;
 	public $dok_p6_cpe;
 	public $dok_p8_cpe;
 	public $dok_kl_wo_cpe;
@@ -36,6 +37,6 @@ class ncx extends Model
 	public $asset_cpe;
 	public $approval_sm_cpe;
 	public $approval_ubc_cpe;
-	public $billcom_cpe;
-	public $kendala_cpe;
+	public $billcom_cpe_nonter;
+	public $billcom_cpe_termin; 
 }

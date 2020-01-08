@@ -84,10 +84,10 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="#">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="#">Data</a>
+                    <a href="{{ url('data') }}">Data</a>
                 </li>
             </ul>
 

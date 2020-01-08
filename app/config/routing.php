@@ -33,7 +33,22 @@ $di->set(
             'controller' => 'index',
             'action' => 'show404'
         ]);
+
+        $router->addGet(
+            '/listdata',
+            [
+                'controller' => 'index',
+                'action' => 'listdata'
+            ]
+        );
         
+        $router->addGet(
+            '/list',
+            [
+                'controller' => 'index',
+                'action' => 'list'
+            ]
+        );
         return $router;
     }
 );

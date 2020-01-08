@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jan 2020 pada 09.23
+-- Waktu pembuatan: 08 Jan 2020 pada 02.32
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.11
 
@@ -36,6 +36,7 @@ CREATE TABLE `ncx` (
   `nilai_nrc` varchar(225) DEFAULT NULL,
   `nilai_mrc` varchar(225) DEFAULT NULL,
   `status_ncx` varchar(225) DEFAULT NULL,
+  `kendala` text,
   `no_quote` varchar(225) DEFAULT NULL,
   `no_agreement` varchar(225) DEFAULT NULL,
   `tipe_order` int(11) DEFAULT NULL,
@@ -47,7 +48,6 @@ CREATE TABLE `ncx` (
   `asset_con` varchar(225) DEFAULT NULL,
   `approval_sm_con` int(11) DEFAULT NULL,
   `approval_ubc_con` int(11) DEFAULT NULL,
-  `kendala_con` varchar(1500) DEFAULT NULL,
   `dok_p6_cpe` int(11) DEFAULT NULL,
   `dok_p8_cpe` int(11) DEFAULT NULL,
   `dok_kl_wo_cpe` int(11) DEFAULT NULL,
@@ -63,8 +63,7 @@ CREATE TABLE `ncx` (
   `asset_cpe` varchar(225) DEFAULT NULL,
   `approval_sm_cpe` int(11) DEFAULT NULL,
   `approval_ubc_cpe` int(11) DEFAULT NULL,
-  `billcom_cpe` date DEFAULT NULL,
-  `kendala_cpe` varchar(1500) DEFAULT NULL
+  `billcom_cpe` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -14,8 +14,20 @@ class IndexController extends Controller
     {
         
     }
+
+    // public function dataAction()
+    // {
+    	
+    // }
+
     public function loginadminAction()
     {
-    	
+
     }
+
+    public function show404Action()
+    {
+        
+    }
+
 }

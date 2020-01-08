@@ -21,6 +21,14 @@ $di->set(
             ]
         );
 
+        // $router->addGet(
+        //     '/data',
+        //     [
+        //         'controller' => 'index',
+        //         'action' => 'data'
+        //     ]
+        // );
+
         $router->addGet(
             '/loginadmin',
             [

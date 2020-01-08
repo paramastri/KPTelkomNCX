@@ -22,10 +22,10 @@ $di->set(
         );
 
         $router->addGet(
-            '/listdata',
+            '/data',
             [
                 'controller' => 'index',
-                'action' => 'listdata'
+                'action' => 'data'
             ]
         );
 

@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <title>Generate Nomor Surat</title>
+    <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
+    <link rel="icon" href="favicon.png" type="png" sizes="16x16">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../style5.css">
+    <link rel="stylesheet" href="style5.css">
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -49,66 +49,28 @@
 
     <div class="wrapper">
         <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
+         <nav id="sidebar">
+            <img style="height: 100px; margin-top: 30px;" src="logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
-                <h3></h3>
+            <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
             </div>
 
-          <?php if (($this->session->get('admin')['username'])) { ?>
-            <ul style="margin-left: 10px;" class="list-unstyled">
+
+            <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="<?= $this->url->get('') ?>">Generate Nomor Surat</a>
+                    <a href="#">Form</a>
                 </li>
                 <li>
-                    <a href="<?= $this->url->get('surat/list') ?>">Upload Surat</a>
-                </li>
-                <li>
-                    <a href="<?= $this->url->get('admin/list') ?>">Beranda Admin</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Masuk sebagai <?= $this->session->get('admin')['username'] ?></a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="<?= $this->url->get('admin/register') ?>">Daftar</a>
-                        </li>
-                        <li>
-                            <a href="<?= $this->url->get('admin/logout') ?>">Keluar</a>
-                        </li>
-                    </ul>
+                    <a href="#">Data</a>
                 </li>
             </ul>
 
-            <?php } else { ?>
 
-            <ul style="margin-left: 10px;" class="list-unstyled">
-
-                <li>
-                    <a href="<?= $this->url->get('') ?>">Generate Nomor Surat</a>
-                </li>
-                <li>
-                    <a href="<?= $this->url->get('surat/list') ?>">Upload Surat</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Admin</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        
-                        <!-- <li>
-                            <a href="<?= $this->url->get('register') ?>">Register</a>
-                        </li> -->
-                        
-                        <li>
-                            <a href="<?= $this->url->get('admin/login') ?>">Masuk</a>
-                        </li>
-                        
-                    </ul>
-                </li>
-            </ul>
-            <?php } ?>
 
 
         </nav>
+
 
 
 

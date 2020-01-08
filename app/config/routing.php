@@ -49,6 +49,14 @@ $di->set(
                 'action' => 'list'
             ]
         );
+
+        $router->addGet(
+            '/detail',
+            [
+                'controller' => 'index',
+                'action' => 'detail'
+            ]
+        );
         return $router;
     }
 );

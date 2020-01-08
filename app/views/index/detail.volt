@@ -112,7 +112,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">List Data Progres NCX</h2>
+                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Detail Progres NCX</h2>
                     <!--  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button> -->
@@ -121,42 +121,6 @@
 
                 </div>
             </nav>
-
-    <div class="home-content">
-        <h2 class="dashboard-title"></h2>
-        <div id="example-table"></div>
-    </div>
-
-    <script>
-
-    // tabelnya
-        var table = new Tabulator("#example-table", {
-            // height: "345px",
-            layout: "fitColumns",
-            pagination:"local",
-            paginationSize:10,
-            layout:"fitColumns",
-            placeholder: "Tidak Ada Data",
-            columns: [
-                {title: "No", field: "no", formatter: "rownum", width: 10},
-                {title: "Nama CC", field: "nama_cc"},
-                {title: "Nama Pekerjaan", field: "nama_pekerjaan"},
-                {title: "Mitra", field: "mitra"},
-                {title: "Progres", field: "progres"},
-                {
-                    title: "Lihat Detail", field: "link", formatter: "link", formatterParams: {
-                        labelField: "name",
-                        label: "Lihat Detail",
-                        urlPrefix: "{{ url('detail/') }}",
-                        target: "_blank",
-                    }
-                },
-                
-            ],
-        });
-        table.setData("{{ url('/listdata') }}");
-    </script>
-        </div>
 
 
 </body>

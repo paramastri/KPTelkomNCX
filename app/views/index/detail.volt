@@ -122,6 +122,22 @@
                 </div>
             </nav>
 
+            <h2 style="margin-top: 30px; margin-left: 90px;">Detail</h2>
+
+            <ul style="margin-top: 40px;  margin-left: 90px; margin-right: 50%;" class="list-group">
+                <li class="list-group-item list-group-item-primary">Nama CC:</li>
+                <li class="list-group-item list-group-item-primary">Nama Pekerjaan:</li>
+                <li class="list-group-item list-group-item-primary">Mitra:</li>
+                <li class="list-group-item list-group-item-primary">Nilai NRC:</li>
+                <li class="list-group-item list-group-item-primary">Nilai MRC:</li>
+                <li class="list-group-item list-group-item-primary">Status NCX:</li>
+                <li class="list-group-item list-group-item-primary">No Quote:</li>
+                <li class="list-group-item list-group-item-primary">No Agreement:</li>
+                <li class="list-group-item list-group-item-primary">Kendala:</li>
+                <li class="list-group-item list-group-item-primary">Tipe Order:</li>
+
+        </div>
+
 
 </body>
 

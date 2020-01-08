@@ -15,7 +15,7 @@ class IndexController extends Controller
         
     }
 
-    public function listdataAction()
+    public function dataAction()
     {
 
     }
@@ -24,5 +24,7 @@ class IndexController extends Controller
     {
         
     }
+
+     public function listdataAction()
 
 }

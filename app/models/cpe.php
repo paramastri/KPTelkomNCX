@@ -6,7 +6,7 @@ class cpe extends Model{
 	public $dok_p6;
 	public $dok_p8;
 	public $dok_kl_wo;
-	public $dok_sm_crm;
+	public $approval_sm_crm;
 	public $no_order;
 	public $wfm_mitra;
 	public $approval_wfm;
@@ -15,9 +15,10 @@ class cpe extends Model{
 	public $baso;
 	public $jenis_termin;
 	public $billing_nol;
+	public $billing_com;
 	public $asset;
 	public $approval_sm;
 	public $approval_ubc;
-	public $billcom_nonter_cpe;
-	public $billcom_termin_cpe; 
+	// public $billcom_nonter_cpe;
+	// public $billcom_termin_cpe; 
 }

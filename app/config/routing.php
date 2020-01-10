@@ -49,6 +49,14 @@ $di->set(
                 'action' => 'list'
             ]
         );
+
+        $router->addPost(
+            '/storeform',
+            [
+                'controller' => 'index',
+                'action' => 'storeform'
+            ]
+        );
         return $router;
     }
 );

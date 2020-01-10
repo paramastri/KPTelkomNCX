@@ -119,7 +119,7 @@
             </nav>
 
             <div>
-            <form  action="" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form  action="storeform" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
 
                 <div class="form-group">
                     <label>Nama CC</label>
@@ -153,7 +153,7 @@
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <input type="text" class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" name="kendala">
                 </div>
 
                 <div class="form-group">
@@ -252,7 +252,7 @@
 
                 <div>
                     <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="billcom_nonter_con" >
+                    <input type="date" class="form-control" name="billing_com_con" >
                 </div>
 
   
@@ -264,7 +264,7 @@
 
                 <div>
                     <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="billcom_termin_con" >
+                    <input type="date" class="form-control" name="billing_com_con" >
                 </div>
 
  
@@ -283,7 +283,7 @@
                     <label style="margin-top: 20px;">DOK P6</label>
                 </div>
 
-                <select name="dok_p6_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                <select name="dok_p6" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -294,7 +294,7 @@
                     <label style="margin-top: 20px;">DOK P8</label>
                 </div>
 
-                <select name="dok_p8_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="dok_p8" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -305,7 +305,7 @@
                     <label style="margin-top: 20px;">DOK KL/WO</label>
                 </div>
 
-                <select name="dok_kl_wo_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="dok_kl_wo" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -316,7 +316,7 @@
                     <label style="margin-top: 20px;">DOK SM/CRM</label>
                 </div>
 
-                <select name="dok_sm_crm_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="approval_sm_crm" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -325,7 +325,7 @@
 
                 <div class="form-group">
                     <label style="margin-top: 20px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_cpe" >
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order" >
                 </div>    
 
 
@@ -333,7 +333,7 @@
                     <label style="margin-top: 20px;">WFM Mitra</label>
                 </div>
 
-                <select name="wfm_mitra_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="wfm_mitra" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">Sudah Masuk</option>
                   <option value="2">Belum Masuk</option>
@@ -344,7 +344,7 @@
                     <label style="margin-top: 20px;">Approval WFM oleh Mitra</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="approval_wfm" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -355,7 +355,7 @@
                     <label style="margin-top: 20px;">NDE Closed WFM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="status_nde" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -366,7 +366,7 @@
                     <label style="margin-top: 20px;">Approval DES PJM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="approval_des" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -376,7 +376,7 @@
                     <label style="margin-top: 20px;">BASO</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="baso" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -386,7 +386,7 @@
                     <label style="margin-top: 25px;">Termin/Non Termin</label>
                 </div>
 
-                <select id = "ddlPassportTerr" onchange = "ShowHideDivTerr()" name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                <select name="jenis_termin" id = "ddlPassportTerr" onchange = "ShowHideDivTerr()" name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
                   <option value="0"></option>
                   <option value="1">Termin</option>
                   <option value="2">Non Termin</option>
@@ -398,19 +398,19 @@
 <div id="dvPassportTerr" style="display: none">
                 <div class="form-group">
                     <label style="margin-top: 20px;">Billing NOL</label>
-                    <input type="date" class="form-control" name="tanggal" >
+                    <input type="date" class="form-control" name="billing_nol" >
                 </div>
 
                 <div class="form-group">
                     <label style="margin-top: 20px;">Asset</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="" >
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="asset" >
                 </div>       
 
                 <div>
                     <label style="margin-top: 5px;">Approval SM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="approval_sm" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -421,7 +421,7 @@
                     <label style="margin-top: 20px;">Approval UBC</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="approval_ubc" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -429,7 +429,7 @@
 
                 <div>
                     <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="tanggal" >
+                    <input type="date" class="form-control" name="billing_com" >
                 </div>
 
         </div>
@@ -438,7 +438,7 @@
 <div id="dvPassportTerr2" style="display: none">
                 <div>
                     <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="tanggal" >
+                    <input type="date" class="form-control" name="billing_com" >
                 </div>
 
 </div>

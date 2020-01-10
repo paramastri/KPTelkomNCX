@@ -50,6 +50,14 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/detail',
+            [
+                'controller' => 'index',
+                'action' => 'detail'
+            ]
+        );
+
         $router->addPost(
             '/storeform',
             [

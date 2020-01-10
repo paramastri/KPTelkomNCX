@@ -112,7 +112,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">List Data Progres NCX</h2>
+                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Detail Progres NCX</h2>
                     <!--  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button> -->
@@ -122,40 +122,20 @@
                 </div>
             </nav>
 
-    <div class="home-content">
-        <h2 class="dashboard-title"></h2>
-        <div id="example-table"></div>
-    </div>
+            <h2 style="margin-top: 30px; margin-left: 90px;">Detail</h2>
 
-    <script>
+            <ul style="margin-top: 40px;  margin-left: 90px; margin-right: 50%;" class="list-group">
+                <li class="list-group-item list-group-item-primary">Nama CC:</li>
+                <li class="list-group-item list-group-item-primary">Nama Pekerjaan:</li>
+                <li class="list-group-item list-group-item-primary">Mitra:</li>
+                <li class="list-group-item list-group-item-primary">Nilai NRC:</li>
+                <li class="list-group-item list-group-item-primary">Nilai MRC:</li>
+                <li class="list-group-item list-group-item-primary">Status NCX:</li>
+                <li class="list-group-item list-group-item-primary">No Quote:</li>
+                <li class="list-group-item list-group-item-primary">No Agreement:</li>
+                <li class="list-group-item list-group-item-primary">Kendala:</li>
+                <li class="list-group-item list-group-item-primary">Tipe Order:</li>
 
-    // tabelnya
-        var table = new Tabulator("#example-table", {
-            // height: "345px",
-            layout: "fitColumns",
-            pagination:"local",
-            paginationSize:10,
-            layout:"fitColumns",
-            placeholder: "Tidak Ada Data",
-            columns: [
-                {title: "No", field: "no", formatter: "rownum", width: 10},
-                {title: "Nama CC", field: "nama_cc"},
-                {title: "Nama Pekerjaan", field: "nama_pekerjaan"},
-                {title: "Mitra", field: "mitra"},
-                {title: "Progres", field: "progres"},
-                {
-                    title: "Lihat Detail", field: "link", formatter: "link", formatterParams: {
-                        labelField: "name",
-                        label: "Lihat Detail",
-                        urlPrefix: "{{ url('detail/') }}",
-                        target: "_blank",
-                    }
-                },
-                
-            ],
-        });
-        table.setData("{{ url('/listdata') }}");
-    </script>
         </div>
 
 

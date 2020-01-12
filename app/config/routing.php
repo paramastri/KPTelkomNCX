@@ -57,6 +57,14 @@ $di->set(
                 'action' => 'detail'
             ]
         );
+
+        $router->addGet(
+            '/indexbaru',
+            [
+                'controller' => 'index',
+                'action' => 'indexbaru'
+            ]
+        );
         return $router;
     }
 );

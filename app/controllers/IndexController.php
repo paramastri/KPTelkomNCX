@@ -60,6 +60,11 @@ class IndexController extends Controller
 
     }
 
+public function indexbaruAction()
+    {
+
+    }
+
 
 
 }

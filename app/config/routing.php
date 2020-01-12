@@ -65,6 +65,7 @@ $di->set(
                 'action' => 'indexbaru'
             ]
         );
+
         return $router;
     }
 );

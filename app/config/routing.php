@@ -51,7 +51,7 @@ $di->set(
         );
 
         $router->addGet(
-            '/detail',
+            '/detail/{id}',
             [
                 'controller' => 'index',
                 'action' => 'detail'

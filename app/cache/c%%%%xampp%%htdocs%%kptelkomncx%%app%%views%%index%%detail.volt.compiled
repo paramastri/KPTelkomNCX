@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="../style5.css">
 
     <!-- tabulator -->
-    <link href="{{ url("tabulator.min.css") }}" rel="stylesheet">
-    <script src="{{ url("tabulator.min.js") }}"></script>
+    <link href="<?= $this->url->get('tabulator.min.css') ?>" rel="stylesheet">
+    <script src="<?= $this->url->get('tabulator.min.js') ?>"></script>
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -88,10 +88,10 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('') }}">Form</a>
+                    <a href="<?= $this->url->get('') ?>">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="<?= $this->url->get('data') ?>">Data</a>
                 </li>
             </ul>
 

@@ -51,12 +51,21 @@ $di->set(
         );
 
         $router->addGet(
-            '/detail',
+            '/detail/{id}',
             [
                 'controller' => 'index',
                 'action' => 'detail'
             ]
         );
+
+        $router->addGet(
+            '/indexbaru',
+            [
+                'controller' => 'index',
+                'action' => 'indexbaru'
+            ]
+        );
+
 
         $router->addPost(
             '/storeform',

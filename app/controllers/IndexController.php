@@ -160,7 +160,12 @@ class IndexController extends Controller
 
     }
 
-    public function detailAction()
+    public function detailAction($id)
+    {
+
+    }
+
+public function indexbaruAction()
     {
 
     }

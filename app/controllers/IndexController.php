@@ -165,9 +165,44 @@ class IndexController extends Controller
 
     }
 
-public function indexbaruAction()
+    public function indexbaruAction()
     {
 
+    }
+
+    public function tipeorderAction()
+    {
+
+    }
+
+    public function coAction()
+    {
+        
+    }
+
+    public function coterminAction()
+    {
+        
+    }
+
+    public function cononAction()
+    {
+        
+    }
+
+    public function cpeAction()
+    {
+        
+    }
+
+    public function cpeterminAction()
+    {
+        
+    }
+
+    public function cpenonAction()
+    {
+        
     }
 
 

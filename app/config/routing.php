@@ -66,6 +66,66 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/tipeorder',
+            [
+                'controller' => 'index',
+                'action' => 'tipeorder'
+            ]
+        );
+
+        $router->addGet(
+            '/co',
+            [
+                'controller' => 'index',
+                'action' => 'co'
+            ]
+        );
+
+        $router->addGet(
+            '/cotermin',
+            [
+                'controller' => 'index',
+                'action' => 'cotermin'
+            ]
+        );
+
+        $router->addGet(
+            '/conon',
+            [
+                'controller' => 'index',
+                'action' => 'conon'
+            ]
+        );       
+
+
+        $router->addGet(
+            '/cpe',
+            [
+                'controller' => 'index',
+                'action' => 'cpe'
+            ]
+        ); 
+
+        $router->addGet(
+            '/cpetermin',
+            [
+                'controller' => 'index',
+                'action' => 'cpetermin'
+            ]
+        );
+
+
+        $router->addGet(
+            '/cpenon',
+            [
+                'controller' => 'index',
+                'action' => 'cpenon'
+            ]
+        );
+
+
+
 
         $router->addPost(
             '/storeform',

@@ -129,13 +129,14 @@
         <li><a href="#tab1" data-toggle="tab">DOK P6</a></li>
         <li><a href="#tab2" data-toggle="tab">DOK P8</a></li>
         <li><a href="#tab3" data-toggle="tab">DOK KL/WO</a></li>
-        <li><a href="#tab4" data-toggle="tab">DOK SM/CRM</a></li>
-        <li><a href="#tab5" data-toggle="tab">No Order</a></li>
-        <li><a href="#tab6" data-toggle="tab">WFM Mitra</a></li>
-        <li><a href="#tab7" data-toggle="tab">Approval WFM oleh Mitra</a></li>
-        <li><a href="#tab8" data-toggle="tab">NDE Closed WFM</a></li>
-        <li><a href="#tab9" data-toggle="tab">Approval DES PJM</a></li>
-        <li><a href="#tab10" data-toggle="tab">BASO</a></li>
+        <li><a href="#tab4" data-toggle="tab">No Agreement</a></li>
+        <li><a href="#tab5" data-toggle="tab">DOK SM/CRM</a></li>
+        <li><a href="#tab6" data-toggle="tab">No Order</a></li>
+        <li><a href="#tab7" data-toggle="tab">WFM Mitra</a></li>
+        <li><a href="#tab8" data-toggle="tab">Approval WFM oleh Mitra</a></li>
+        <li><a href="#tab9" data-toggle="tab">NDE Closed WFM</a></li>
+        <li><a href="#tab10" data-toggle="tab">Approval DES PJM</a></li>
+        <li><a href="#tab11" data-toggle="tab">BASO</a></li>
     </ul>
      </div>
       </div>
@@ -143,7 +144,7 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-    <div class="tab-content">
+    <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
                 <div>
@@ -155,6 +156,11 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
         <div class="tab-pane" id="tab2">
@@ -167,6 +173,11 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
         <div class="tab-pane" id="tab3">
@@ -179,9 +190,26 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
         <div class="tab-pane" id="tab4">
+                <div class="form-group">
+                    <label style="margin-top: 15px;">No Agreement</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con">
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
+        </div>
+
+        <div class="tab-pane" id="tab5">
             <div>
                     <label style="margin-top: 20px;">DOK SM/CRM</label>
                 </div>
@@ -192,16 +220,26 @@
                   <option value="2">Belum OK</option>
                 </select> 
 
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
+
         </div>
 
-        <div class="tab-pane" id="tab5">
+        <div class="tab-pane" id="tab6">
                 <div class="form-group">
                     <label style="margin-top: 20px;">No Order</label>
                     <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_cpe" >
                 </div>  
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
-        <div class="tab-pane" id="tab6">
+        <div class="tab-pane" id="tab7">
             <div>
                     <label style="margin-top: 20px;">WFM Mitra</label>
                 </div>
@@ -211,9 +249,14 @@
                   <option value="1">Sudah Masuk</option>
                   <option value="2">Belum Masuk</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
-        <div class="tab-pane" id="tab7">
+        <div class="tab-pane" id="tab8">
             <div>
                     <label style="margin-top: 20px;">Approval WFM oleh Mitra</label>
                 </div>
@@ -223,9 +266,14 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
-        <div class="tab-pane" id="tab8">
+        <div class="tab-pane" id="tab9">
             <div>
                     <label style="margin-top: 20px;">NDE Closed WFM</label>
                 </div>
@@ -235,9 +283,14 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
-        <div class="tab-pane" id="tab9">
+        <div class="tab-pane" id="tab10">
             <div>
                     <label style="margin-top: 20px;">Approval DES PJM</label>
                 </div>
@@ -247,9 +300,14 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
 
-        <div class="tab-pane" id="tab10">
+        <div class="tab-pane" id="tab11">
             <div>
                     <label style="margin-top: 20px;">BASO</label>
                 </div>
@@ -259,15 +317,23 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
      
 
-        <ul class="pager wizard">
+       <!--  <ul class="pager wizard">
             <li class="previous first" style="display:none;"><a href="#">First</a></li>
             <li class="previous"><a href="#">Previous</a></li>
             <li class="next last" style="display:none;"><a href="#">Last</a></li>
             <li class="next"><a href="#">Next</a></li>
-        </ul>
+        </ul> -->
+        <div style="margin-top: 30px;">
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Selesai</button>
+    </div>
     </div>
 </div>
     </div>

@@ -142,7 +142,7 @@
     </div>
     <div class="tab-content">
         <div class="tab-pane" id="tab1">
-          <div class="form-group">
+                <div class="form-group">
                     <label>Nama CC</label>
                     <input type="text" class="form-control" placeholder="Masukkan Nama CC" name="nama_cc" required>
                 </div>
@@ -184,12 +184,12 @@
 
         </div>
         <div class="tab-pane" id="tab2">
-           <div>
+                <div>
                     <label>Tipe Order</label>
                 </div>
 
 
-                <select id = "ddlPassport" name="tipe_order" onchange = "ShowHideDiv()" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                <select id = "ddlPassport" name="tipe_order" onchange = "ShowHideDiv()" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">Connectivity</option>
                   <option value="2">CPE</option>
@@ -214,7 +214,7 @@
                     <label style="margin-top: 10px;">BASO</label>
                 </div>
 
-                <select name="baso_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="baso_con" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -224,7 +224,7 @@
                     <label style="margin-top: 25px;">Termin/Non Termin</label>
                 </div>
 
-                <select id = "ddlPassportTer" onchange = "ShowHideDivTer()" name="jenis_termin_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                <select id = "ddlPassportTer" onchange = "ShowHideDivTer()" name="jenis_termin_con" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">Termin</option>
                   <option value="2">Non Termin</option>
@@ -248,7 +248,7 @@
                     <label style="margin-top: 5px;">Approval SM</label>
                 </div>
 
-                <select name="approval_sm_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="approval_sm_con" class="form-control form-control-sm" style="width: 100%; " >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -259,7 +259,7 @@
                     <label style="margin-top: 20px;">Approval UBC</label>
                 </div>
 
-                <select name="approval_ubc_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="approval_ubc_con" class="form-control form-control-sm" style="width: 100%; " >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -290,7 +290,7 @@
 
 
                 <!-- CPE -->
-  <div id="dvPassport2" style="display: none">
+        <div id="dvPassport2" style="display: none">
 
                 <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">CPE</h3> -->
 
@@ -298,7 +298,7 @@
                     <label style="margin-top: 20px;">DOK P6</label>
                 </div>
 
-                <select name="dok_p6_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                <select name="dok_p6_cpe" class="form-control form-control-sm" style="width: 100%;" required>
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -309,7 +309,7 @@
                     <label style="margin-top: 20px;">DOK P8</label>
                 </div>
 
-                <select name="dok_p8_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="dok_p8_cpe" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -320,7 +320,7 @@
                     <label style="margin-top: 20px;">DOK KL/WO</label>
                 </div>
 
-                <select name="dok_kl_wo_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="dok_kl_wo_cpe" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -331,7 +331,7 @@
                     <label style="margin-top: 20px;">DOK SM/CRM</label>
                 </div>
 
-                <select name="dok_sm_crm_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="dok_sm_crm_cpe" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -348,7 +348,7 @@
                     <label style="margin-top: 20px;">WFM Mitra</label>
                 </div>
 
-                <select name="wfm_mitra_cpe" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="wfm_mitra_cpe" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">Sudah Masuk</option>
                   <option value="2">Belum Masuk</option>
@@ -359,7 +359,7 @@
                     <label style="margin-top: 20px;">Approval WFM oleh Mitra</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -370,7 +370,7 @@
                     <label style="margin-top: 20px;">NDE Closed WFM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -381,7 +381,7 @@
                     <label style="margin-top: 20px;">Approval DES PJM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -391,7 +391,7 @@
                     <label style="margin-top: 20px;">BASO</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -401,7 +401,7 @@
                     <label style="margin-top: 25px;">Termin/Non Termin</label>
                 </div>
 
-                <select id = "ddlPassportTerr" onchange = "ShowHideDivTerr()" name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                <select id = "ddlPassportTerr" onchange = "ShowHideDivTerr()" name="" class="form-control form-control-sm" style="width: 100%;" required>
                   <option value="0"></option>
                   <option value="1">Termin</option>
                   <option value="2">Non Termin</option>
@@ -410,7 +410,7 @@
 </div>
 
                 <!--  Kalau Termin -->
-<div id="dvPassportTerr" style="display: none">
+        <div id="dvPassportTerr" style="display: none">
                 <div class="form-group">
                     <label style="margin-top: 20px;">Billing NOL</label>
                     <input type="date" class="form-control" name="tanggal" >
@@ -425,7 +425,7 @@
                     <label style="margin-top: 5px;">Approval SM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -436,7 +436,7 @@
                     <label style="margin-top: 20px;">Approval UBC</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>

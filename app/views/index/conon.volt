@@ -136,7 +136,7 @@
 <!--     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div> -->
-    <div class="tab-content">
+    <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
                 <div>
@@ -146,12 +146,15 @@
         </div>
      
 
-        <ul class="pager wizard">
+        <!-- <ul class="pager wizard">
             <li class="previous first" style="display:none;"><a href="#">First</a></li>
             <li class="previous"><a href="#">Previous</a></li>
             <li class="next last" style="display:none;"><a href="#">Last</a></li>
             <li class="next"><a href="#">Next</a></li>
-        </ul>
+        </ul> -->
+        <div style="margin-top: 30px;">
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Selesai</button>
+    </div>
     </div>
 </div>
     </div>

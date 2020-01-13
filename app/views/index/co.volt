@@ -126,8 +126,9 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
-        <li><a href="#tab1" data-toggle="tab">No Order</a></li>
-        <li><a href="#tab2" data-toggle="tab">BASO</a></li>
+        <li><a href="#tab1" data-toggle="tab">No Agreement</a></li>
+        <li><a href="#tab2" data-toggle="tab">No Order</a></li>
+        <li><a href="#tab3" data-toggle="tab">BASO</a></li>
 
     </ul>
      </div>
@@ -136,17 +137,36 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-    <div class="tab-content">
+    <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
+      
+                <div class="form-group">
+                    <label style="margin-top: 15px;">No Agreement</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con">
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
+
+        </div>
+
+        <div class="tab-pane" id="tab2">
                 <div class="form-group">
                     <label style="margin-top: 15px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con" >
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con">
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
 
-        <div class="tab-pane" id="tab2">
+        <div class="tab-pane" id="tab3">
                 <div>
                     <label style="margin-top: 15px;">BASO</label>
                 </div>
@@ -156,16 +176,25 @@
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
                 </select> 
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
         </div>
      
 
-        <ul class="pager wizard">
+        <!-- <ul class="pager wizard">
             <li class="previous first" style="display:none;"><a href="#">First</a></li>
             <li class="previous"><a href="#">Previous</a></li>
             <li class="next last" style="display:none;"><a href="#">Last</a></li>
             <li class="next"><a href="#">Next</a></li>
-        </ul>
+        </ul> -->
+        <div style="margin-top: 30px;">
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Selesai</button>
     </div>
+    </div>
+
 </div>
     </div>
 

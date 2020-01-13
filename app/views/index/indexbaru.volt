@@ -119,23 +119,25 @@
                 </div>
             </nav>
 
-            <body>
+            <body >
     <div class="container">
         <div id="rootwizard">
     <div class="navbar">
       <div class="navbar-inner">
-        <div class="container">
+        <div  class="container">
     <ul>
         <li><a href="#tab1" data-toggle="tab">Umum</a></li>
-
     </ul>
      </div>
       </div>
     </div>
-<!--     <div id="bar" class="progress">
+    <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
-    </div> -->
-    <div class="tab-content">
+    </div>
+    <div style="width: 30%; margin: 0 auto;" class="tab-content">
+
+
+
         <div class="tab-pane" id="tab1">
                 <div class="form-group">
                     <label>Nama CC</label>
@@ -167,28 +169,29 @@
                     <input  type="text" class="form-control" placeholder="Masukkan Status NCX" name="status_ncx" >
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
                     <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label>No Quote</label>
                     <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="no_quote" >
                 </div>
-
         </div>
+     
 
-</div>
-        </div>
-
-        <ul class="pager wizard">
+        <!-- <ul class="pager wizard">
             <li class="previous first" style="display:none;"><a href="#">First</a></li>
             <li class="previous"><a href="#">Previous</a></li>
             <li class="next last" style="display:none;"><a href="#">Last</a></li>
             <li class="next"><a href="#">Next</a></li>
-        </ul>
+        </ul> -->
+    <div style="margin-top: 30px;">
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Selesai</button>
     </div>
+    </div>
+
 </div>
     </div>
 

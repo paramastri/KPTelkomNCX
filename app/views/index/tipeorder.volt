@@ -126,7 +126,7 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
-        <li><a href="#tab1" data-toggle="tab">Umum</a></li>
+        <li><a href="#tab1" data-toggle="tab">Tipe Order</a></li>
 
     </ul>
      </div>
@@ -136,50 +136,18 @@
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div> -->
     <div class="tab-content">
+
         <div class="tab-pane" id="tab1">
-                <div class="form-group">
-                    <label>Nama CC</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nama CC" name="nama_cc" required>
+                <div>
+                    <label>Tipe Order</label>
                 </div>
 
-                <div class="form-group">
-                    <label>Nama Pekerjaan</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nama Pekerjaan" name="nama_pekerjaan" required>
-                </div>
+                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                  <option value="0"></option>
+                  <option value="1">Connectivity</option>
+                  <option value="2">CPE</option>
+                </select>
 
-                <div class="form-group">
-                    <label>Mitra</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Mitra" name="mitra" required>
-                </div>
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;">Nilai NRC</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nilai NRC" name="nilai_nrc" >
-                </div>
-
-                <div class="form-group">
-                    <label>Nilai MRC</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nilai MRC" name="nilai_mrc" >
-                </div>
-
-                <div class="form-group">
-                    <label>Status NCX</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Status NCX" name="status_ncx" >
-                </div>
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>No Quote</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="no_quote" >
-                </div>
-
-        </div>
-
-</div>
         </div>
 
         <ul class="pager wizard">

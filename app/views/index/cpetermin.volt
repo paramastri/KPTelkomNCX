@@ -126,61 +126,66 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
-        <li><a href="#tab1" data-toggle="tab">Umum</a></li>
+        <li><a href="#tab1" data-toggle="tab">Billing NOL</a></li>
+        <li><a href="#tab2" data-toggle="tab">Asset</a></li>
+        <li><a href="#tab3" data-toggle="tab">Approval SM</a></li>
+        <li><a href="#tab4" data-toggle="tab">Approval UBC</a></li>
+        <li><a href="#tab5" data-toggle="tab">Billing Complete</a></li>
 
     </ul>
      </div>
       </div>
     </div>
-<!--     <div id="bar" class="progress">
+    <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
-    </div> -->
+    </div>
     <div class="tab-content">
+
         <div class="tab-pane" id="tab1">
                 <div class="form-group">
-                    <label>Nama CC</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nama CC" name="nama_cc" required>
+                    <label style="margin-top: 0px;">Billing NOL</label>
+                    <input type="date" class="form-control" name="tanggal">
                 </div>
-
-                <div class="form-group">
-                    <label>Nama Pekerjaan</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nama Pekerjaan" name="nama_pekerjaan" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Mitra</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Mitra" name="mitra" required>
-                </div>
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;">Nilai NRC</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nilai NRC" name="nilai_nrc" >
-                </div>
-
-                <div class="form-group">
-                    <label>Nilai MRC</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nilai MRC" name="nilai_mrc" >
-                </div>
-
-                <div class="form-group">
-                    <label>Status NCX</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Status NCX" name="status_ncx" >
-                </div>
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>No Quote</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="no_quote" >
-                </div>
-
         </div>
 
-</div>
+        <div class="tab-pane" id="tab2">
+            <div class="form-group">
+                    <label style="margin-top: 0px;">Asset</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="" >
+            </div>  
         </div>
+
+        <div class="tab-pane" id="tab3">
+               <div>
+                    <label style="margin-top: 0px;">Approval SM</label>
+                </div>
+
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                  <option value="0"></option>
+                  <option value="1">OK</option>
+                  <option value="2">Belum OK</option>
+                </select>
+        </div>
+
+        <div class="tab-pane" id="tab4">
+            <div>
+                    <label style="margin-top: 0px;">Approval UBC</label>
+                </div>
+
+                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                  <option value="0"></option>
+                  <option value="1">OK</option>
+                  <option value="2">Belum OK</option>
+                </select> 
+        </div>
+
+        <div class="tab-pane" id="tab5">
+                <div>
+                    <label style="margin-top: 0px;">Billing Complete</label>
+                    <input type="date" class="form-control" name="tanggal" >
+                </div>
+        </div>
+     
 
         <ul class="pager wizard">
             <li class="previous first" style="display:none;"><a href="#">First</a></li>

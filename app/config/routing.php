@@ -124,6 +124,22 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/login',
+            [
+                'controller' => 'index',
+                'action' => 'login'
+            ]
+        );
+
+        $router->addGet(
+            '/register',
+            [
+                'controller' => 'index',
+                'action' => 'register'
+            ]
+        );
+
 
 
         return $router;

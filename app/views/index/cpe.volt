@@ -137,6 +137,8 @@
         <li><a href="#tab9" data-toggle="tab">NDE Closed WFM</a></li>
         <li><a href="#tab10" data-toggle="tab">Approval DES PJM</a></li>
         <li><a href="#tab11" data-toggle="tab">BASO</a></li>
+        <li><a href="#tab12" data-toggle="tab">Termin/Non</a></li>
+
     </ul>
      </div>
       </div>
@@ -330,6 +332,24 @@
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
                     <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
+        </div>
+
+        <div class="tab-pane" id="tab12">
+                <div>
+                    <label>Termin/Non</label>
+                </div>
+
+                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                  <option value="0"></option>
+                  <option value="1">Termin</option>
+                  <option value="2">Non Termin</option>
+                </select>
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
+
         </div>
      
 

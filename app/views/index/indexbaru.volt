@@ -127,6 +127,9 @@
         <div  class="container">
     <ul>
         <li><a href="#tab1" data-toggle="tab">Umum</a></li>
+        <li><a href="#tab2" data-toggle="tab">Tipe Order</a></li>
+
+
     </ul>
      </div>
       </div>
@@ -178,6 +181,24 @@
                     <label>No Quote</label>
                     <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="no_quote" >
                 </div>
+        </div>
+
+        <div class="tab-pane" id="tab2">
+                <div>
+                    <label>Tipe Order</label>
+                </div>
+
+                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                  <option value="0"></option>
+                  <option value="1">Connectivity</option>
+                  <option value="2">CPE</option>
+                </select>
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
+
         </div>
      
 

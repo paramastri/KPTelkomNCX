@@ -157,9 +157,11 @@
                   <option value="2">Belum OK</option>
                 </select> 
 
+                <input type="hidden" name="1" value="1">
+
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala1" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -172,11 +174,13 @@
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
-                </select> 
+                </select>
+
+                <input type="hidden" name="2" value="2">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala2" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -189,11 +193,13 @@
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
-                </select> 
+                </select>
+
+                <input type="hidden" name="3" value="3">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala3" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -201,11 +207,6 @@
                 <div class="form-group">
                     <label style="margin-top: 15px;">No Agreement</label>
                     <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con">
-                </div>
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -220,9 +221,11 @@
                   <option value="2">Belum OK</option>
                 </select> 
 
+                <input type="hidden" name="4" value="4">
+
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala4" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
 
         </div>
@@ -232,11 +235,6 @@
                     <label style="margin-top: 20px;">No Order</label>
                     <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_cpe" >
                 </div>  
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div>
         </div>
 
         <div class="tab-pane" id="tab7">
@@ -250,9 +248,11 @@
                   <option value="2">Belum Masuk</option>
                 </select> 
 
+                <input type="hidden" name="5" value="5">
+
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala5" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -265,11 +265,13 @@
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
-                </select> 
+                </select>
+
+                <input type="hidden" name="6" value="6">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala6" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -282,11 +284,13 @@
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
-                </select> 
+                </select>
+
+                <input type="hidden" name="7" value="7">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala7" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -299,11 +303,13 @@
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
-                </select> 
+                </select>
+
+                <input type="hidden" name="8" value="8">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala8" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -316,11 +322,13 @@
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
-                </select> 
+                </select>
+
+                <input type="hidden" name="9" value="9">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
      

@@ -129,6 +129,7 @@
         <li><a href="#tab1" data-toggle="tab">No Agreement</a></li>
         <li><a href="#tab2" data-toggle="tab">No Order</a></li>
         <li><a href="#tab3" data-toggle="tab">BASO</a></li>
+        <li><a href="#tab4" data-toggle="tab">Termin/Non</a></li>
 
     </ul>
      </div>
@@ -181,6 +182,24 @@
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
                     <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
+        </div>
+
+        <div class="tab-pane" id="tab4">
+                <div>
+                    <label>Termin/Non</label>
+                </div>
+
+                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                  <option value="0"></option>
+                  <option value="1">Termin</option>
+                  <option value="2">Non Termin</option>
+                </select>
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
+
         </div>
      
 

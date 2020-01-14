@@ -98,7 +98,7 @@
             
             </div>
         <div>
-            <form action="{{ url("admin/login") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form action="{{ url("login") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
                 <div class="form-group">
                     <label>Username</label>
 

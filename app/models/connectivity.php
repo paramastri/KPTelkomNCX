@@ -3,6 +3,7 @@ use Phalcon\Mvc\Model;
 class connectivity extends Model{
 	public $id;
 	public $id_ncx;
+	public $no_agreement_con;
 	public $no_order_con; 
 	public $baso_con;
 	public $jenis_termin_con; 

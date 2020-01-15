@@ -62,6 +62,7 @@ class IndexController extends Controller
         {
             $detail = new connectivity();
             $id_ncx = $data->id;
+            $no_agreement_con = $this->request->getPost('no_agreement_con');
             $no_order_con = $this->request->getPost('no_order_con');
             $baso_con = $this->request->getPost('baso_con');
             $jenis_termin_con = $this->request->getPost('jenis_termin_con');
@@ -72,6 +73,7 @@ class IndexController extends Controller
             $approval_ubc_con = $this->request->getPost('approval_ubc_con');
 
             $detail->id_ncx = $id_ncx;
+            $detail->no_agreement_con = $no_agreemnet_con;
             $detail->no_order_con = $no_order_con;
             $detail->baso_con = $baso_con;
             $detail->jenis_termin_con = $jenis_termin_con;

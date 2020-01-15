@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jan 2020 pada 04.02
--- Versi server: 10.1.36-MariaDB
--- Versi PHP: 7.2.11
+-- Generation Time: Jan 15, 2020 at 11:26 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `connectivity`
+-- Table structure for table `connectivity`
 --
 
 CREATE TABLE `connectivity` (
@@ -35,23 +35,16 @@ CREATE TABLE `connectivity` (
   `baso_con` int(11) DEFAULT NULL,
   `jenis_termin_con` int(11) DEFAULT NULL,
   `billing_nol_con` date DEFAULT NULL,
+  `billing_com_con` date DEFAULT NULL,
   `asset_con` varchar(225) DEFAULT NULL,
   `approval_sm_con` int(11) DEFAULT NULL,
-  `approval_ubc_con` int(11) DEFAULT NULL,
-  `billcom_termin_con` date DEFAULT NULL,
-  `billcom_nonter_con` date DEFAULT NULL
+  `approval_ubc_con` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONSHIPS FOR TABLE `connectivity`:
---   `id_ncx`
---       `ncx` -> `id`
---
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cpe`
+-- Table structure for table `cpe`
 --
 
 CREATE TABLE `cpe` (
@@ -69,23 +62,16 @@ CREATE TABLE `cpe` (
   `baso` int(11) DEFAULT NULL,
   `jenis_termin` int(11) DEFAULT NULL,
   `billing_nol` date DEFAULT NULL,
+  `billing_com` date DEFAULT NULL,
   `asset` varchar(225) DEFAULT NULL,
   `approval_sm` int(11) DEFAULT NULL,
-  `approval_ubc` int(11) DEFAULT NULL,
-  `billcom_nonter_cpe` date DEFAULT NULL,
-  `billcom_termin_cpe` date DEFAULT NULL
+  `approval_ubc` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONSHIPS FOR TABLE `cpe`:
---   `id_ncx`
---       `ncx` -> `id`
---
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kendala`
+-- Table structure for table `kendala`
 --
 
 CREATE TABLE `kendala` (
@@ -95,18 +81,10 @@ CREATE TABLE `kendala` (
   `kendala` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- RELATIONSHIPS FOR TABLE `kendala`:
---   `id_level`
---       `level` -> `id`
---   `id_ncx`
---       `ncx` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `level`
+-- Table structure for table `level`
 --
 
 CREATE TABLE `level` (
@@ -115,11 +93,7 @@ CREATE TABLE `level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- RELATIONSHIPS FOR TABLE `level`:
---
-
---
--- Dumping data untuk tabel `level`
+-- Dumping data for table `level`
 --
 
 INSERT INTO `level` (`id`, `nama_level`) VALUES
@@ -143,12 +117,11 @@ INSERT INTO `level` (`id`, `nama_level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ncx`
+-- Table structure for table `ncx`
 --
 
 CREATE TABLE `ncx` (
   `id` int(11) NOT NULL,
-  `id_level_cpe` int(11) DEFAULT NULL,
   `nama_cc` varchar(225) DEFAULT NULL,
   `nama_pekerjaan` varchar(225) DEFAULT NULL,
   `mitra` varchar(225) DEFAULT NULL,
@@ -156,21 +129,13 @@ CREATE TABLE `ncx` (
   `nilai_mrc` varchar(225) DEFAULT NULL,
   `status_ncx` varchar(225) DEFAULT NULL,
   `no_quote` varchar(225) DEFAULT NULL,
-  `no_agreement` varchar(225) DEFAULT NULL,
-  `kendala` text,
   `tipe_order` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONSHIPS FOR TABLE `ncx`:
---   `id_level_cpe`
---       `level` -> `id`
---
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -180,11 +145,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- RELATIONSHIPS FOR TABLE `user`:
---
-
---
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
@@ -195,21 +156,21 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 --
 
 --
--- Indeks untuk tabel `connectivity`
+-- Indexes for table `connectivity`
 --
 ALTER TABLE `connectivity`
   ADD PRIMARY KEY (`id`),
   ADD KEY `con_ibfk_1` (`id_ncx`);
 
 --
--- Indeks untuk tabel `cpe`
+-- Indexes for table `cpe`
 --
 ALTER TABLE `cpe`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cpe_ibfk_1` (`id_ncx`);
 
 --
--- Indeks untuk tabel `kendala`
+-- Indexes for table `kendala`
 --
 ALTER TABLE `kendala`
   ADD PRIMARY KEY (`id`),
@@ -217,68 +178,85 @@ ALTER TABLE `kendala`
   ADD KEY `id_ncx` (`id_ncx`);
 
 --
--- Indeks untuk tabel `level`
+-- Indexes for table `level`
 --
 ALTER TABLE `level`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `ncx`
+-- Indexes for table `ncx`
 --
 ALTER TABLE `ncx`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_level_cpe` (`id_level_cpe`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `level`
+-- AUTO_INCREMENT for table `connectivity`
+--
+ALTER TABLE `connectivity`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cpe`
+--
+ALTER TABLE `cpe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `kendala`
+--
+ALTER TABLE `kendala`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `ncx`
+--
+ALTER TABLE `ncx`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `connectivity`
+-- Constraints for table `connectivity`
 --
 ALTER TABLE `connectivity`
-  ADD CONSTRAINT `con_ibfk_1` FOREIGN KEY (`id_ncx`) REFERENCES `ncx` (`id`);
+  ADD CONSTRAINT `connectivity_ibfk_1` FOREIGN KEY (`id_ncx`) REFERENCES `ncx` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `cpe`
+-- Constraints for table `cpe`
 --
 ALTER TABLE `cpe`
   ADD CONSTRAINT `cpe_ibfk_1` FOREIGN KEY (`id_ncx`) REFERENCES `ncx` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `kendala`
+-- Constraints for table `kendala`
 --
 ALTER TABLE `kendala`
   ADD CONSTRAINT `kendala_ibfk_1` FOREIGN KEY (`id_level`) REFERENCES `level` (`id`),
   ADD CONSTRAINT `kendala_ibfk_2` FOREIGN KEY (`id_ncx`) REFERENCES `ncx` (`id`);
-
---
--- Ketidakleluasaan untuk tabel `ncx`
---
-ALTER TABLE `ncx`
-  ADD CONSTRAINT `ncx_ibfk_1` FOREIGN KEY (`id_level_cpe`) REFERENCES `level` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

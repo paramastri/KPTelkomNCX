@@ -341,9 +341,9 @@ class IndexController extends Controller
         if($kendala1)
         {
             $kendala = new kendala();
-            $kendala->id_kendala = $this->request->getPost('1');
+            $kendala->id_level = $this->request->getPost('1');
             $kendala->id_ncx = $id_ncx;
-            $kendala->id_kendala = $kendala1;
+            $kendala->kendala = $kendala1;
             $kendala->save();
         }
     }

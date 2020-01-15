@@ -83,7 +83,7 @@ $di->set(
         );
 
         $router->addGet(
-            '/cotermin',
+            '/cotermin/{id}',
             [
                 'controller' => 'index',
                 'action' => 'cotermin'
@@ -164,6 +164,14 @@ $di->set(
             [
                 'controller' => 'index',
                 'action' => 'storeco'
+            ]
+        );
+
+        $router->addPost(
+            '/storecotermin',
+            [
+                'controller' => 'index',
+                'action' => 'storecotermin'
             ]
         );
 

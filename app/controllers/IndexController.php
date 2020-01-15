@@ -181,9 +181,9 @@ class IndexController extends Controller
         
     }
 
-    public function coterminAction()
+    public function coterminAction($id)
     {
-        
+        $this->view->data = $id;
     }
 
     public function cononAction()
@@ -346,12 +346,25 @@ class IndexController extends Controller
             $kendala->kendala = $kendala1;
             $kendala->save();
         }
+
+        if($jenis_termin_con == 1)
+        {
+            return $this->response->redirect('cotermin' . '/' . $id_ncx);
+            // return $this->response->redirect('co');
+        }
+        elseif($jenis_termin_con == 2)
+        {
+            // return $this->response->redirect('cpe');
+            return $this->response->redirect('conon' . '/' . $id_ncx);
+
+        }
     }
 
     public function storecoterminAction()
     {
-        $detail = new connectivity();
         $id_ncx = $this->request->getPost('id_ncx');
+        $detail = connectivity::findFirst("id_ncx='$id_ncx'");
+
         $billing_nol_con = $this->request->getPost('billing_nol_con');
         $asset_con = $this->request->getPost('asset_con');
         $approval_sm_con  = $this->request->getPost('approval_sm_con');
@@ -364,7 +377,7 @@ class IndexController extends Controller
         $kendala15 = $this->request->getPost('kendala15');
         $kendala16 = $this->request->getPost('kendala16');
 
-        $detail->id_ncx = $id_ncx;
+        // $detail->id_ncx = $id_ncx;
         $detail->billing_nol_con = $billing_nol_con;
         $detail->asset_con = $asset_con;
         $detail->approval_sm_con = $approval_sm_con;

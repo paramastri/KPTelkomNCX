@@ -347,4 +347,140 @@ class IndexController extends Controller
             $kendala->save();
         }
     }
+
+
+    public function storecpeAction()
+    {
+        $detail = new cpe();
+        $id_ncx = $this->request->getPost('id_ncx');
+        $dok_p6 = $this->request->getPost('dok_p6');
+        $dok_p8 = $this->request->getPost('dok_p8');
+        $dok_kl_wo = $this->request->getPost('dok_kl_wo');
+        $no_agreement = $this->request->getPost('no_agreement');
+        $approval_sm_crm = $this->request->getPost('approval_sm_crm');
+        $no_order = $this->request->getPost('no_order');
+        $wfm_mitra = $this->request->getPost('wfm_mitra');
+        $approval_wfm = $this->request->getPost('approval_wfm');
+        $status_nde = $this->request->getPost('status_nde');
+        $approval_des = $this->request->getPost('approval_des');
+        $baso = $this->request->getPost('baso');
+        $jenis_termin = $this->request->getPost('jenis_termin');
+        $billing_nol = $this->request->getPost('billing_nol');
+        $billing_com = $this->request->getPost('billing_com');
+        $asset = $this->request->getPost('asset');
+        $approval_sm = $this->request->getPost('approval_sm');
+        $approval_ubc = $this->request->getPost('approval_ubc');
+
+        $kendala1 = $this->request->getPost('kendala1');
+        $kendala2 = $this->request->getPost('kendala2');
+        $kendala3 = $this->request->getPost('kendala3');
+        $kendala4 = $this->request->getPost('kendala4');
+        $kendala5 = $this->request->getPost('kendala5');
+        $kendala6 = $this->request->getPost('kendala6');
+        $kendala7 = $this->request->getPost('kendala7');
+        $kendala8 = $this->request->getPost('kendala8');
+        $kendala9 = $this->request->getPost('kendala9');
+
+        $detail->id_ncx = $id_ncx;
+        $detail->dok_p6 = $dok_p6;
+        $detail->dok_p8 = $dok_p8;
+        $detail->dok_kl_wo = $dok_kl_wo;
+        $detail->no_agreement = $no_agreement;
+        $detail->approval_sm_crm = $approval_sm_crm;
+        $detail->no_order = $no_order;
+        $detail->wfm_mitra = $wfm_mitra;
+        $detail->approval_wfm = $approval_wfm;
+        $detail->status_nde = $status_nde;
+        $detail->approval_des = $approval_des;
+        $detail->baso = $baso;
+        $detail->jenis_termin = $jenis_termin;
+        $detail->billing_nol = $billing_nol;
+        $detail->billing_com = $billing_com;
+        $detail->asset = $asset;
+        $detail->approval_sm = $approval_sm;
+        $detail->approval_ubc = $approval_ubc;
+        $detail->save();
+
+        if($kendala1)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('1');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala1;
+            $kendala->save();
+        }
+
+        if($kendala2)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('2');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala2;
+            $kendala->save();
+        }
+
+        if($kendala3)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('3');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala3;
+            $kendala->save();
+        }
+
+        if($kendala4)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('4');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala4;
+            $kendala->save();
+        }
+
+        if($kendala5)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('5');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala5;
+            $kendala->save();
+        }
+
+        if($kendala6)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('6');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala6;
+            $kendala->save();
+        }
+
+        if($kendala7)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('7');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala7;
+            $kendala->save();
+        }
+
+        if($kendala8)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('8');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala8;
+            $kendala->save();
+        }
+
+        if($kendala9)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('9');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala9;
+            $kendala->save();
+        }
+    }
+
 }

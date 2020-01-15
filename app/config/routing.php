@@ -166,6 +166,14 @@ $di->set(
                 'action' => 'storeco'
             ]
         );
+
+        $router->addPost(
+        '/storecpe',
+        [
+            'controller' => 'index',
+            'action' => 'storecpe'
+        ]
+        );
         return $router;
     }
 );

@@ -139,20 +139,21 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-<form>
+<form action="{{ url("storecpetermin") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
                 <div class="form-group">
                     <label style="margin-top: 0px;">Billing NOL</label>
+                    <input type="hidden" name="id_ncx" value="{{data}}">
                     <input type="date" class="form-control" name="billing_nol">
                 </div>
 
-                <input type="hidden" name="10" value="10">
+                <input type="hidden" name="12" value="12">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala10" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala12" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -162,11 +163,11 @@
                     <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="asset" >
             </div> 
 
-            <input type="hidden" name="11" value="11">
+            <input type="hidden" name="13" value="13">
 
             <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala11" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala13" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
             </div>
         </div>
 
@@ -181,11 +182,11 @@
                   <option value="2">Belum OK</option>
                 </select>
 
-                <input type="hidden" name="12" value="12">
+                <input type="hidden" name="14" value="14">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala12" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala14" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -200,11 +201,11 @@
                   <option value="2">Belum OK</option>
                 </select>
 
-                <input type="hidden" name="13" value="13">
+                <input type="hidden" name="15" value="15">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala13" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea class="form-control" name="kendala15" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 
@@ -214,7 +215,7 @@
                     <input type="date" class="form-control" name="billing_com" >
                 </div>
 
-                <input type="hidden" name="14" value="14">
+                <input type="hidden" name="16" value="16">
         </div>
      
 

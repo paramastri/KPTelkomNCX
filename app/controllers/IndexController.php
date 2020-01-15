@@ -567,4 +567,75 @@ class IndexController extends Controller
         }
     }
 
+    public function storecpeterminAction()
+    {
+        $id_ncx = $this->request->getPost('id_ncx');
+        $detail = cpe::findFirst("id_ncx='$id_ncx'");
+
+        $billing_nol = $this->request->getPost('billing_nol');
+        $asset = $this->request->getPost('asset');
+        $approval_sm = $this->request->getPost('approval_sm');
+        $approval_ubc = $this->request->getPost('approval_ubc');
+        $billing_com = $this->request->getPost('billing_com');
+
+        $kendala12 = $this->request->getPost('kendala12');
+        $kendala13 = $this->request->getPost('kendala13');
+        $kendala14 = $this->request->getPost('kendala14');
+        $kendala15 = $this->request->getPost('kendala15');
+        $kendala16 = $this->request->getPost('kendala16');
+
+        $detail->billing_nol = $billing_nol;
+        $detail->asset = $asset;
+        $detail->approval_sm = $approval_sm;
+        $detail->approval_ubc = $approval_ubc;
+        $detail->billing_com = $billing_com;
+        $detail->save();
+
+        if($kendala12)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('12');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala12;
+            $kendala->save();
+        }
+
+        if($kendala13)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('13');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala13;
+            $kendala->save();
+        }
+
+        if($kendala14)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('14');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala14;
+            $kendala->save();
+        }
+
+        if($kendala15)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('15');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala15;
+            $kendala->save();
+        }
+
+        if($kendala16)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('16');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala16;
+            $kendala->save();
+        }
+
+    }
+
 }

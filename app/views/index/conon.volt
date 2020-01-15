@@ -136,12 +136,13 @@
 <!--     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div> -->
-<form>
+<form action="{{ url("storeconon") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
                 <div>
                     <label style="margin-top: 0px;">Billing Complete</label>
+                    <input type="hidden" name="id_ncx" value="{{data}}">
                     <input type="date" class="form-control" name="billing_com_con" >
                 </div>
         </div>

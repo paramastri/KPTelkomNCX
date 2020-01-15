@@ -176,6 +176,14 @@ $di->set(
         );
 
         $router->addPost(
+            '/storeconon',
+            [
+                'controller' => 'index',
+                'action' => 'storeconon'
+            ]
+        );
+
+        $router->addPost(
         '/storecpe',
         [
             'controller' => 'index',
@@ -188,6 +196,14 @@ $di->set(
             [
                 'controller' => 'index',
                 'action' => 'storecpetermin'
+            ]
+        );
+
+        $router->addPost(
+            '/storecpenon',
+            [
+                'controller' => 'index',
+                'action' => 'storecpenon'
             ]
         );
         return $router;

@@ -432,6 +432,16 @@ class IndexController extends Controller
 
     }
 
+    public function storecononAction()
+    {
+        $id_ncx = $this->request->getPost('id_ncx');
+        $detail = connectivity::findFirst("id_ncx='$id_ncx'");
+
+        $billing_com_non = $this->request->getPost('billing_com_non');
+
+        $detail->billing_com_non = $billing_com_non;
+        $detail->save();
+    }
 
     public function storecpeAction()
     {
@@ -636,6 +646,17 @@ class IndexController extends Controller
             $kendala->save();
         }
 
+    }
+
+    public function storecpenonAction()
+    {
+        $id_ncx = $this->request->getPost('id_ncx');
+        $detail = cpe::findFirst("id_ncx='$id_ncx'");
+
+        $billing_com = $this->request->getPost('billing_com');
+
+        $detail->billing_com = $billing_com;
+        $detail->save();
     }
 
 }

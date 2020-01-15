@@ -175,8 +175,9 @@ class IndexController extends Controller
 
     }
 
-    public function coAction()
+    public function coAction($id)
     {
+        $this->view->data = $id;
         
     }
 
@@ -190,8 +191,9 @@ class IndexController extends Controller
         
     }
 
-    public function cpeAction()
+    public function cpeAction($id)
     {
+        $this->view->data = $id;
         
     }
 
@@ -274,7 +276,7 @@ class IndexController extends Controller
         $status_ncx = $this->request->getPost('status_ncx');
         $kendala = $this->request->getPost('kendala');
         $no_quote = $this->request->getPost('no_quote');
-        $no_agreement = $this->request->getPost('no_agreement');
+        // $no_agreement = $this->request->getPost('no_agreement');
         $tipe_order = $this->request->getPost('tipe_order');
         
         
@@ -286,7 +288,7 @@ class IndexController extends Controller
         $dokumen->status_ncx = $status_ncx;
         $dokumen->kendala = $kendala;
         $dokumen->no_quote = $no_quote;
-        $dokumen->no_agreement = $no_agreement;
+        // $dokumen->no_agreement = $no_agreement;
         $dokumen->tipe_order = $tipe_order;
         $dokumen->save();
         // echo $no_agreement; die();
@@ -299,21 +301,50 @@ class IndexController extends Controller
         // else{
         //     echo "gagal"; die();
         // }
-        // $max = ncx::maximum(
-        //     [
-        //         'column' => 'id',
-        //     ]
-        // );
+        $max = ncx::maximum(
+            [
+                'column' => 'id',
+            ]
+        );
 
         // $data = ncx::findFirst("id='$max'");
         if($tipe_order == 1)
         {
-            return $this->response->redirect('co');
+            return $this->response->redirect('co' . '/' . $max);
+            // return $this->response->redirect('co');
         }
         elseif($tipe_order == 2)
         {
-            return $this->response->redirect('cpe');
+            // return $this->response->redirect('cpe');
+            return $this->response->redirect('cpe' . '/' . $max);
 
+        }
+    }
+
+    public function storecoAction()
+    {
+        $detail = new connectivity();
+        $id_ncx = $this->request->getPost('id_ncx');
+        $no_agreement_con = $this->request->getPost('no_agreement_con');
+        $no_order_con = $this->request->getPost('no_order_con');
+        $baso_con = $this->request->getPost('baso_con');
+        $jenis_termin_con = $this->request->getPost('jenis_termin_con');
+        $kendala1 = $this->request->getPost('kendala1');
+
+        $detail->id_ncx = $id_ncx;
+        $detail->no_agreement_con = $no_agreement_con;
+        $detail->no_order_con = $no_order_con;
+        $detail->baso_con = $baso_con;
+        $detail->jenis_termin_con = $jenis_termin_con;
+        $detail->save();
+        
+        if($kendala1)
+        {
+            $kendala = new kendala();
+            $kendala->id_kendala = $this->request->getPost('1');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->id_kendala = $kendala1;
+            $kendala->save();
         }
     }
 }

@@ -75,7 +75,7 @@ $di->set(
         );
 
         $router->addGet(
-            '/co',
+            '/co/{id}',
             [
                 'controller' => 'index',
                 'action' => 'co'
@@ -100,7 +100,7 @@ $di->set(
 
 
         $router->addGet(
-            '/cpe',
+            '/cpe/{id}',
             [
                 'controller' => 'index',
                 'action' => 'cpe'
@@ -156,6 +156,14 @@ $di->set(
             [
                 'controller' => 'index',
                 'action' => 'store'
+            ]
+        );
+
+        $router->addPost(
+            '/storeco',
+            [
+                'controller' => 'index',
+                'action' => 'storeco'
             ]
         );
         return $router;

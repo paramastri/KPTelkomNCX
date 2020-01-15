@@ -150,6 +150,14 @@ $di->set(
                 'action' => 'storeform'
             ]
         );
+
+        $router->addPost(
+            '/store',
+            [
+                'controller' => 'index',
+                'action' => 'store'
+            ]
+        );
         return $router;
     }
 );

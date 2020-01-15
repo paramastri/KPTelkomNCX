@@ -226,7 +226,7 @@
             <li class="next"><a href="#">Next</a></li>
         </ul> -->
         <div style="margin-top: 30px;">
-            <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Selesai</button>
+            <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
         </div>
     </div>
 </form>

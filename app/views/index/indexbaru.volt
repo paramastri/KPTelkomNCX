@@ -127,7 +127,7 @@
         <div  class="container">
     <ul>
         <li><a href="#tab1" data-toggle="tab">Umum</a></li>
-        <li><a href="#tab2" data-toggle="tab">Tipe Order</a></li>
+        <!-- <li><a href="#tab2" data-toggle="tab">Tipe Order</a></li> -->
 
 
     </ul>
@@ -182,9 +182,18 @@
                     <label>No Quote</label>
                     <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="no_quote" >
                 </div>
+
+                <div class="form-group">
+                    <label>Tipe Order</label>
+                    <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                        <option value="0"></option>
+                        <option value="1">Connectivity</option>
+                        <option value="2">CPE</option>
+                    </select>
+                </div>
         </div>
 
-        <div class="tab-pane" id="tab2">
+      <!--  <div class="tab-pane" id="tab2">
                 <div>
                     <label>Tipe Order</label>
                 </div>
@@ -200,7 +209,7 @@
                     <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
 
-        </div>
+        </div> -->
      
 
         <!-- <ul class="pager wizard">
@@ -210,7 +219,7 @@
             <li class="next"><a href="#">Next</a></li>
         </ul> -->
     <div style="margin-top: 30px;">
-        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Selesai</button>
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
     </div>
     </div>
 </form>

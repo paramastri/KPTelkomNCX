@@ -189,10 +189,10 @@
                   <option value="2">Non Termin</option>
                 </select>
 
-                <div class="form-group">
+               <!-- <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
                     <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div>
+                </div> -->
 
         </div>
      
@@ -205,7 +205,7 @@
             <li class="next"><a href="#">Next</a></li>
         </ul> -->
         <div style="margin-top: 30px;">
-            <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Selesai</button>
+            <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
         </div>
     </div>
 </form>

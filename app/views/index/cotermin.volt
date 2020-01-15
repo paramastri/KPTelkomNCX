@@ -147,7 +147,7 @@
                     <input type="date" class="form-control" name="billing_nol_con">
                 </div>
 
-                <input type="hidden" name="2" value="2">
+                <input type="hidden" name="12" value="12">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
@@ -161,7 +161,7 @@
                     <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="asset_con" >
             </div> 
 
-            <input type="hidden" name="3" value="3">
+            <input type="hidden" name="13" value="13">
 
             <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
@@ -180,7 +180,7 @@
                   <option value="2">Belum OK</option>
                 </select>
 
-                <input type="hidden" name="4" value="4">
+                <input type="hidden" name="14" value="14">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
@@ -199,7 +199,7 @@
                   <option value="2">Belum OK</option>
                 </select>
 
-                <input type="hidden" name="5" value="5">
+                <input type="hidden" name="15" value="15">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
@@ -213,7 +213,7 @@
                     <input type="date" class="form-control" name="billing_com_con" >
                 </div>
 
-                <input type="hidden" name="6" value="6">
+                <input type="hidden" name="16" value="16">
 
                 
         </div>

@@ -144,7 +144,7 @@
         <div class="tab-pane" id="tab1">
                 <div class="form-group">
                     <label style="margin-top: 0px;">Billing NOL</label>
-                    <input type="date" class="form-control" name="tanggal">
+                    <input type="date" class="form-control" name="billing_nol_con">
                 </div>
 
                 <input type="hidden" name="2" value="2">
@@ -158,7 +158,7 @@
         <div class="tab-pane" id="tab2">
             <div class="form-group">
                     <label style="margin-top: 0px;">Asset</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="" >
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="asset_con" >
             </div> 
 
             <input type="hidden" name="3" value="3">
@@ -174,7 +174,7 @@
                     <label style="margin-top: 0px;">Approval SM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="approval_sm_con" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -193,7 +193,7 @@
                     <label style="margin-top: 0px;">Approval UBC</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="approval_ubc_con" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -210,7 +210,7 @@
         <div class="tab-pane" id="tab5">
                 <div>
                     <label style="margin-top: 0px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="tanggal" >
+                    <input type="date" class="form-control" name="billing_com_con" >
                 </div>
 
                 <input type="hidden" name="6" value="6">

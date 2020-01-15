@@ -154,7 +154,7 @@
                     <label style="margin-top: 20px;">DOK P6</label>
                 </div>
 
-                <select name="dok_p6_cpe" class="form-control form-control-sm" style="width: 100%;" required>
+                <select name="dok_p6" class="form-control form-control-sm" style="width: 100%;" required>
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -173,7 +173,7 @@
                     <label style="margin-top: 20px;">DOK P8</label>
                 </div>
 
-                <select name="dok_p8_cpe" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="dok_p8" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -192,7 +192,7 @@
                     <label style="margin-top: 20px;">DOK KL/WO</label>
                 </div>
 
-                <select name="dok_kl_wo_cpe" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="dok_kl_wo" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -209,16 +209,16 @@
         <div class="tab-pane" id="tab4">
                 <div class="form-group">
                     <label style="margin-top: 15px;">No Agreement</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con">
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Agreement" name="no_agreement">
                 </div>
         </div>
 
         <div class="tab-pane" id="tab5">
             <div>
-                    <label style="margin-top: 20px;">DOK SM/CRM</label>
+                    <label style="margin-top: 20px;">Approval SM/CRM</label>
                 </div>
 
-                <select name="dok_sm_crm_cpe" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="approval_sm_crm" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -236,7 +236,7 @@
         <div class="tab-pane" id="tab6">
                 <div class="form-group">
                     <label style="margin-top: 20px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_cpe" >
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order" >
                 </div>  
         </div>
 
@@ -245,7 +245,7 @@
                     <label style="margin-top: 20px;">WFM Mitra</label>
                 </div>
 
-                <select name="wfm_mitra_cpe" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="wfm_mitra" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">Sudah Masuk</option>
                   <option value="2">Belum Masuk</option>
@@ -264,7 +264,7 @@
                     <label style="margin-top: 20px;">Approval WFM oleh Mitra</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="approval_wfm" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -283,7 +283,7 @@
                     <label style="margin-top: 20px;">NDE Closed WFM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="status_nde" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -302,7 +302,7 @@
                     <label style="margin-top: 20px;">Approval DES PJM</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="approval_des" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -321,7 +321,7 @@
                     <label style="margin-top: 20px;">BASO</label>
                 </div>
 
-                <select name="" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="baso" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">OK</option>
                   <option value="2">Belum OK</option>
@@ -340,7 +340,7 @@
                     <label>Termin/Non</label>
                 </div>
 
-                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="jenis_termin" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">Termin</option>
                   <option value="2">Non Termin</option>

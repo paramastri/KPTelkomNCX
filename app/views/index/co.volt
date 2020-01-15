@@ -183,7 +183,7 @@
                     <label>Termin/Non</label>
                 </div>
 
-                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                <select name="jenis_termin_con" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">Termin</option>
                   <option value="2">Non Termin</option>

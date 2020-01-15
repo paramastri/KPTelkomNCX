@@ -142,7 +142,7 @@
         <div class="tab-pane" id="tab1">
                 <div>
                     <label style="margin-top: 0px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="tanggal" >
+                    <input type="date" class="form-control" name="billing_com_con" >
                 </div>
         </div>
      

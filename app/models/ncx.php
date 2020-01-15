@@ -12,6 +12,5 @@ class ncx extends Model
 	public $status_ncx;
 	public $kendala;
 	public $no_quote;
-	public $no_agreement;
 	public $tipe_order;
 }

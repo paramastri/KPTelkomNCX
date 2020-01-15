@@ -24,9 +24,7 @@ class IndexController extends Controller
         $nilai_nrc = $this->request->getPost('nilai_nrc');
         $nilai_mrc = $this->request->getPost('nilai_mrc');
         $status_ncx = $this->request->getPost('status_ncx');
-        $kendala = $this->request->getPost('kendala');
         $no_quote = $this->request->getPost('no_quote');
-        $no_agreement = $this->request->getPost('no_agreement');
         $tipe_order = $this->request->getPost('tipe_order');
         
         
@@ -36,9 +34,7 @@ class IndexController extends Controller
         $dokumen->nilai_nrc = $nilai_nrc;
         $dokumen->nilai_mrc = $nilai_mrc;
         $dokumen->status_ncx = $status_ncx;
-        $dokumen->kendala = $kendala;
         $dokumen->no_quote = $no_quote;
-        $dokumen->no_agreement = $no_agreement;
         $dokumen->tipe_order = $tipe_order;
         $dokumen->save();
         // echo $no_agreement; die();
@@ -91,6 +87,7 @@ class IndexController extends Controller
             $dok_p6 = $this->request->getPost('dok_p6');
             $dok_p8 = $this->request->getPost('dok_p8');
             $dok_kl_wo = $this->request->getPost('dok_kl_wo');
+            $no_agreement = $this->request->getPost('no_agreement');
             $approval_sm_crm = $this->request->getPost('approval_sm_crm');
             $no_order = $this->request->getPost('no_order');
             $wfm_mitra = $this->request->getPost('wfm_mitra');
@@ -109,6 +106,7 @@ class IndexController extends Controller
             $detail->dok_p6 = $dok_p6;
             $detail->dok_p8 = $dok_p8;
             $detail->dok_kl_wo = $dok_kl_wo;
+            $detail->no_agreement = $no_agreemnet;
             $detail->approval_sm_crm = $approval_sm_crm;
             $detail->no_order = $no_order;
             $detail->wfm_mitra = $wfm_mitra;

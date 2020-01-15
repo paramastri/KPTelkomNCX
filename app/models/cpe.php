@@ -6,6 +6,7 @@ class cpe extends Model{
 	public $dok_p6;
 	public $dok_p8;
 	public $dok_kl_wo;
+	public $no_agreement
 	public $approval_sm_crm;
 	public $no_order;
 	public $wfm_mitra;

@@ -186,9 +186,9 @@ class IndexController extends Controller
         $this->view->data = $id;
     }
 
-    public function cononAction()
+    public function cononAction($id)
     {
-        
+        $this->view->data = $id;
     }
 
     public function cpeAction($id)
@@ -197,14 +197,14 @@ class IndexController extends Controller
         
     }
 
-    public function cpeterminAction()
+    public function cpeterminAction($id)
     {
-        
+        $this->view->data = $id;
     }
 
-    public function cpenonAction()
+    public function cpenonAction($id)
     {
-        
+        $this->view->data = $id;
     }
 
     public function loginAction()
@@ -434,12 +434,15 @@ class IndexController extends Controller
 
     public function storecononAction()
     {
+        // $detail = new connectivity();
+        // $id_ncx = $this->request->getPost('id_ncx');
+
         $id_ncx = $this->request->getPost('id_ncx');
         $detail = connectivity::findFirst("id_ncx='$id_ncx'");
+        // echo $id_ncx; die();
+        $billing_com_con = $this->request->getPost('billing_com_con');
 
-        $billing_com_non = $this->request->getPost('billing_com_non');
-
-        $detail->billing_com_non = $billing_com_non;
+        $detail->billing_com_con = $billing_com_con;
         $detail->save();
     }
 
@@ -459,11 +462,7 @@ class IndexController extends Controller
         $approval_des = $this->request->getPost('approval_des');
         $baso = $this->request->getPost('baso');
         $jenis_termin = $this->request->getPost('jenis_termin');
-        $billing_nol = $this->request->getPost('billing_nol');
-        $billing_com = $this->request->getPost('billing_com');
-        $asset = $this->request->getPost('asset');
-        $approval_sm = $this->request->getPost('approval_sm');
-        $approval_ubc = $this->request->getPost('approval_ubc');
+
 
         $kendala1 = $this->request->getPost('kendala1');
         $kendala2 = $this->request->getPost('kendala2');
@@ -488,11 +487,7 @@ class IndexController extends Controller
         $detail->approval_des = $approval_des;
         $detail->baso = $baso;
         $detail->jenis_termin = $jenis_termin;
-        $detail->billing_nol = $billing_nol;
-        $detail->billing_com = $billing_com;
-        $detail->asset = $asset;
-        $detail->approval_sm = $approval_sm;
-        $detail->approval_ubc = $approval_ubc;
+// var_dump($detail); die();
         $detail->save();
 
         if($kendala1)
@@ -575,6 +570,18 @@ class IndexController extends Controller
             $kendala->kendala = $kendala9;
             $kendala->save();
         }
+
+        if($jenis_termin == 1)
+        {
+            return $this->response->redirect('cpetermin' . '/' . $id_ncx);
+            // return $this->response->redirect('co');
+        }
+        elseif($jenis_termin == 2)
+        {
+            // return $this->response->redirect('cpe');
+            return $this->response->redirect('cpenon' . '/' . $id_ncx);
+
+        }
     }
 
     public function storecpeterminAction()
@@ -652,6 +659,7 @@ class IndexController extends Controller
     {
         $id_ncx = $this->request->getPost('id_ncx');
         $detail = cpe::findFirst("id_ncx='$id_ncx'");
+        // echo $id_ncx; die();
 
         $billing_com = $this->request->getPost('billing_com');
 

@@ -91,7 +91,7 @@ $di->set(
         );
 
         $router->addGet(
-            '/conon',
+            '/conon/{id}',
             [
                 'controller' => 'index',
                 'action' => 'conon'
@@ -108,7 +108,7 @@ $di->set(
         ); 
 
         $router->addGet(
-            '/cpetermin',
+            '/cpetermin/{id}',
             [
                 'controller' => 'index',
                 'action' => 'cpetermin'
@@ -117,7 +117,7 @@ $di->set(
 
 
         $router->addGet(
-            '/cpenon',
+            '/cpenon/{id}',
             [
                 'controller' => 'index',
                 'action' => 'cpenon'

@@ -152,6 +152,7 @@
         <div class="tab-pane" id="tab1">
                 <div>
                     <label style="margin-top: 20px;">DOK P6</label>
+                    <input type="hidden" name="id_ncx" value="{{data}}">
                 </div>
 
                 <select name="dok_p6" class="form-control form-control-sm" style="width: 100%;" required>

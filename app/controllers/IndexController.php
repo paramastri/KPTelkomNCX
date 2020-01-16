@@ -188,19 +188,19 @@ class IndexController extends Controller
         $listdata = ncx::findFirst("id='$id'");
         $listdata2 = connectivity::findFirst("id_ncx='$id'");
         $listdata3 = cpe::findFirst("id_ncx='$id'");
-
+        $this->view->data = $listdata;
         if($listdata2)
         {
             // var_dump($listdata2); die();
             // echo("ini con"); die();
             $this->view->dataco = $listdata2; 
-            $this->view->data = $listdata;           
+            // $this->view->data = $listdata;           
         }
         elseif($listdata3)
         {
                 // echo("ini cpe"); die();
                 $this->view->datacpe = $listdata3;
-                $this->view->data = $listdata;
+
         }
         // die();
 

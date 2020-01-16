@@ -144,6 +144,14 @@
                 {title: "Mitra", field: "mitra"},
                 {title: "Progres", field: "progres"},
                 {
+                    title: "Edit", field: "link", formatter: "link", formatterParams: {
+                        labelField: "name",
+                        label: "Edit",
+                        urlPrefix: "{{ url('edit/') }}",
+                        // target: "_blank",
+                    }
+                },
+                {
                     title: "Lihat Detail", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",
                         label: "Lihat Detail",

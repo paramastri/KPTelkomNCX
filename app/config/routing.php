@@ -206,6 +206,23 @@ $di->set(
                 'action' => 'storecpenon'
             ]
         );
+
+        $router->addGet(
+            '/edit/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'edit'
+            ]
+        );
+
+        $router->addPost(
+            '/storeedit',
+            [
+                'controller' => 'index',
+                'action' => 'storeedit'
+            ]
+        );
+
         return $router;
     }
 );

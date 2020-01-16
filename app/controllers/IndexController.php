@@ -708,4 +708,68 @@ class IndexController extends Controller
         $detail->save();
     }
 
+    public function editAction($id)
+    {
+        $data = ncx::findFirst("id='$id'");
+        $this->view->data = $data;
+        
+    }
+
+    public function storeeditAction()
+    {
+        $id = $this->request->getPost('id');
+        $dokumen = ncx::findFirst("id='$id'");;
+        $nama_cc = $this->request->getPost('nama_cc');
+        $nama_pekerjaan = $this->request->getPost('nama_pekerjaan');
+        $mitra = $this->request->getPost('mitra');
+        $nilai_nrc = $this->request->getPost('nilai_nrc');
+        $nilai_mrc = $this->request->getPost('nilai_mrc');
+        $status_ncx = $this->request->getPost('status_ncx');
+        $kendala = $this->request->getPost('kendala');
+        $no_quote = $this->request->getPost('no_quote');
+        // $no_agreement = $this->request->getPost('no_agreement');
+        $tipe_order = $this->request->getPost('tipe_order');
+        
+        
+        $dokumen->nama_cc = $nama_cc;
+        $dokumen->nama_pekerjaan = $nama_pekerjaan;
+        $dokumen->mitra = $mitra;
+        $dokumen->nilai_nrc = $nilai_nrc;
+        $dokumen->nilai_mrc = $nilai_mrc;
+        $dokumen->status_ncx = $status_ncx;
+        $dokumen->kendala = $kendala;
+        $dokumen->no_quote = $no_quote;
+        // $dokumen->no_agreement = $no_agreement;
+        $dokumen->tipe_order = $tipe_order;
+        $dokumen->save();
+        // echo $no_agreement; die();
+        // var_dump($dokumen); die();
+        // if($dokumen->save())
+        // {
+        //     echo "tersimpan"; die();
+
+        // }
+        // else{
+        //     echo "gagal"; die();
+        // }
+        // $max = ncx::maximum(
+        //     [
+        //         'column' => 'id',
+        //     ]
+        // );
+
+        // $data = ncx::findFirst("id='$max'");
+        // if($tipe_order == 1)
+        // {
+        //     return $this->response->redirect('co' . '/' . $is);
+        //     // return $this->response->redirect('co');
+        // }
+        // elseif($tipe_order == 2)
+        // {
+        //     // return $this->response->redirect('cpe');
+        //     return $this->response->redirect('cpe' . '/' . $is);
+
+        // }
+    }
+
 }

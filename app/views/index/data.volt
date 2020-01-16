@@ -148,7 +148,7 @@
                         labelField: "name",
                         label: "Lihat Detail",
                         urlPrefix: "{{ url('detail/') }}",
-                        target: "_blank",
+                        // target: "_blank",
                     }
                 },
                 

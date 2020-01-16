@@ -130,9 +130,16 @@ class IndexController extends Controller
         
     }
 
+    public function dataAction()
+    {
+
+    }
+
     public function listdataAction()
     {
         $listdatas = ncx::find();
+        // $listdata2 = connectivity::find();
+        // $listdata3 = cpe::find();
         $data = array();
 
         foreach ($listdatas as $listdata)
@@ -143,6 +150,21 @@ class IndexController extends Controller
                 'nama_cc' => $listdata->nama_cc,
                 'nama_pekerjaan' => $listdata->nama_pekerjaan,
                 'mitra' => $listdata->mitra,
+                'nilai_nrc' => $listdata->nilai_nrc,
+                'nilai_mrc' => $listdata->nilai_mrc,
+                'status_ncx' => $listdata->status_ncx,
+                'no_quote' =>$listdata->no_quote,
+                'tipe_order' => $listdata->tipe_order,
+                // 'no_agreement_con' => $listdata->no_agreement_con,
+                // 'no_order_con' => $listdata->no_order_con,
+                // 'baso_con' =>$listdata->baso_con,
+                // 'jenis_termin_con' =>$listdata->jenis_termin_con,
+                // 'billing_nol_con' =>$listdata->billing_nol_con,
+                // 'billing_com_con' =>$listdata->billing_com_con,
+                // 'asset_con' =>$listdata->asset_con,
+                // 'approval_sm_con' =>$listdata->approval_sm_con,
+                // 'approval_ubc_con' =>$listdata->approval_ubc_con,
+                // 'dok_p6' =>$listdata->dok_p6,
                 // 'jenis_surat' => $jenissurat,
                 // 'status' => $status,
                 // 'verifikasi' => $verifikasi,
@@ -160,8 +182,25 @@ class IndexController extends Controller
 
     }
 
+
     public function detailAction($id)
     {
+        $listdata = ncx::findFirst("id='$id'");
+        $listdata2 = connectivity::findFirst("id_ncx='$id'");
+        $listdata3 = cpe::findFirst("id_ncx='$id'");
+
+        if($listdata2)
+        {
+            // var_dump($listdata2); die();
+            // echo("ini con"); die();
+            $this->view->data = $listdata2;            
+        }
+        elseif($listdata3)
+        {
+                // echo("ini cpe"); die();
+                $this->view->data = $listdata3;
+        }
+        // die();
 
     }
 

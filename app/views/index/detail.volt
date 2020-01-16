@@ -122,26 +122,37 @@
                 </div>
             </nav>
 
-            <h2 style="margin-top: 30px; margin-left: 20px;">Detail</h2>
+            <!-- <h2 style="margin-top: 30px; margin-left: 20px;">Detail</h2> -->
 
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
                        <!-- <ul style="margin-top: 40px;  margin-left: 90px; margin-right: 50%; col-" class="list-group"> -->
-                            <li class="list-group-item list-group-item-primary">Nama CC:</li>
-                            <li class="list-group-item list-group-item-primary">Nama Pekerjaan:</li>
-                            <li class="list-group-item list-group-item-primary">Mitra:</li>
-                            <li class="list-group-item list-group-item-primary">Nilai NRC:</li>
-                            <li class="list-group-item list-group-item-primary">Nilai MRC:</li>
-                            
+                            <li class="list-group-item list-group-item-warning">Nama CC: {{data.nama_cc}}</li>
+                            <li class="list-group-item list-group-item-warning">Nama Pekerjaan: {{data.nama_pekerjaan}}</li>
+                            <li class="list-group-item list-group-item-warning">Mitra: {{data.mitra}}</li>
+                            <li class="list-group-item list-group-item-warning">Nilai NRC: {{data.nilai_nrc}}</li>
+                            <li class="list-group-item list-group-item-warning">Nilai MRC: {{data.nilai_mrc}}</li>
+                            <li class="list-group-item list-group-item-warning">Status NCX: {{data.status_ncx}}</li>
+                            <li class="list-group-item list-group-item-warning">No Quote: {{data.no_quote}}</li>
+                            <li class="list-group-item list-group-item-warning">Tipe Order: 
+                            {% if (data.tipe_order == 1) %}
+                            Connectivity
+                            {% elseif (data.tipe_order == 2) %}
+                            DITOLAK
+                            {% else %}
+                            CPE
+                            {% endif %}
+                            </li>
+                            <!-- <li class="list-group-item list-group-item-warning">No Agreement Conectivity: </li> -->
                         <!-- </ul> -->
                     </div>
                     <div class="col-sm">
-                            <li class="list-group-item list-group-item-primary">Status NCX:</li>
-                            <li class="list-group-item list-group-item-primary">No Quote:</li>
-                            <li class="list-group-item list-group-item-primary">No Agreement:</li>
-                            <li class="list-group-item list-group-item-primary">Kendala:</li>
-                            <li class="list-group-item list-group-item-primary">Tipe Order:</li>
+                            <li class="list-group-item list-group-item-warning">Status NCX:</li>
+                            <li class="list-group-item list-group-item-warning">No Quote:</li>
+                            <li class="list-group-item list-group-item-warning">No Agreement:</li>
+                            <li class="list-group-item list-group-item-warning">Kendala:</li>
+                            <li class="list-group-item list-group-item-warning">Tipe Order:</li>
                     </div>
                 </div>
             </div>

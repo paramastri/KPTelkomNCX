@@ -87,7 +87,7 @@
                     <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="{{ url('') }}">Data</a>
                 </li>
             </ul>
 

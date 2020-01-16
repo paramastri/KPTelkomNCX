@@ -193,12 +193,14 @@ class IndexController extends Controller
         {
             // var_dump($listdata2); die();
             // echo("ini con"); die();
-            $this->view->data = $listdata2;            
+            $this->view->dataco = $listdata2; 
+            $this->view->data = $listdata;           
         }
         elseif($listdata3)
         {
                 // echo("ini cpe"); die();
-                $this->view->data = $listdata3;
+                $this->view->datacpe = $listdata3;
+                $this->view->data = $listdata;
         }
         // die();
 

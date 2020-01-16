@@ -139,7 +139,7 @@
                             {% if (data.tipe_order == 1) %}
                             Connectivity
                             {% elseif (data.tipe_order == 2) %}
-                            DITOLAK
+                            CPE. <br> Agreement : {{datacpe.no_agreement}}
                             {% else %}
                             CPE
                             {% endif %}

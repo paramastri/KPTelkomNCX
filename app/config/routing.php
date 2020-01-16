@@ -223,6 +223,22 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/editco/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editco'
+            ]
+        );
+
+        $router->addPost(
+            '/storeeditco',
+            [
+                'controller' => 'index',
+                'action' => 'storeeditco'
+            ]
+        );
+
         return $router;
     }
 );

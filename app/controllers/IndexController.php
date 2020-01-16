@@ -742,34 +742,82 @@ class IndexController extends Controller
         // $dokumen->no_agreement = $no_agreement;
         $dokumen->tipe_order = $tipe_order;
         $dokumen->save();
-        // echo $no_agreement; die();
-        // var_dump($dokumen); die();
-        // if($dokumen->save())
-        // {
-        //     echo "tersimpan"; die();
 
-        // }
-        // else{
-        //     echo "gagal"; die();
-        // }
-        // $max = ncx::maximum(
-        //     [
-        //         'column' => 'id',
-        //     ]
-        // );
+        if($tipe_order == 1)
+        {
+            return $this->response->redirect('editco' . '/' . $id);
+        }
+        elseif($tipe_order == 2)
+        {
+            return $this->response->redirect('editcpe' . '/' . $id);
 
-        // $data = ncx::findFirst("id='$max'");
-        // if($tipe_order == 1)
-        // {
-        //     return $this->response->redirect('co' . '/' . $is);
-        //     // return $this->response->redirect('co');
-        // }
-        // elseif($tipe_order == 2)
-        // {
-        //     // return $this->response->redirect('cpe');
-        //     return $this->response->redirect('cpe' . '/' . $is);
+        }
+    }
 
-        // }
+    public function editcoAction($id)
+    {
+        $data = connectivity::findFirst("id_ncx='$id'");
+        $this->view->data = $data;
+        $kendalas = kendala::find("id_ncx='$id'");
+        $this->view->kendalas = $kendalas;
+        
+    }
+
+    public function storeeditcoAction()
+    {
+        
+        $id_ncx = $this->request->getPost('id_ncx');
+        $detail = connectivity::findFirst("id_ncx='$id_ncx'");
+        $no_agreement_con = $this->request->getPost('no_agreement_con');
+        $no_order_con = $this->request->getPost('no_order_con');
+        $baso_con = $this->request->getPost('baso_con');
+        $jenis_termin_con = $this->request->getPost('jenis_termin_con');
+        $kendala1 = $this->request->getPost('kendala1');
+
+        $detail->id_ncx = $id_ncx;
+        $detail->no_agreement_con = $no_agreement_con;
+        $detail->no_order_con = $no_order_con;
+        $detail->baso_con = $baso_con;
+        $detail->jenis_termin_con = $jenis_termin_con;
+        $detail->save();
+        
+        if($kendala1)
+        {
+            $kendala = kendala::findFirst("id_ncx='$id_ncx'");
+            // $kendala->id_level = $this->request->getPost('1');
+            // $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala1;
+            $kendala->save();
+
+            if($kendala)
+            {
+                $kendala = kendala::findFirst("id_ncx='$id_ncx'");
+                // $kendala->id_level = $this->request->getPost('1');
+                // $kendala->id_ncx = $id_ncx;
+                $kendala->kendala = $kendala1;
+                $kendala->save();
+
+            }
+            else{
+                $kendala = new kendala();
+                $kendala->id_level = $this->request->getPost('1');
+                $kendala->id_ncx = $id_ncx;
+                $kendala->kendala = $kendala1;
+                $kendala->save();
+            }
+        }
+
+        if($jenis_termin_con == 1)
+        {
+            return $this->response->redirect('editcotermin' . '/' . $id_ncx);
+            // return $this->response->redirect('co');
+        }
+        elseif($jenis_termin_con == 2)
+        {
+            // return $this->response->redirect('cpe');
+            return $this->response->redirect('editconon' . '/' . $id_ncx);
+
+        }
     }
 
 }

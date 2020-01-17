@@ -287,6 +287,22 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/editcpenon/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editcpenon'
+            ]
+        );
+
+        $router->addPost(
+            '/storeeditcpenon',
+            [
+                'controller' => 'index',
+                'action' => 'storeeditcpenon'
+            ]
+        );
+
         return $router;
     }
 );

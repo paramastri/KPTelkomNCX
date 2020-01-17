@@ -138,7 +138,7 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-<form action="{{ url("storeco") }}" method="post">
+<form action="{{ url("storeeditco") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
@@ -183,10 +183,19 @@
 
                 <input type="hidden" name="1" value="1">
 
-                <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <input class="form-control" name="kendala1" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" value="{{kendalas[0].kendala}}"></textarea>
-                </div>
+                
+
+                {% if (kendala1) %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <input class="form-control" name="kendala1" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" value="{{kendala1.kendala}}"></textarea>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <input class="form-control" name="kendala1" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                {% endif %}
         </div>
 
         <div class="tab-pane" id="tab4">

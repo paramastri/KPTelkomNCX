@@ -718,7 +718,7 @@ class IndexController extends Controller
     public function storeeditAction()
     {
         $id = $this->request->getPost('id');
-        $dokumen = ncx::findFirst("id='$id'");;
+        $dokumen = ncx::findFirst("id='$id'");
         $nama_cc = $this->request->getPost('nama_cc');
         $nama_pekerjaan = $this->request->getPost('nama_pekerjaan');
         $mitra = $this->request->getPost('mitra');
@@ -745,11 +745,27 @@ class IndexController extends Controller
 
         if($tipe_order == 1)
         {
-            return $this->response->redirect('editco' . '/' . $id);
+            $cek = connectivity::findFirst("id_ncx='$id'");
+            if($cek)
+            {
+                return $this->response->redirect('editco' . '/' . $id);
+            }
+            else{
+                return $this->response->redirect('co' . '/' . $id);
+            }
+            
         }
         elseif($tipe_order == 2)
         {
-            return $this->response->redirect('editcpe' . '/' . $id);
+            $cek = cpe::findFirst("id_ncx='$id'");
+            if($cek)
+            {
+                return $this->response->redirect('editcpe' . '/' . $id);
+            }
+            else{
+                return $this->response->redirect('cpe' . '/' . $id);
+            }
+            
 
         }
     }
@@ -758,8 +774,8 @@ class IndexController extends Controller
     {
         $data = connectivity::findFirst("id_ncx='$id'");
         $this->view->data = $data;
-        $kendalas = kendala::find("id_ncx='$id'");
-        $this->view->kendalas = $kendalas;
+        $kendala1 = kendala::findFirst("id_ncx='$id'");
+        $this->view->kendala1 = $kendala1;
         
     }
 
@@ -786,12 +802,12 @@ class IndexController extends Controller
             $kendala = kendala::findFirst("id_ncx='$id_ncx'");
             // $kendala->id_level = $this->request->getPost('1');
             // $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala1;
-            $kendala->save();
+            // $kendala->kendala = $kendala1;
+            // $kendala->save();
 
             if($kendala)
             {
-                $kendala = kendala::findFirst("id_ncx='$id_ncx'");
+                // $kendala = kendala::findFirst("id_ncx='$id_ncx'");
                 // $kendala->id_level = $this->request->getPost('1');
                 // $kendala->id_ncx = $id_ncx;
                 $kendala->kendala = $kendala1;
@@ -799,11 +815,11 @@ class IndexController extends Controller
 
             }
             else{
-                $kendala = new kendala();
-                $kendala->id_level = $this->request->getPost('1');
-                $kendala->id_ncx = $id_ncx;
-                $kendala->kendala = $kendala1;
-                $kendala->save();
+                $newkendala = new kendala();
+                $newkendala->id_level = $this->request->getPost('1');
+                $newkendala->id_ncx = $id_ncx;
+                $newkendala->kendala = $kendala1;
+                $newkendala->save();
             }
         }
 

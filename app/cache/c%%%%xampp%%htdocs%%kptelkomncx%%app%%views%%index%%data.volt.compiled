@@ -4,7 +4,7 @@
 <head>
     <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
+    <link rel="icon" href="favicon.png" type="png" sizes="16x16">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +12,11 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../style5.css">
+    <link rel="stylesheet" href="style5.css">
 
     <!-- tabulator -->
-    <link href="{{ url("tabulator.min.css") }}" rel="stylesheet">
-    <script src="{{ url("tabulator.min.js") }}"></script>
+    <link href="<?= $this->url->get('tabulator.min.css') ?>" rel="stylesheet">
+    <script src="<?= $this->url->get('tabulator.min.js') ?>"></script>
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -79,7 +79,7 @@
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-            <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
+            <img style="height: 100px; margin-top: 30px;" src="logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
             <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
             </div>
@@ -88,10 +88,10 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('') }}">Form</a>
+                    <a href="<?= $this->url->get('') ?>">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="<?= $this->url->get('data') ?>">Data</a>
                 </li>
             </ul>
 
@@ -112,7 +112,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Detail Progres NCX</h2>
+                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">List Data Progres NCX</h2>
                     <!--  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button> -->
@@ -122,27 +122,48 @@
                 </div>
             </nav>
 
-            <ul style="margin-top: 40px;  margin-left: 90px; margin-right: 50%;" class="list-group">
-                <li class="list-group-item list-group-item-primary">Nama CC : {{data.nama_cc}}</li>
-                <li class="list-group-item list-group-item-primary">Nama Pekerjaan : {{data.nama_pekerjaan}}</li>
-                <li class="list-group-item list-group-item-primary">Mitra : {{data.mitra}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai NRC : {{data.nilai_nrc}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai MRC : {{data.nilai_mrc}}</li>
-                <li class="list-group-item list-group-item-primary">Status NCX : {{data.status_ncx}}</li>
-                <li class="list-group-item list-group-item-primary">No Quote : {{data.no_quote}} </li>
-                <li class="list-group-item list-group-item-primary">Tipe Order : 
-                    {% if (data.tipe_order == 1) %}
-                    Connectivity
-                    {% elseif (data.tipe_order == 2) %}
-                    CPE
-                    {% endif %}</li>
-            </ul>
+    <div class="home-content">
+        <h2 class="dashboard-title"></h2>
+        <div id="example-table"></div>
+    </div>
 
-            <a value = "" style="margin-top: 30px; margin-bottom: 0px; margin-left: 420px; color: white;" type="submit" class="btn btn-primary">Selanjutnya</a>
+    <script>
 
-            <!-- <h2 style="margin-top: 30px; margin-left: 20px;">Detail</h2> -->
-           
-
+    // tabelnya
+        var table = new Tabulator("#example-table", {
+            // height: "345px",
+            layout: "fitColumns",
+            pagination:"local",
+            paginationSize:10,
+            layout:"fitColumns",
+            placeholder: "Tidak Ada Data",
+            columns: [
+                {title: "No", field: "no", formatter: "rownum", width: 10},
+                {title: "Nama CC", field: "nama_cc"},
+                {title: "Nama Pekerjaan", field: "nama_pekerjaan"},
+                {title: "Mitra", field: "mitra"},
+                {title: "Progres", field: "progres"},
+                {
+                    title: "Edit", field: "link", formatter: "link", formatterParams: {
+                        labelField: "name",
+                        label: "Edit",
+                        urlPrefix: "<?= $this->url->get('edit/') ?>",
+                        // target: "_blank",
+                    }
+                },
+                {
+                    title: "Lihat Detail", field: "link", formatter: "link", formatterParams: {
+                        labelField: "name",
+                        label: "Lihat Detail",
+                        urlPrefix: "<?= $this->url->get('detail/') ?>",
+                        // target: "_blank",
+                    }
+                },
+                
+            ],
+        });
+        table.setData("<?= $this->url->get('/listdata') ?>");
+    </script>
         </div>
 
 

@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="../style5.css">
 
     <!-- tabulator -->
-    <link href="{{ url("tabulator.min.css") }}" rel="stylesheet">
-    <script src="{{ url("tabulator.min.js") }}"></script>
+    <link href="<?= $this->url->get('tabulator.min.css') ?>" rel="stylesheet">
+    <script src="<?= $this->url->get('tabulator.min.js') ?>"></script>
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -88,10 +88,10 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('') }}">Form</a>
+                    <a href="<?= $this->url->get('') ?>">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="<?= $this->url->get('data') ?>">Data</a>
                 </li>
             </ul>
 
@@ -123,19 +123,19 @@
             </nav>
 
             <ul style="margin-top: 40px;  margin-left: 90px; margin-right: 50%;" class="list-group">
-                <li class="list-group-item list-group-item-primary">Nama CC : {{data.nama_cc}}</li>
-                <li class="list-group-item list-group-item-primary">Nama Pekerjaan : {{data.nama_pekerjaan}}</li>
-                <li class="list-group-item list-group-item-primary">Mitra : {{data.mitra}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai NRC : {{data.nilai_nrc}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai MRC : {{data.nilai_mrc}}</li>
-                <li class="list-group-item list-group-item-primary">Status NCX : {{data.status_ncx}}</li>
-                <li class="list-group-item list-group-item-primary">No Quote : {{data.no_quote}} </li>
-                <li class="list-group-item list-group-item-primary">Tipe Order : 
-                    {% if (data.tipe_order == 1) %}
+                <li class="list-group-item list-group-item-primary">Nama CC         : <?= $data->nama_cc ?></li>
+                <li class="list-group-item list-group-item-primary">Nama Pekerjaan  : <?= $data->nama_pekerjaan ?></li>
+                <li class="list-group-item list-group-item-primary">Mitra           : <?= $data->mitra ?></li>
+                <li class="list-group-item list-group-item-primary">Nilai NRC       : <?= $data->nilai_nrc ?></li>
+                <li class="list-group-item list-group-item-primary">Nilai MRC       : <?= $data->nilai_mrc ?></li>
+                <li class="list-group-item list-group-item-primary">Status NCX      : <?= $data->status_ncx ?></li>
+                <li class="list-group-item list-group-item-primary">No Quote        : <?= $data->no_quote ?> </li>
+                <li class="list-group-item list-group-item-primary">Tipe Order      : 
+                    <?php if (($data->tipe_order == 1)) { ?>
                     Connectivity
-                    {% elseif (data.tipe_order == 2) %}
+                    <?php } elseif (($data->tipe_order == 2)) { ?>
                     CPE
-                    {% endif %}</li>
+                    <?php } ?></li>
             </ul>
 
             <a value = "" style="margin-top: 30px; margin-bottom: 0px; margin-left: 420px; color: white;" type="submit" class="btn btn-primary">Selanjutnya</a>

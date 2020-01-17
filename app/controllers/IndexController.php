@@ -144,7 +144,6 @@ class IndexController extends Controller
 
         foreach ($listdatas as $listdata)
         {
-
             
             $data[] = array(
                 'nama_cc' => $listdata->nama_cc,
@@ -155,7 +154,7 @@ class IndexController extends Controller
                 'status_ncx' => $listdata->status_ncx,
                 'no_quote' =>$listdata->no_quote,
                 'tipe_order' => $listdata->tipe_order,
-                // 'no_agreement_con' => $listdata->no_agreement_con,
+                // 'no_agreement_con' => $listdata2->no_agreement_con,
                 // 'no_order_con' => $listdata->no_order_con,
                 // 'baso_con' =>$listdata->baso_con,
                 // 'jenis_termin_con' =>$listdata->jenis_termin_con,
@@ -203,6 +202,11 @@ class IndexController extends Controller
 
         }
         // die();
+
+    }
+
+    public function detailtipeAction($id)
+    {
 
     }
 

@@ -59,6 +59,14 @@ $di->set(
         );
 
         $router->addGet(
+            '/detailtipe/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'detailtipe'
+            ]
+        );
+
+        $router->addGet(
             '/indexbaru',
             [
                 'controller' => 'index',

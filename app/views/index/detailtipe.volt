@@ -123,19 +123,32 @@
             </nav>
 
             <ul style="margin-top: 40px;  margin-left: 90px; margin-right: 50%;" class="list-group">
-                <li class="list-group-item list-group-item-primary">Nama CC : {{data.nama_cc}}</li>
-                <li class="list-group-item list-group-item-primary">Nama Pekerjaan : {{data.nama_pekerjaan}}</li>
-                <li class="list-group-item list-group-item-primary">Mitra : {{data.mitra}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai NRC : {{data.nilai_nrc}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai MRC : {{data.nilai_mrc}}</li>
-                <li class="list-group-item list-group-item-primary">Status NCX : {{data.status_ncx}}</li>
-                <li class="list-group-item list-group-item-primary">No Quote : {{data.no_quote}} </li>
-                <li class="list-group-item list-group-item-primary">Tipe Order : 
-                    {% if (data.tipe_order == 1) %}
-                    Connectivity
-                    {% elseif (data.tipe_order == 2) %}
-                    CPE
-                    {% endif %}</li>
+                <li class="list-group-item list-group-item-primary">No Agreement : </li>
+                <li class="list-group-item list-group-item-primary">No Order : </li>
+                <li class="list-group-item list-group-item-primary">Baso : </li>
+                <li class="list-group-item list-group-item-primary">Jenis Termin : </li>
+                <li class="list-group-item list-group-item-primary">Billing Nol : </li>
+                <li class="list-group-item list-group-item-primary">Billing Complete : </li>
+                <li class="list-group-item list-group-item-primary">Asset : </li>
+                <li class="list-group-item list-group-item-primary">Approval SM : </li>
+                <li class="list-group-item list-group-item-primary">Approval UBC : </li>
+
+                <li class="list-group-item list-group-item-primary">Dokumen P6 : </li>
+                <li class="list-group-item list-group-item-primary">Dokumen P8 : </li>
+                <li class="list-group-item list-group-item-primary">Dokumen KL WO : </li>
+                <li class="list-group-item list-group-item-primary">Dokumen SM CRM : </li>
+                <li class="list-group-item list-group-item-primary">No Agreement : </li>
+                <li class="list-group-item list-group-item-primary">No Order : </li>
+                <li class="list-group-item list-group-item-primary">WFM Mitra : </li>
+                <li class="list-group-item list-group-item-primary">Approval WFM : </li>
+                <li class="list-group-item list-group-item-primary">Status NDE : </li>
+                <li class="list-group-item list-group-item-primary">Approval DES : </li>
+                <li class="list-group-item list-group-item-primary">Baso : </li>
+                <li class="list-group-item list-group-item-primary">Jenis Termin : </li>
+                <li class="list-group-item list-group-item-primary">Billing Nol : </li>
+                <li class="list-group-item list-group-item-primary">Billing Complete : </li>
+                <li class="list-group-item list-group-item-primary">Asset : </li>
+
             </ul>
 
             <a value = "" style="margin-top: 30px; margin-bottom: 0px; margin-left: 420px; color: white;" type="submit" class="btn btn-primary">Selanjutnya</a>

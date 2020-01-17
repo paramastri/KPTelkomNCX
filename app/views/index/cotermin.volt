@@ -214,8 +214,6 @@
                     <input type="date" class="form-control" name="billing_com_con" >
                 </div>
 
-                <input type="hidden" name="16" value="16">
-
                 
         </div>
      

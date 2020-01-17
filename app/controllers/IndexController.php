@@ -360,6 +360,9 @@ class IndexController extends Controller
             return $this->response->redirect('cpe' . '/' . $max);
 
         }
+        else{
+            return $this->response->redirect('data');
+        }
     }
 
     public function storecoAction()
@@ -370,7 +373,7 @@ class IndexController extends Controller
         $no_order_con = $this->request->getPost('no_order_con');
         $baso_con = $this->request->getPost('baso_con');
         $jenis_termin_con = $this->request->getPost('jenis_termin_con');
-        $kendala1 = $this->request->getPost('kendala1');
+        $kendala9 = $this->request->getPost('kendala9');
 
         $detail->id_ncx = $id_ncx;
         $detail->no_agreement_con = $no_agreement_con;
@@ -379,12 +382,12 @@ class IndexController extends Controller
         $detail->jenis_termin_con = $jenis_termin_con;
         $detail->save();
         
-        if($kendala1)
+        if($kendala9)
         {
             $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('1');
+            $kendala->id_level = $this->request->getPost('9');
             $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala1;
+            $kendala->kendala = $kendala9;
             $kendala->save();
         }
 
@@ -399,6 +402,9 @@ class IndexController extends Controller
             return $this->response->redirect('conon' . '/' . $id_ncx);
 
         }
+        else{
+            return $this->response->redirect('data');
+        }
     }
 
     public function storecoterminAction()
@@ -412,11 +418,10 @@ class IndexController extends Controller
         $approval_ubc_con = $this->request->getPost('approval_ubc_con');
         $billing_com_con = $this->request->getPost('billing_com_con');
 
+        $kendala10 = $this->request->getPost('kendala10');
+        $kendala11 = $this->request->getPost('kendala11');
         $kendala12 = $this->request->getPost('kendala12');
         $kendala13 = $this->request->getPost('kendala13');
-        $kendala14 = $this->request->getPost('kendala14');
-        $kendala15 = $this->request->getPost('kendala15');
-        $kendala16 = $this->request->getPost('kendala16');
 
         // $detail->id_ncx = $id_ncx;
         $detail->billing_nol_con = $billing_nol_con;
@@ -425,6 +430,24 @@ class IndexController extends Controller
         $detail->approval_ubc_con = $approval_ubc_con;
         $detail->billing_com_con = $billing_com_con;
         $detail->save();
+
+        if($kendala10)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('10');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala10;
+            $kendala->save();
+        }
+
+        if($kendala11)
+        {
+            $kendala = new kendala();
+            $kendala->id_level = $this->request->getPost('11');
+            $kendala->id_ncx = $id_ncx;
+            $kendala->kendala = $kendala11;
+            $kendala->save();
+        }
 
         if($kendala12)
         {
@@ -441,33 +464,6 @@ class IndexController extends Controller
             $kendala->id_level = $this->request->getPost('13');
             $kendala->id_ncx = $id_ncx;
             $kendala->kendala = $kendala13;
-            $kendala->save();
-        }
-
-        if($kendala14)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('14');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala14;
-            $kendala->save();
-        }
-
-        if($kendala15)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('15');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala15;
-            $kendala->save();
-        }
-
-        if($kendala16)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('16');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala16;
             $kendala->save();
         }
 

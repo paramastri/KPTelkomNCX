@@ -830,6 +830,29 @@ class IndexController extends Controller
             return $this->response->redirect('editconon' . '/' . $id_ncx);
 
         }
+        else{
+            return $this->response->redirect('data');
+        }
+    }
+
+    public function editcononAction($id)
+    {
+        $data = connectivity::findFirst("id_ncx='$id'");
+        $this->view->data = $data;
+        
+    }
+
+    public function storeeditcononAction()
+    {
+        
+        $id_ncx = $this->request->getPost('id_ncx');
+        $detail = connectivity::findFirst("id_ncx='$id_ncx'");
+        $billing_com_con = $this->request->getPost('billing_com_con');
+
+        $detail->billing_com_con = $billing_com_con;
+        $detail->save();
+        
+        return $this->response->redirect('data');
     }
 
 }

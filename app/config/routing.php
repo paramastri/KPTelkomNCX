@@ -239,6 +239,22 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/editconon/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editconon'
+            ]
+        );
+
+        $router->addPost(
+            '/storeeditconon',
+            [
+                'controller' => 'index',
+                'action' => 'storeeditconon'
+            ]
+        );
+
         return $router;
     }
 );

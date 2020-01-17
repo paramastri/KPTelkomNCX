@@ -171,11 +171,11 @@
                   <option value="2">Belum OK</option>
                 </select> 
 
-                <input type="hidden" name="1" value="1">
+                <input type="hidden" name="11" value="11">
 
                 <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <input class="form-control" name="kendala1" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <input class="form-control" name="kendala11" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
         </div>
 

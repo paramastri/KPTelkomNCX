@@ -28,6 +28,7 @@
 
 
 
+
     <script>
         $(function() {
 
@@ -122,168 +123,343 @@
                 </div>
             </nav>
 
-            <ul style="margin-top: 40px;  margin-left: 90px; margin-right: 50%;" class="list-group">
-                <li class="list-group-item list-group-item-primary">Nama CC : {{data.nama_cc}}</li>
-                <li class="list-group-item list-group-item-primary">Nama Pekerjaan : {{data.nama_pekerjaan}}</li>
-                <li class="list-group-item list-group-item-primary">Mitra : {{data.mitra}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai NRC : {{data.nilai_nrc}}</li>
-                <li class="list-group-item list-group-item-primary">Nilai MRC : {{data.nilai_mrc}}</li>
-                <li class="list-group-item list-group-item-primary">Status NCX : {{data.status_ncx}}</li>
-                <li class="list-group-item list-group-item-primary">No Quote : {{data.no_quote}} </li>
-                <li class="list-group-item list-group-item-primary">Tipe Order : 
-                    {% if (data.tipe_order == 1) %}
-                    Connectivity
-                    {% elseif (data.tipe_order == 2) %}
-                    CPE
-                    {% endif %}</li>
+<div class="row" style="margin-top: 50px;">
 
-                {% if (data.tipe_order == 1) %}
-                    {% if (dataco) %}
-                        <li class="list-group-item list-group-item-primary">No Agreement : {{dataco.no_agreement_con}}</li>
-                        <li class="list-group-item list-group-item-primary">No Order : {{dataco.no_order_con}}</li>
-                        <li class="list-group-item list-group-item-primary">Baso : 
-                        {% if (dataco.baso_con == 1) %}
-                        OK
-                        {% elseif (dataco.baso_con == 2) %}
-                        Belum OK
-                        {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Jenis Termin : 
-                        {% if (dataco.jenis_termin_con == 1) %}
-                        Termin
-                        {% elseif (dataco.jenis_termin_con == 2) %}
-                        Non termin
-                        {% endif %}
-                        </li>
+  <div class="col-4">
+     <h5 style="font-weight: bold; margin-left: 0px; text-decoration: underline; margin-bottom: 30px; color: #a81616;">Data Umum</h5>
+<table class="table table-hover table-bordered" style="">
+                <tbody>
+                    <tr>
+                      <th>Nama CC</th>
+                        <td>{{data.nama_cc}}</td>
+                    </tr>
+                    <tr>
+                      <th>Nama Pekerjaan</th>
+                        <td>{{data.nama_pekerjaan}}</td>
+                    </tr>
+                    <tr>
+                      <th>Mitra</th>
+                        <td>{{data.mitra}}</td>
+                    </tr>
+                    <tr>
+                      <th>Nilai NRC</th>
+                        <td>{{data.nilai_nrc}}</td>
+                    </tr>
+                    <tr>
+                      <th>Nilai MRC</th>
+                        <td>{{data.nilai_mrc}}</td>
+                    </tr>
+                    <tr>
+                      <th>Status NCX</th>
+                        <td>{{data.status_ncx}}</td>
+                    </tr>
+                    <tr>
+                      <th>No Quote</th>
+                        <td>{{data.no_quote}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+</div>
+
+  <div class="col-8">
+
+    <h5 style="font-weight: bold; margin-left: 0px; text-decoration: underline; color: #a81616; float: left;">{% if (data.tipe_order == 1) %}Connectivity{% elseif (data.tipe_order == 2) %}CPE{% endif %}/</h5>
+        <table class="table table-hover table-bordered">
+                <tbody>
+                        {% if (data.tipe_order == 1) %}
+                        {% if (dataco) %}
+                        <tr>
+                          <th>>No Agreement</th>
+                            <td>{{dataco.no_agreement_con}}</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                          <th>>No Order</th>
+                            <td>{{dataco.no_order_con}}</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                          <th>>BASO</th>
+                            <td>
+                            {% if (dataco.baso_con == 1) %}
+                            OK
+                            {% elseif (dataco.baso_con == 2) %}
+                            Belum OK
+                            {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>  
+
+                        <h5 style="font-weight: bold; margin-left: 10px; text-decoration: underline; margin-bottom: 30px; color: #a81616;"> {% if (dataco.jenis_termin_con == 1) %}Termin{% elseif (dataco.jenis_termin_con == 2) %}Non termin{% endif %}</h5>
+
+
 
                         {% if (dataco.jenis_termin_con == 1) %}
-                            <li class="list-group-item list-group-item-primary">Billing Nol : {{dataco.billing_nol_con}}</li>
-                            <li class="list-group-item list-group-item-primary">Billing Complete : {{dataco.billing_com_con}}</li>
-                            <li class="list-group-item list-group-item-primary">Asset : {{dataco.asset_con}}</li>
-                            <li class="list-group-item list-group-item-primary">Approval SM :
+
+                        <tr>
+                          <th>Billing Nol</th>
+                            <td>
+                            {{dataco.billing_nol_con}}
+                            </td>
+                            <td>-</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Billing Complete</th>
+                            <td>
+                            {{dataco.billing_com_con}}
+                            </td>
+                            <td>-</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Asset</th>
+                            <td>
+                            {{dataco.asset_con}}
+                            </td>
+                            <td>-</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Approval SM</th>
+                            <td>
                             {% if (dataco.approval_sm_con == 1) %}
                             OK
                             {% elseif (dataco.approval_sm_con == 2) %}
                             Belum OK
                             {% endif %}
-                            </li>
-                            <li class="list-group-item list-group-item-primary">Approval UBC : 
+                            </td>
+                            <td>Kendala</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Approval UBC</th>
+                            <td>
                             {% if (dataco.approval_ubc_con == 1) %}
                             OK
                             {% elseif (dataco.approval_ubc_con == 2) %}
                             Belum OK
                             {% endif %}
-                            </li>
+                            </td>
+                            <td>Kendala</td>
+                        </tr> 
                         {% elseif (dataco.jenis_termin_con == 2) %}
-                            <li class="list-group-item list-group-item-primary">Billing Complete : {{dataco.billing_com_con}}</li>
+                        <tr>
+                          <th>Billing Complete</th>
+                            <td>
+                            {{dataco.billing_com_con}}
+                            </td>
+                            <td>-</td>
+                        </tr> 
                         {% endif %}
                     {% endif %}
-                {% elseif (data.tipe_order == 2) %}
+                
+
+
+
+
+                    {% elseif (data.tipe_order == 2) %}
                     {% if (datacpe) %}
-                        <li class="list-group-item list-group-item-primary">Dokumen P6 : 
-                            {% if (datacpe.dok_p6 == 1) %}
-                            OK
-                            {% elseif (datacpe.dok_p6 == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Dokumen P8 : 
-                            {% if (datacpe.dok_p8 == 1) %}
-                            OK
-                            {% elseif (datacpe.dok_p8 == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Dokumen KL WO : 
-                            {% if (datacpe.dok_kl_wo == 1) %}
-                            OK
-                            {% elseif (datacpe.dok_kl_wo == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Approval SM CRM :
-                            {% if (datacpe.approval_sm_crm == 1) %}
-                            OK
-                            {% elseif (datacpe.approval_sm_crm == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">No Agreement : {{datacpe.no_agreement}}</li>
-                        <li class="list-group-item list-group-item-primary">No Order : {{datacpe.no_order}}</li>
-                        <li class="list-group-item list-group-item-primary">WFM Mitra : 
-                            {% if (datacpe.wfm_mitra == 1) %}
-                            OK
-                            {% elseif (datacpe.wfm_mitra == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Approval WFM : 
-                            {% if (datacpe.approval_wfm == 1) %}
-                            OK
-                            {% elseif (datacpe.approval_wfm == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Status NDE : 
-                            {% if (datacpe.status_nde == 1) %}
-                            OK
-                            {% elseif (datacpe.status_nde == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Approval DES : 
-                            {% if (datacpe.approval_des == 1) %}
-                            OK
-                            {% elseif (datacpe.approval_des == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Baso : 
-                            {% if (datacpe.baso == 1) %}
-                            OK
-                            {% elseif (datacpe.baso == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
-                        <li class="list-group-item list-group-item-primary">Jenis Termin : 
-                            {% if (datacpe.jenis_termin == 1) %}
-                            OK
-                            {% elseif (datacpe.jenis_termin == 2) %}
-                            Belum OK
-                            {% endif %}
-                        </li>
+                        <tr>
+                          <th>Dokumen P6</th>
+                            <td>
+                                {% if (datacpe.dok_p6 == 1) %}
+                                OK
+                                {% elseif (datacpe.dok_p6 == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>Dokumen P8</th>
+                            <td>
+                                {% if (datacpe.dok_p8 == 1) %}
+                                OK
+                                {% elseif (datacpe.dok_p8 == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>Dokumen KL WO</th>
+                            <td>
+                                {% if (datacpe.dok_kl_wo == 1) %}
+                                OK
+                                {% elseif (datacpe.dok_kl_wo == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>Approval SM CRM</th>
+                            <td>
+                                {% if (datacpe.approval_sm_crm == 1) %}
+                                OK
+                                {% elseif (datacpe.approval_sm_crm == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>No Agreement</th>
+                            <td>
+                                {{datacpe.no_agreement}}
+                            </td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                          <th>No Order</th>
+                            <td>
+                                {{datacpe.no_order}}
+                            </td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                          <th>WFM Mitra</th>
+                            <td>
+                                {% if (datacpe.wfm_mitra == 1) %}
+                                OK
+                                {% elseif (datacpe.wfm_mitra == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>Approval WFM</th>
+                            <td>
+                                {% if (datacpe.approval_wfm == 1) %}
+                                OK
+                                {% elseif (datacpe.approval_wfm == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>Status NDE</th>
+                            <td>
+                                {% if (datacpe.status_nde == 1) %}
+                                OK
+                                {% elseif (datacpe.status_nde == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>Approval DES</th>
+                            <td>
+                                {% if (datacpe.approval_des == 1) %}
+                                OK
+                                {% elseif (datacpe.approval_des == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                        <tr>
+                          <th>BASO</th>
+                            <td>
+                                {% if (datacpe.baso == 1) %}
+                                OK
+                                {% elseif (datacpe.baso == 2) %}
+                                Belum OK
+                                {% endif %}
+                            </td>
+                            <td>Kendala</td>
+                        </tr>
+
+                         <h5 style="font-weight: bold; margin-left: 10px; text-decoration: underline; margin-bottom: 30px; color: #a81616;"> {% if (datacpe.jenis_termin == 1) %}Termin{% elseif (datacpe.jenis_termin == 2) %}Non termin{% endif %}</h5>
+
+
 
                         {% if (datacpe.jenis_termin == 1) %}
-                            <li class="list-group-item list-group-item-primary">Billing Nol : {{datacpe.billing_nol}}</li>
-                            <li class="list-group-item list-group-item-primary">Billing Complete : {{datacpe.billing_com}}</li>
-                            <li class="list-group-item list-group-item-primary">Asset : {{datacpe.asset}}</li>
-                            <li class="list-group-item list-group-item-primary">Approval SM :
+
+                        <tr>
+                          <th>Billing Nol</th>
+                            <td>
+                            {{datacpe.billing_nol}}
+                            </td>
+                            <td>Kendala</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Billing Complete</th>
+                            <td>
+                            {{datacpe.billing_com}}
+                            </td>
+                            <td>Kendala</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Asset</th>
+                            <td>
+                            {{datacpe.asset}}
+                            </td>
+                            <td>Kendala</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Approval SM</th>
+                            <td>
                             {% if (datacpe.approval_sm == 1) %}
                             OK
                             {% elseif (datacpe.approval_sm == 2) %}
                             Belum OK
                             {% endif %}
-                            </li>
-                            <li class="list-group-item list-group-item-primary">Approval UBC : 
+                            </td>
+                            <td>Kendala</td>
+                        </tr> 
+
+                        <tr>
+                          <th>Approval UBC</th>
+                            <td>
                             {% if (datacpe.approval_ubc == 1) %}
                             OK
                             {% elseif (datacpe.approval_ubc == 2) %}
                             Belum OK
                             {% endif %}
-                            </li>
+                            </td>
+                            <td>Kendala</td>
+                        </tr> 
                         {% elseif (datacpe.jenis_termin == 2) %}
-                            <li class="list-group-item list-group-item-primary">Billing Complete : {{datacpe.billing_com}}</li>
+                        <tr>
+                          <th>Billing Complete</th>
+                            <td>
+                            {{datacpe.billing_com}}
+                            </td>
+                            <td>-</td>
+                        </tr> 
                         {% endif %}
                     {% endif %}
-                {% endif %}</li>
-            </ul>
+                    {% endif %}
+                 
+                </tbody>
+            </table>
 
-            <a value = "" style="margin-top: 30px; margin-bottom: 0px; margin-left: 420px; color: white;" type="submit" class="btn btn-primary">Selanjutnya</a>
+
+  </div>
+</div>
+
 
             <!-- <h2 style="margin-top: 30px; margin-left: 20px;">Detail</h2> -->
            
-
-        </div>
 
 
 </body>

@@ -1413,4 +1413,24 @@ class IndexController extends Controller
             return $this->response->redirect('data');
         }
     }
+
+    public function editcpenonAction($id)
+    {
+        $data = cpe::findFirst("id_ncx='$id'");
+        $this->view->data = $data;
+        
+    }
+
+    public function storeeditcpenonAction()
+    {
+        $id_ncx = $this->request->getPost('id_ncx');
+        $detail = cpe::findFirst("id_ncx='$id_ncx'");
+        $billing_com = $this->request->getPost('billing_com');
+
+        $detail->billing_com = $billing_com;
+        $detail->save();
+        
+        return $this->response->redirect('data');
+    }
+
 }

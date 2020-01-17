@@ -126,10 +126,11 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
-        <li><a href="#tab1" data-toggle="tab">No Agreement</a></li>
-        <li><a href="#tab2" data-toggle="tab">No Order</a></li>
-        <li><a href="#tab3" data-toggle="tab">BASO</a></li>
-        <li><a href="#tab4" data-toggle="tab">Termin/Non</a></li>
+        <li><a href="#tab1" data-toggle="tab">Billing NOL</a></li>
+        <li><a href="#tab2" data-toggle="tab">Asset</a></li>
+        <li><a href="#tab3" data-toggle="tab">Approval SM</a></li>
+        <li><a href="#tab4" data-toggle="tab">Approval UBC</a></li>
+        <li><a href="#tab5" data-toggle="tab">Billing Complete</a></li>
 
     </ul>
      </div>
@@ -138,66 +139,136 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-<form action="{{ url("storeco") }}" method="post">
+<form action="{{ url("storeeditcotermin") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
-
         <div class="tab-pane" id="tab1">
-      
                 <div class="form-group">
-                    <label style="margin-top: 15px;">No Agreement</label>
-                    <input type="hidden" name="id_ncx" value="{{data}}">
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_agreement_con">
+                    <label style="margin-top: 0px;">Billing NOL</label>
+                    <input type="hidden" name="id_ncx" value="{{data.id_ncx}}">
+                    <input type="date" class="form-control" name="billing_nol_con" value="{{data.billing_nol_con}}">
                 </div>
-        </div>
 
+                <input type="hidden" name="10" value="10">
+
+                {% if (kendala10) %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala10" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" >{{kendala10.kendala}}</textarea>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala10" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    </div>
+                {% endif %}
+                
+        </div>
 
         <div class="tab-pane" id="tab2">
+            <div class="form-group">
+                    <label style="margin-top: 0px;">Asset</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="asset_con" value="{{data.asset_con}}">
+            </div> 
+
+            <input type="hidden" name="11" value="11">
+
+            {% if (kendala11) %}
                 <div class="form-group">
-                    <label style="margin-top: 15px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con">
-                </div>
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala11" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3">{{kendala11.kendala}}</textarea>
+                </div> 
+            {% else %}
+                <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala11" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div> 
+            {% endif %}
+            
         </div>
 
-
-
         <div class="tab-pane" id="tab3">
-                <div>
-                    <label style="margin-top: 15px;">BASO</label>
+               <div>
+                    <label style="margin-top: 0px;">Approval SM</label>
                 </div>
 
-                <select name="baso_con" class="form-control form-control-sm" style="width: 100%;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
+                <select name="approval_sm_con" class="form-control form-control-sm" style="width: 100%;" >
+                    {% if (data.approval_sm_con == 1) %}
+                        <option value="0"></option>
+                        <option value="1" selected>OK</option>
+                        <option value="2">Belum OK</option>
+                    {% elseif (data.approval_sm_con == 2) %}
+                        <option value="0"></option>
+                        <option value="1">OK</option>
+                        <option value="2" selected>Belum OK</option>
+                    {% else %}
+                        <option value="0"></option>
+                        <option value="1">OK</option>
+                        <option value="2">Belum OK</option>
+                    {% endif %}
+                  
+                </select>
 
-                <input type="hidden" name="9" value="9">
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div>
+                <input type="hidden" name="12" value="12">
+                {% if (kendala12) %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala12" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3">{{kendala12.kendala}}</textarea>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala12" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    </div>
+                {% endif %}
+                
         </div>
 
         <div class="tab-pane" id="tab4">
-                <div>
-                    <label>Termin/Non</label>
+            <div>
+                    <label style="margin-top: 0px;">Approval UBC</label>
                 </div>
 
-                <select name="jenis_termin_con" class="form-control form-control-sm" style="width: 100%;" >
-                  <option value="0"></option>
-                  <option value="1">Termin</option>
-                  <option value="2">Non Termin</option>
+                <select name="approval_ubc_con" class="form-control form-control-sm" style="width: 100%;" >
+                {% if (data.approval_ubc_con == 1) %}
+                    <option value="0"></option>
+                    <option value="1" selected>OK</option>
+                    <option value="2">Belum OK</option>
+                {% elseif (data.approval_ubc_con == 2) %}
+                    <option value="0"></option>
+                    <option value="1">OK</option>
+                    <option value="2" selected>Belum OK</option>
+                {% else %}
+                    <option value="0"></option>
+                    <option value="1">OK</option>
+                    <option value="2">Belum OK</option>
+                {% endif %}
+                  
                 </select>
 
-               <!-- <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div> -->
+                <input type="hidden" name="13" value="13">
+                {% if (kendala13) %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala13" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3">{{kendala13.kendala}}</textarea>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                        <textarea class="form-control" name="kendala13" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    </div>
+                {% endif %}
+                
+        </div>
 
+        <div class="tab-pane" id="tab5">
+                <div>
+                    <label style="margin-top: 0px;">Billing Complete</label>
+                    <input type="date" class="form-control" name="billing_com_con" value="{{data.billing_com_con}}">
+                </div>
+
+                
         </div>
      
-
 
         <!-- <ul class="pager wizard">
             <li class="previous first" style="display:none;"><a href="#">First</a></li>
@@ -210,7 +281,6 @@
         </div>
     </div>
 </form>
-
 </div>
     </div>
 

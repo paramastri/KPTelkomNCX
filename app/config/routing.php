@@ -255,6 +255,22 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/editcotermin/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editcotermin'
+            ]
+        );
+
+        $router->addPost(
+            '/storeeditcotermin',
+            [
+                'controller' => 'index',
+                'action' => 'storeeditcotermin'
+            ]
+        );
+
         return $router;
     }
 );

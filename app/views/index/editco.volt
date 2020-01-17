@@ -181,19 +181,19 @@
                   
                 </select> 
 
-                <input type="hidden" name="1" value="1">
+                <input type="hidden" name="9" value="9">
 
                 
 
-                {% if (kendala1) %}
+                {% if (kendala9) %}
                     <div class="form-group">
                         <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                        <input class="form-control" name="kendala1" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" value="{{kendala1.kendala}}"></textarea>
+                        <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3">{{kendala9.kendala}}</textarea>
                     </div>
                 {% else %}
                     <div class="form-group">
                         <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                        <input class="form-control" name="kendala1" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 {% endif %}
         </div>

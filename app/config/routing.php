@@ -271,6 +271,22 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/editcpe/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editcpe'
+            ]
+        );
+
+        $router->addPost(
+            '/storeeditcpe',
+            [
+                'controller' => 'index',
+                'action' => 'storeeditcpe'
+            ]
+        );
+
         return $router;
     }
 );

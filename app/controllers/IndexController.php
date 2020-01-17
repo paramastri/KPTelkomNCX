@@ -1433,4 +1433,174 @@ class IndexController extends Controller
         return $this->response->redirect('data');
     }
 
+    public function editcpeterminAction($id)
+    {
+        $data = cpe::findFirst("id_ncx='$id'");
+        $this->view->data = $data;
+        $kendala10 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '10',
+            ]
+        ]);
+        $this->view->kendala10 = $kendala10;
+
+        $kendala11 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '11',
+            ]
+        ]);
+        $this->view->kendala11 = $kendala11;
+
+        $kendala12 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '12',
+            ]
+        ]);
+        $this->view->kendala12 = $kendala12;
+
+        $kendala13 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '13',
+            ]
+        ]);
+        $this->view->kendala13 = $kendala13;
+        
+    }
+
+    public function storeeditcpeterminAction()
+    {
+        
+        $id_ncx = $this->request->getPost('id_ncx');
+        $detail = cpe::findFirst("id_ncx='$id_ncx'");
+
+        $billing_nol = $this->request->getPost('billing_nol');
+        $asset = $this->request->getPost('asset');
+        $approval_sm  = $this->request->getPost('approval_sm');
+        $approval_ubc = $this->request->getPost('approval_ubc');
+        $billing_com = $this->request->getPost('billing_com');
+
+        $kendala10 = $this->request->getPost('kendala10');
+        $kendala11 = $this->request->getPost('kendala11');
+        $kendala12 = $this->request->getPost('kendala12');
+        $kendala13 = $this->request->getPost('kendala13');
+
+        // $detail->id_ncx = $id_ncx;
+        $detail->billing_nol = $billing_nol;
+        $detail->asset = $asset;
+        $detail->approval_sm = $approval_sm;
+        $detail->approval_ubc = $approval_ubc;
+        $detail->billing_com = $billing_com;
+        $detail->save();
+        
+        if($kendala10)
+        {
+            $kendala = kendala::findFirst([
+                'id_ncx = :id_ncx: AND id_level = :id_level:',
+                'bind' => [
+                    'id_ncx' => $id_ncx,
+                    'id_level' => '10',
+                ]
+            ]);
+
+            if($kendala)
+            {
+                $kendala->kendala = $kendala10;
+                $kendala->save();
+
+            }
+            else{
+                $newkendala = new kendala();
+                $newkendala->id_level = $this->request->getPost('10');
+                $newkendala->id_ncx = $id_ncx;
+                $newkendala->kendala = $kendala10;
+                $newkendala->save();
+            }
+        }
+
+        if($kendala11)
+        {
+            $kendala = kendala::findFirst([
+                'id_ncx = :id_ncx: AND id_level = :id_level:',
+                'bind' => [
+                    'id_ncx' => $id_ncx,
+                    'id_level' => '11',
+                ]
+            ]);
+
+            if($kendala)
+            {
+                $kendala->kendala = $kendala11;
+                $kendala->save();
+
+            }
+            else{
+                $newkendala = new kendala();
+                $newkendala->id_level = $this->request->getPost('11');
+                $newkendala->id_ncx = $id_ncx;
+                $newkendala->kendala = $kendala11;
+                $newkendala->save();
+            }
+        }
+
+        if($kendala12)
+        {
+            $kendala = kendala::findFirst([
+                'id_ncx = :id_ncx: AND id_level = :id_level:',
+                'bind' => [
+                    'id_ncx' => $id_ncx,
+                    'id_level' => '12',
+                ]
+            ]);
+
+            if($kendala)
+            {
+                $kendala->kendala = $kendala12;
+                $kendala->save();
+
+            }
+            else{
+                $newkendala = new kendala();
+                $newkendala->id_level = $this->request->getPost('12');
+                $newkendala->id_ncx = $id_ncx;
+                $newkendala->kendala = $kendala12;
+                $newkendala->save();
+            }
+        }
+
+        if($kendala13)
+        {
+            $kendala = kendala::findFirst([
+                'id_ncx = :id_ncx: AND id_level = :id_level:',
+                'bind' => [
+                    'id_ncx' => $id_ncx,
+                    'id_level' => '13',
+                ]
+            ]);
+
+            if($kendala)
+            {
+                $kendala->kendala = $kendala13;
+                $kendala->save();
+
+            }
+            else{
+                $newkendala = new kendala();
+                $newkendala->id_level = $this->request->getPost('13');
+                $newkendala->id_ncx = $id_ncx;
+                $newkendala->kendala = $kendala13;
+                $newkendala->save();
+            }
+        }
+
+        return $this->response->redirect('data');
+    }
+
 }

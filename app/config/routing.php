@@ -303,6 +303,22 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/editcpetermin/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editcpetermin'
+            ]
+        );
+
+        $router->addPost(
+            '/storeeditcpetermin',
+            [
+                'controller' => 'index',
+                'action' => 'storeeditcpetermin'
+            ]
+        );
+
         return $router;
     }
 );

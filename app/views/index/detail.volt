@@ -170,17 +170,17 @@
                         {% if (data.tipe_order == 1) %}
                         {% if (dataco) %}
                         <tr>
-                          <th>>No Agreement</th>
+                          <th>No Agreement</th>
                             <td>{{dataco.no_agreement_con}}</td>
                             <td>-</td>
                         </tr>
                         <tr>
-                          <th>>No Order</th>
+                          <th>No Order</th>
                             <td>{{dataco.no_order_con}}</td>
                             <td>-</td>
                         </tr>
                         <tr>
-                          <th>>BASO</th>
+                          <th>BASO</th>
                             <td>
                             {% if (dataco.baso_con == 1) %}
                             OK
@@ -188,7 +188,11 @@
                             Belum OK
                             {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala9) %}
+                            <td>{{kendala9.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>  
 
                         <h5 style="font-weight: bold; margin-left: 10px; text-decoration: underline; margin-bottom: 30px; color: #a81616;"> {% if (dataco.jenis_termin_con == 1) %}Termin{% elseif (dataco.jenis_termin_con == 2) %}Non termin{% endif %}</h5>
@@ -202,7 +206,11 @@
                             <td>
                             {{dataco.billing_nol_con}}
                             </td>
+                            {% if (kendala10) %}
+                            <td>{{kendala10.kendala}}</td>
+                            {% else %}
                             <td>-</td>
+                            {% endif %}
                         </tr> 
 
                         <tr>
@@ -218,7 +226,11 @@
                             <td>
                             {{dataco.asset_con}}
                             </td>
+                            {% if (kendala11) %}
+                            <td>{{kendala11.kendala}}</td>
+                            {% else %}
                             <td>-</td>
+                            {% endif %}
                         </tr> 
 
                         <tr>
@@ -230,7 +242,11 @@
                             Belum OK
                             {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala12) %}
+                            <td>{{kendala12.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr> 
 
                         <tr>
@@ -242,7 +258,11 @@
                             Belum OK
                             {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala13) %}
+                            <td>{{kendala13.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr> 
                         {% elseif (dataco.jenis_termin_con == 2) %}
                         <tr>
@@ -270,7 +290,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala1) %}
+                            <td>{{kendala1.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
@@ -282,7 +306,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala2) %}
+                            <td>{{kendala2.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
@@ -294,7 +322,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala3) %}
+                            <td>{{kendala3.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
@@ -306,7 +338,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala4) %}
+                            <td>{{kendala4.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
@@ -334,7 +370,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            <td>{% if (kendala5) %}
+                            <td>{{kendala5.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}</td>
                         </tr>
 
                         <tr>
@@ -346,7 +386,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala6) %}
+                            <td>{{kendala6.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
@@ -358,7 +402,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala7) %}
+                            <td>{{kendala7.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
@@ -370,7 +418,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala8) %}
+                            <td>{{kendala8.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
@@ -382,7 +434,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala9) %}
+                            <td>{{kendala9.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr>
 
                          <h5 style="font-weight: bold; margin-left: 10px; text-decoration: underline; margin-bottom: 30px; color: #a81616;"> {% if (datacpe.jenis_termin == 1) %}Termin{% elseif (datacpe.jenis_termin == 2) %}Non termin{% endif %}</h5>
@@ -396,7 +452,11 @@
                             <td>
                             {{datacpe.billing_nol}}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala10) %}
+                            <td>{{kendala10.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr> 
 
                         <tr>
@@ -404,7 +464,7 @@
                             <td>
                             {{datacpe.billing_com}}
                             </td>
-                            <td>Kendala</td>
+                            <td>-</td>
                         </tr> 
 
                         <tr>
@@ -412,7 +472,11 @@
                             <td>
                             {{datacpe.asset}}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala11) %}
+                            <td>{{kendala11.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr> 
 
                         <tr>
@@ -424,7 +488,11 @@
                             Belum OK
                             {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala12) %}
+                            <td>{{kendala12.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr> 
 
                         <tr>
@@ -436,7 +504,11 @@
                             Belum OK
                             {% endif %}
                             </td>
-                            <td>Kendala</td>
+                            {% if (kendala13) %}
+                            <td>{{kendala13.kendala}}</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
                         </tr> 
                         {% elseif (datacpe.jenis_termin == 2) %}
                         <tr>

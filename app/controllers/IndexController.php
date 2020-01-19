@@ -135,17 +135,23 @@ class IndexController extends Controller
 
     }
 
+    private function aldomematikan($str){
+        echo "<pre>";
+        print_r($str);
+        echo "</pre>";
+        die();
+    }
+
     public function listdataAction()
     {
         $listdatas = ncx::find();
         // $listdata2 = connectivity::find();
         // $listdata3 = cpe::find();
         $data = array();
-
-        foreach ($listdatas as $listdata)
+        foreach ($listdatas as $key => $listdata)
         {
             
-            $data[] = array(
+            $data[$key] = array(
                 'nama_cc' => $listdata->nama_cc,
                 'nama_pekerjaan' => $listdata->nama_pekerjaan,
                 'mitra' => $listdata->mitra,
@@ -168,8 +174,189 @@ class IndexController extends Controller
                 // 'status' => $status,
                 // 'verifikasi' => $verifikasi,
                 'link' => $listdata->id,
+                'progress' => "selesai",
             );
+
+            // jika belum isi tipe order
+            if (intval($listdata->tipe_order) < 1) {
+                // di cek semua kolomnya, kalo ketemu ada yang kosong langsung isi progress dam lanjut ke loop selanjutnya
+                if(empty($listdata->nama_cc)){
+                    $data[$key]['progress'] = "belum isi nama";
+                    continue;
+                }
+                else if(empty($listdata->nama_pekerjaan)){
+                    $data[$key]['progress'] = "belum isi pekerjaan";
+                    continue;
+                }
+                else if(empty($listdata->mitra)){
+                    $data[$key]['progress'] = "belum isi mitra";
+                    continue;
+                }
+                else if(empty($listdata->nilai_nrc)){
+                    $data[$key]['progress'] = "belum isi nilai nrc";
+                    continue;
+                }
+                else if(empty($listdata->nilai_mrc)){
+                    $data[$key]['progress'] = "belum isi nilai mrc";
+                    continue;
+                }
+                else if(empty($listdata->status_ncx)){
+                    $data[$key]['progress'] = "belum isi status ncx";
+                    continue;
+                }
+                else if(empty($listdata->no_quote)){
+                    $data[$key]['progress'] = "belum isi no quote";
+                    continue;
+                }
+            }
+            // jika tiper ordernya disii, dan nilai nya 1 connectivity
+            else if (intval($listdata->tipe_order > 0) && intval($listdata->tipe_order < 2)){
+                // query tabel 
+                $con_data=  connectivity::findFirst(['conditions' => 'id_ncx = :id:', 'bind' => ["id" => $listdata->id]]);
+
+                // cek semua kolomnya, kalo ketemu ada yang kosong langsung isi progress dam lanjut ke loop selanjutnya
+                if(empty($con_data->no_agreement_con)){
+                    $data[$key]['progress'] = "belum isi no agreement";
+                    continue;
+                }
+                else if(empty($con_data->no_order_con)){
+                    $data[$key]['progress'] = "belum isi no order con";
+                    continue;
+                }
+                else if(empty($con_data->baso_con)){
+                    $data[$key]['progress'] = "belum isi baso";
+                    continue;
+                }
+                else if(empty($con_data->jenis_termin_con)){
+                    $data[$key]['progress'] = "belum isi jenis termin";
+                    continue;
+                }
+                else if(intval($con_data->jenis_termin_con) > 0 && intval($con_data->jenis_termin_con) < 2){
+                    if(empty($con_data->billing_nol_con)){
+                        $data[$key]['progress'] = "belum isi billing nol";
+                        continue;
+                    }
+                    
+                    else if(empty($con_data->approval_sm_con)){
+                        $data[$key]['progress'] = "belum isi approval sm";
+                        continue;
+                    }
+                    else if(empty($con_data->approval_ubc_con)){
+                        $data[$key]['progress'] = "belum isi approval ubc";
+                        continue;
+                    }
+                    else if(empty($con_data->billing_com_con)){
+                        $data[$key]['progress'] = "belum isi billing com";
+                        continue;
+                    }
+                }
+                else if(intval($con_data->jenis_termin_con) > 1 && intval($con_data->jenis_termin_con) < 3){
+                    if(empty($con_data->billing_com_con)){
+                        $data[$key]['progress'] = "belum isi billing com";
+                        continue;
+                    }
+                }
+                
+
+            }
+            // jika tiper ordernya disii, dan nilai nya 2 cpe
+            else if (intval($listdata->tipe_order > 1) && intval($listdata->tipe_order < 3)){
+                // query tabel
+                $con_data=  cpe::findFirst(['conditions' => 'id_ncx = :id:', 'bind' => ["id" => $listdata->id]]);
+
+                // cek semua kolomnya, kalo ketemu ada yang kosong langsung isi progress dam lanjut ke loop selanjutnya
+                if(empty($con_data->dok_p6)){
+                    $data[$key]['progress'] = "belum isi dokumen p6";
+                    continue;
+                }
+                else if(empty($con_data->dok_p8)){
+                    $data[$key]['progress'] = "belum isi dokumen p8";
+                    continue;
+                }
+                else if(empty($con_data->dok_kl_wo)){
+                    $data[$key]['progress'] = "belum isi dokumen kl/wo";
+                    continue;
+                }
+                else if(empty($con_data->no_agreement)){
+                    $data[$key]['progress'] = "belum isi no agreement";
+                    continue;
+                }
+                else if(empty($con_data->approval_sm_crm)){
+                    $data[$key]['progress'] = "belum isi dokumen sm/crm";
+                    continue;
+                }
+                else if(empty($con_data->no_order)){
+                    $data[$key]['progress'] = "belum isi no order";
+                    continue;
+                }
+                else if(empty($con_data->wfm_mitra)){
+                    $data[$key]['progress'] = "belum isi wfm mitra";
+                    continue;
+                }
+                else if(empty($con_data->approval_wfm)){
+                    $data[$key]['progress'] = "belum isi approval wfm";
+                    continue;
+                }
+                else if(empty($con_data->status_nde)){
+                    $data[$key]['progress'] = "belum isi status nde";
+                    continue;
+                }
+                else if(empty($con_data->approval_des)){
+                    $data[$key]['progress'] = "belum isi approval des";
+                    continue;
+                }
+                else if(empty($con_data->baso)){
+                    $data[$key]['progress'] = "belum isi baso";
+                    continue;
+                }
+                else if(empty($con_data->jenis_termin)){
+                    $data[$key]['progress'] = "belum isi jenis termin";
+                    continue;
+                }
+                else if(intval($con_data->jenis_termin) > 0 && intval($con_data->jenis_termin) < 2){
+                    if(empty($con_data->billing_nol)){
+                        $data[$key]['progress'] = "belum isi billing nol";
+                        continue;
+                    }
+                    else if(empty($con_data->asset)){
+                        $data[$key]['progress'] = "belum isi asset";
+                        continue;
+                    }
+                    else if(empty($con_data->approval_sm)){
+                        $data[$key]['progress'] = "belum isi approval sm";
+                        continue;
+                    }
+                    else if(empty($con_data->approval_ubc)){
+                        $data[$key]['progress'] = "belum isi approval ubc";
+                        continue;
+                    }
+                    else if(empty($con_data->billing_com)){
+                        $data[$key]['progress'] = "belum isi billing complete";
+                        continue;
+                    }
+                }
+                else if(intval($con_data->jenis_termin) > 1 && intval($con_data->jenis_termin) < 3){
+                    if(empty($con_data->billing_com)){
+                        $data[$key]['progress'] = "belum isi billing complete";
+                        continue;
+                    }
+                }
+            }
         }
+
+        // $max = kendala::maximum(
+        //     [
+        //         'column' => 'id',
+        //     ]
+        // );
+
+        // // echo $max->id_level;
+        // // die();
+
+        // $level = $max->id_level;
+        // $nama_level = level::findFirst("id='$level'");
+        
+
 
         $content = json_encode($data);
         return $this->response->setContent($content);

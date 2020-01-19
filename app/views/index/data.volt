@@ -142,7 +142,7 @@
                 {title: "Nama CC", field: "nama_cc"},
                 {title: "Nama Pekerjaan", field: "nama_pekerjaan"},
                 {title: "Mitra", field: "mitra"},
-                {title: "Progres", field: "progres"},
+                {title: "progress", field: "progress"},
                 {
                     title: "Edit", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",

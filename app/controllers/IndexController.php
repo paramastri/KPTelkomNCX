@@ -377,18 +377,130 @@ class IndexController extends Controller
         $this->view->data = $listdata;
         if($listdata2)
         {
-            // var_dump($listdata2); die();
-            // echo("ini con"); die();
-            $this->view->dataco = $listdata2; 
-            // $this->view->data = $listdata;           
+            $this->view->dataco = $listdata2;        
         }
         elseif($listdata3)
         {
-                // echo("ini cpe"); die();
-                $this->view->datacpe = $listdata3;
+            $this->view->datacpe = $listdata3;
 
         }
-        // die();
+
+        $kendala1 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '1',
+            ]
+        ]);
+        $this->view->kendala1 = $kendala1;
+
+        $kendala2 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '2',
+            ]
+        ]);
+        $this->view->kendala2 = $kendala2;
+
+        $kendala3 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '3',
+            ]
+        ]);
+        $this->view->kendala3 = $kendala3;
+
+        $kendala4 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '4',
+            ]
+        ]);
+        $this->view->kendala4 = $kendala4;
+
+        $kendala5 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '5',
+            ]
+        ]);
+        $this->view->kendala5 = $kendala5;
+
+        $kendala6 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '6',
+            ]
+        ]);
+        $this->view->kendala6 = $kendala6;
+
+        $kendala7 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '7',
+            ]
+        ]);
+        $this->view->kendala7 = $kendala7;
+
+        $kendala8 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '8',
+            ]
+        ]);
+        $this->view->kendala8 = $kendala8;
+
+        $kendala9 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '9',
+            ]
+        ]);
+        $this->view->kendala9 = $kendala9;
+
+        $kendala10 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '10',
+            ]
+        ]);
+        $this->view->kendala10 = $kendala10;
+
+        $kendala11 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '11',
+            ]
+        ]);
+        $this->view->kendala11 = $kendala11;
+
+        $kendala12 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '12',
+            ]
+        ]);
+        $this->view->kendala12 = $kendala12;
+
+        $kendala13 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level:',
+            'bind' => [
+                'id_ncx' => $id,
+                'id_level' => '13',
+            ]
+        ]);
+        $this->view->kendala13 = $kendala13;
 
     }
 

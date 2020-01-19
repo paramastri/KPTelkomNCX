@@ -126,18 +126,78 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
+        {% if (data.dok_p6 != "1" AND data.dok_p6 != "2") %}
         <li><a href="#tab1" data-toggle="tab">DOK P6</a></li>
+        {% else %}
+        <li><a href="#tab1" data-toggle="tab" style="background-color: #48ba2f">DOK P6</a></li>
+        {% endif %}
+
+        {% if (data.dok_p8 != "1" AND data.dok_p8 != "2") %}
         <li><a href="#tab2" data-toggle="tab">DOK P8</a></li>
+        {% else %}
+        <li><a href="#tab2" data-toggle="tab" style="background-color: #48ba2f">DOK P8</a></li>
+        {% endif %}
+
+        {% if (data.dok_kl_wo != "1" AND data.dok_kl_wo != "2") %}
         <li><a href="#tab3" data-toggle="tab">DOK KL/WO</a></li>
+        {% else %}
+        <li><a href="#tab3" data-toggle="tab" style="background-color: #48ba2f">DOK KL/WO</a></li>
+        {% endif %}
+
+        {% if (data.no_agreement == "") %}
         <li><a href="#tab4" data-toggle="tab">No Agreement</a></li>
+        {% else %}
+        <li><a href="#tab4" data-toggle="tab" style="background-color: #48ba2f">No Agreement</a></li>
+        {% endif %}
+
+        {% if (data.approval_sm_crm != "1" AND data.approval_sm_crm != "2") %}
         <li><a href="#tab5" data-toggle="tab">DOK SM/CRM</a></li>
+        {% else %}
+        <li><a href="#tab5" data-toggle="tab" style="background-color: #48ba2f">DOK SM/CRM</a></li>
+        {% endif %}
+
+        {% if (data.no_order == "") %}
         <li><a href="#tab6" data-toggle="tab">No Order</a></li>
+        {% else %}
+        <li><a href="#tab6" data-toggle="tab" style="background-color: #48ba2f">No Order</a></li>
+        {% endif %}
+
+        {% if (data.wfm_mitra != "1" AND data.wfm_mitra != "2") %}
         <li><a href="#tab7" data-toggle="tab">WFM Mitra</a></li>
+        {% else %}
+        <li><a href="#tab7" data-toggle="tab" style="background-color: #48ba2f">WFM Mitra</a></li>
+        {% endif %}
+
+        {% if (data.approval_wfm != "1" AND data.approval_wfm != "2") %}
         <li><a href="#tab8" data-toggle="tab">Approval WFM oleh Mitra</a></li>
+        {% else %}
+        <li><a href="#tab8" data-toggle="tab" style="background-color: #48ba2f">Approval WFM oleh Mitra</a></li>
+        {% endif %}
+
+        {% if (data.status_nde != "1" AND data.status_nde != "2") %}
         <li><a href="#tab9" data-toggle="tab">NDE Closed WFM</a></li>
+        {% else %}
+        <li><a href="#tab9" data-toggle="tab" style="background-color: #48ba2f">NDE Closed WFM</a></li>
+        {% endif %}
+
+        {% if (data.approval_des != "1" AND data.approval_des != "2") %}
         <li><a href="#tab10" data-toggle="tab">Approval DES PJM</a></li>
+        {% else %}
+        <li><a href="#tab10" data-toggle="tab" style="background-color: #48ba2f">Approval DES PJM</a></li>
+        {% endif %}
+
+        {% if (data.baso != "1" AND data.baso != "2") %}
         <li><a href="#tab11" data-toggle="tab">BASO</a></li>
+        {% else %}
+        <li><a href="#tab11" data-toggle="tab" style="background-color: #48ba2f">BASO</a></li>
+        {% endif %}
+
+        {% if (data.jenis_termin != "1" AND data.jenis_termin != "2") %}
         <li><a href="#tab12" data-toggle="tab">Termin/Non</a></li>
+        {% else %}
+        <li><a href="#tab12" data-toggle="tab" style="background-color: #48ba2f">Termin/Non</a></li>
+        {% endif %}
+        
 
     </ul>
      </div>

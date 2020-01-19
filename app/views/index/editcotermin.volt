@@ -126,11 +126,35 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
+        {% if (data.billing_nol_con == "0000-00-00") %}
         <li><a href="#tab1" data-toggle="tab">Billing NOL</a></li>
+        {% else %}
+        <li><a href="#tab1" data-toggle="tab" style="background-color: #48ba2f">Billing NOL</a></li>
+        {% endif %}
+
+        {% if (data.asset_con) == "" %}
         <li><a href="#tab2" data-toggle="tab">Asset</a></li>
+        {% else %}
+        <li><a href="#tab2" data-toggle="tab" style="background-color: #48ba2f">Asset</a></li>
+        {% endif %}
+
+        {% if (data.approval_sm_con != "1" AND (data.approval_sm_con) != "2")  %}
         <li><a href="#tab3" data-toggle="tab">Approval SM</a></li>
+        {% else %}
+        <li><a href="#tab3" data-toggle="tab" style="background-color: #48ba2f">Approval SM</a></li>
+        {% endif %}
+
+        {% if (data.approval_ubc_con != "1" AND (data.approval_ubc_con) != "2") %}
         <li><a href="#tab4" data-toggle="tab">Approval UBC</a></li>
+        {% else %}
+        <li><a href="#tab4" data-toggle="tab" style="background-color: #48ba2f">Approval UBC</a></li>
+        {% endif %}
+
+        {% if (data.billing_com_con) == "0000-00-00" %}
         <li><a href="#tab5" data-toggle="tab">Billing Complete</a></li>
+        {% else %}
+        <li><a href="#tab5" data-toggle="tab" style="background-color: #48ba2f">Billing Complete</a></li>
+        {% endif %}
 
     </ul>
      </div>

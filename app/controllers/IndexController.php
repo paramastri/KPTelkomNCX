@@ -138,13 +138,32 @@ class IndexController extends Controller
     public function listdataAction()
     {
         $listdatas = ncx::find();
-        // $listdata2 = connectivity::find();
-        // $listdata3 = cpe::find();
+        // $listdata2 = connectivity::findFirst("id_ncx='$listdata->id'"); // dicari id ncx yg ada di ncx dan yg ada di connectivity
+        // $listdata3 = cpe::findFirst("id_ncx='$listdata->id'");
         $data = array();
         foreach ($listdatas as $key => $listdata)
         {
-            
+            $listdata2 = connectivity::findFirst("id_ncx='$listdata->id'");
+            if($listdata2)
+            {
+                $noorder = $listdata2->no_order_con;
+            }
+            else
+            {
+                $listdata3 = cpe::findFirst("id_ncx='$listdata->id'");
+                $noorder = $listdata3->no_order;
+            }
+            // if($listdata2)
+            // {
+            //     $noorder = $listdata2->no_order;
+            // }
+            // if($listdata3)
+            // {
+            //     $noorder = $listdata3->no_order;
+            // }
+
             $data[$key] = array(
+                'id_ncx' => $listdata->id_ncx,
                 'nama_cc' => $listdata->nama_cc,
                 'nama_pekerjaan' => $listdata->nama_pekerjaan,
                 'mitra' => $listdata->mitra,
@@ -153,6 +172,7 @@ class IndexController extends Controller
                 'status_ncx' => $listdata->status_ncx,
                 'no_quote' =>$listdata->no_quote,
                 'tipe_order' => $listdata->tipe_order,
+                'no_order' => $noorder,
                 // 'no_agreement_con' => $listdata2->no_agreement_con,
                 // 'no_order_con' => $listdata->no_order_con,
                 // 'baso_con' =>$listdata->baso_con,

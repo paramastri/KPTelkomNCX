@@ -134,7 +134,7 @@
             // height: "345px",
             layout: "fitColumns",
             pagination:"local",
-            paginationSize:10,
+            paginationSize:15,
             layout:"fitColumns",
             placeholder: "Tidak Ada Data",
             columns: [
@@ -146,7 +146,9 @@
                 {title: "Nilai MRC", field: "nilai_mrc"},
                 {title: "Status NCX", field: "status_ncx"},
                 {title: "No Quote", field: "no_quote"},
+                {title: "No Order", field: "no_order"},
                 {title: "progress", field: "progress"},
+                {title: "kendala", field: "kendala"},
                 {
                     title: "Edit", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",

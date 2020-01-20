@@ -101,6 +101,7 @@
 
         <div id="content">
 
+
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="">
 
@@ -117,15 +118,27 @@
 
 
                 </div>
+
             </nav>
 
+            <div>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: 00827H3LAGD</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote: 08378JKSPWM</h4>
+            </div>
+
+
             <body>
+
+<div>
+
     <div class="container" >
         <div id="rootwizard">
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
+
     <ul>
+
         {% if (data.dok_p6 != "1" AND data.dok_p6 != "2") %}
         <li><a href="#tab1" data-toggle="tab">DOK P6</a></li>
         {% else %}
@@ -598,6 +611,7 @@
 </form>
 </div>
     </div>
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

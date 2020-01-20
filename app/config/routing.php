@@ -327,6 +327,14 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/newlistdata',
+            [
+                'controller' => 'index',
+                'action' => 'newlistdata'
+            ]
+        );
+
         return $router;
     }
 );

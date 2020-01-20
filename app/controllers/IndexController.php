@@ -419,8 +419,6 @@ class IndexController extends Controller
         // $level = $max->id_level;
         // $nama_level = level::findFirst("id='$level'");
         
-
-
         $content = json_encode($data);
         return $this->response->setContent($content);
 
@@ -1077,6 +1075,10 @@ class IndexController extends Controller
     {
         $data = ncx::findFirst("id='$id'");
         $this->view->data = $data;
+        $dataco = connectivity::findFirst("id_ncx='$id'");
+        $this->view->dataco = $dataco;
+        $datacpe = cpe::findFirst("id_ncx='$id'");
+        $this->view->datacpe = $datacpe;
         
     }
 

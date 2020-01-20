@@ -120,8 +120,9 @@
             </nav>
 
             <div>
-                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: 00827H3LAGD</h4>
-                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote: 08378JKSPWM</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: 
+                {{data.no_order_con}}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote: {{data.no_quote}}</h4>
             </div>
 
             <body>

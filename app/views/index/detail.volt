@@ -164,7 +164,7 @@
 
   <div class="col-8">
 
-    <h5 style="font-weight: bold; margin-left: 0px; text-decoration: underline; color: #a81616; float: left;">{% if (data.tipe_order == 1) %}Connectivity{% elseif (data.tipe_order == 2) %}CPE{% endif %}/</h5>
+    <h5 style="font-weight: bold; margin-left: 0px; text-decoration: underline; color: #a81616; float: left;">{% if (data.tipe_order == 1) %}Connectivity/{% elseif (data.tipe_order == 2) %}CPE/{% endif %}</h5>
         <table class="table table-hover table-bordered">
                 <tbody>
                         {% if (data.tipe_order == 1) %}

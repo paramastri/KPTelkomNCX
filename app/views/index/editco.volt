@@ -129,25 +129,25 @@
         {% if (data.no_agreement_con == "") %}
         <li><a href="#tab1" data-toggle="tab">No Agreement</a></li>
         {% else %}
-        <li><a href="#tab1" data-toggle="tab" style="background-color: #48ba2f">No Agreement</a></li>
+        <li><a href="#tab1" data-toggle="tab" style="background-color: #57cf6d">No Agreement</a></li>
         {% endif %}
 
         {% if (data.no_order_con == "") %}
         <li><a href="#tab2" data-toggle="tab">No Order</a></li>
         {% else %}
-        <li><a href="#tab2" data-toggle="tab" style="background-color: #48ba2f">No Order</a></li>
+        <li><a href="#tab2" data-toggle="tab" style="background-color: #57cf6d">No Order</a></li>
         {% endif %}
 
         {% if (data.baso_con != "1" AND data.baso_con != "2") %}
         <li><a href="#tab3" data-toggle="tab">BASO</a></li>
         {% else %}
-        <li><a href="#tab3" data-toggle="tab" style="background-color: #48ba2f">BASO</a></li>
+        <li><a href="#tab3" data-toggle="tab" style="background-color: #57cf6d">BASO</a></li>
         {% endif %}
         
         {% if (data.jenis_termin_con != "1" AND data.jenis_termin_con != "2") %}
         <li><a href="#tab4" data-toggle="tab">Termin/Non</a></li>
         {% else %}
-        <li><a href="#tab4" data-toggle="tab" style="background-color: #48ba2f">Termin/Non</a></li>
+        <li><a href="#tab4" data-toggle="tab" style="background-color: #57cf6d">Termin/Non</a></li>
         {% endif %}
         
         

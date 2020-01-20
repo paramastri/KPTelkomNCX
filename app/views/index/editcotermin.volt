@@ -123,7 +123,8 @@
 
             <div>
                 <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: {{data.no_order_con}}</h4>
-                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote: {{data.no_quote}}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote:
+                {{dataumum.no_quote}}</h4>
             </div>
 
             <body>

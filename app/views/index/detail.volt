@@ -370,11 +370,11 @@
                                 Belum OK
                                 {% endif %}
                             </td>
-                            <td>{% if (kendala5) %}
+                            {% if (kendala5) %}
                             <td>{{kendala5.kendala}}</td>
                             {% else %}
                             <td>-</td>
-                            {% endif %}</td>
+                            {% endif %}
                         </tr>
 
                         <tr>

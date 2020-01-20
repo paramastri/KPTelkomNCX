@@ -135,6 +135,56 @@ class IndexController extends Controller
 
     }
 
+
+    public function newlistdataAction()
+    {
+        $listdatas = ncx::find();
+        $data = array();
+        foreach ($listdatas as $key => $listdata)
+        {
+            $listdata2 = connectivity::findFirst("id_ncx='$listdata->id'");
+            if($listdata2)
+            {
+                $noorder = $listdata2->no_order_con;
+            }
+            else
+            {
+                $listdata3 = cpe::findFirst("id_ncx='$listdata->id'");
+                $noorder = $listdata3->no_order;
+            }
+
+            $cekkendala = kendala::findFirst([
+                "id_ncx='$listdata->id'",
+                'order' => 'id_level DESC',
+                'limit' => 1,
+            ]);
+
+            $ceklevel = level::findFirst("id='$cekkendala->id_level'");
+
+            $data[] = array(
+                'id_ncx' => $listdata->id_ncx,
+                'nama_cc' => $listdata->nama_cc,
+                'nama_pekerjaan' => $listdata->nama_pekerjaan,
+                'mitra' => $listdata->mitra,
+                'nilai_nrc' => $listdata->nilai_nrc,
+                'nilai_mrc' => $listdata->nilai_mrc,
+                'status_ncx' => $listdata->status_ncx,
+                'no_quote' =>$listdata->no_quote,
+                'tipe_order' => $listdata->tipe_order,
+                'no_order' => $noorder,
+                'link' => $listdata->id,
+                'progress' => $ceklevel->nama_level,
+                'kendala' => $cekkendala->kendala,
+            );
+        
+
+        }
+        $content = json_encode($data);
+        return $this->response->setContent($content);
+    }
+
+
+
     public function listdataAction()
     {
         $listdatas = ncx::find();

@@ -142,8 +142,8 @@
                 {title: "Nama CC", field: "nama_cc"},
                 {title: "Nama Pekerjaan", field: "nama_pekerjaan"},
                 {title: "Mitra", field: "mitra"},
-                {title: "Niilai NRC", field: "nilai_nrc"},
-                {title: "Nilai MRC", field: "nilai_mrc"},
+                {title: "NRC", field: "nilai_nrc"},
+                {title: "MRC", field: "nilai_mrc"},
                 {title: "Status NCX", field: "status_ncx"},
                 {title: "No Quote", field: "no_quote"},
                 {title: "No Order", field: "no_order"},
@@ -168,7 +168,7 @@
                 
             ],
         });
-        table.setData("{{ url('/listdata') }}");
+        table.setData("{{ url('/newlistdata') }}");
     </script>
         </div>
 

@@ -135,13 +135,6 @@ class IndexController extends Controller
 
     }
 
-    private function aldomematikan($str){
-        echo "<pre>";
-        print_r($str);
-        echo "</pre>";
-        die();
-    }
-
     public function listdataAction()
     {
         $listdatas = ncx::find();

@@ -140,6 +140,14 @@ $di->set(
             ]
         );
 
+        $router->addPost(
+            '/login',
+            [
+                'controller' => 'index',
+                'action' => 'storelogin'
+            ]
+        );
+
         $router->addGet(
             '/register',
             [
@@ -148,6 +156,13 @@ $di->set(
             ]
         );
 
+        $router->addPost(
+            '/register',
+            [
+                'controller' => 'index',
+                'action' => 'storeregister'
+            ]
+        );
 
 
 

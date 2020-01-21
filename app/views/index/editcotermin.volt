@@ -85,13 +85,18 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('') }}">Form</a>
+                    <a href="{{ url('indexbaru') }}">Form</a>
                 </li>
                 <li>
                     <a href="{{ url('data') }}">Data</a>
                 </li>
                 <li>
-                    <a href="{{ url('logout') }}">Keluar</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="{{ url('logout') }}">Keluar</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 

@@ -164,7 +164,13 @@ $di->set(
             ]
         );
 
-
+        $router->addPost(
+            '/logout',
+            [
+                'controller' => 'index',
+                'action' => 'logout'
+            ]
+        );
 
         $router->addPost(
             '/storeform',
@@ -349,6 +355,8 @@ $di->set(
                 'action' => 'newlistdata'
             ]
         );
+
+
 
         return $router;
     }

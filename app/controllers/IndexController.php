@@ -670,6 +670,12 @@ class IndexController extends Controller
         }
     }
 
+    public function logoutAction()
+    {
+        $this->session->destroy();
+        $this->response->redirect();
+    }
+
     public function storeAction()
     {
         $dokumen = new ncx();

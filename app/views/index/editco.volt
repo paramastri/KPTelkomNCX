@@ -90,6 +90,9 @@
                 <li>
                     <a href="{{ url('data') }}">Data</a>
                 </li>
+                <li>
+                    <a href="{{ url('logout') }}">Keluar</a>
+                </li>
             </ul>
 
 

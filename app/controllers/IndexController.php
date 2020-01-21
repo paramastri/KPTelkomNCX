@@ -419,8 +419,6 @@ class IndexController extends Controller
         // $level = $max->id_level;
         // $nama_level = level::findFirst("id='$level'");
         
-
-
         $content = json_encode($data);
         return $this->response->setContent($content);
 
@@ -1077,6 +1075,10 @@ class IndexController extends Controller
     {
         $data = ncx::findFirst("id='$id'");
         $this->view->data = $data;
+        $dataco = connectivity::findFirst("id_ncx='$id'");
+        $this->view->dataco = $dataco;
+        $datacpe = cpe::findFirst("id_ncx='$id'");
+        $this->view->datacpe = $datacpe;
         
     }
 
@@ -1137,8 +1139,10 @@ class IndexController extends Controller
 
     public function editcoAction($id)
     {
+        $dataumum = ncx::findFirst("id='$id'");
         $data = connectivity::findFirst("id_ncx='$id'");
         $this->view->data = $data;
+        $this->view->dataumum = $dataumum;
         $kendala9 = kendala::findFirst([
             'id_ncx = :id_ncx: AND id_level = :id_level:',
             'bind' => [
@@ -1211,8 +1215,10 @@ class IndexController extends Controller
 
     public function editcononAction($id)
     {
+        $dataumum = ncx::findFirst("id='$id'");
         $data = connectivity::findFirst("id_ncx='$id'");
         $this->view->data = $data;
+        $this->view->dataumum = $dataumum;
         
     }
 
@@ -1231,8 +1237,10 @@ class IndexController extends Controller
 
     public function editcoterminAction($id)
     {
+        $dataumum = ncx::findFirst("id='$id'");
         $data = connectivity::findFirst("id_ncx='$id'");
         $this->view->data = $data;
+        $this->view->dataumum = $dataumum;
         $kendala10 = kendala::findFirst([
             'id_ncx = :id_ncx: AND id_level = :id_level:',
             'bind' => [
@@ -1401,8 +1409,10 @@ class IndexController extends Controller
 
     public function editcpeAction($id)
     {
+        $dataumum = ncx::findFirst("id='$id'");
         $data = cpe::findFirst("id_ncx='$id'");
         $this->view->data = $data;
+        $this->view->dataumum = $dataumum;
         $kendala1 = kendala::findFirst([
             'id_ncx = :id_ncx: AND id_level = :id_level:',
             'bind' => [
@@ -1782,8 +1792,10 @@ class IndexController extends Controller
 
     public function editcpenonAction($id)
     {
+        $dataumum = ncx::findFirst("id='$id'");
         $data = cpe::findFirst("id_ncx='$id'");
         $this->view->data = $data;
+        $this->view->dataumum = $dataumum;
         
     }
 
@@ -1801,8 +1813,10 @@ class IndexController extends Controller
 
     public function editcpeterminAction($id)
     {
+        $dataumum = ncx::findFirst("id='$id'");
         $data = cpe::findFirst("id_ncx='$id'");
         $this->view->data = $data;
+        $this->view->dataumum = $dataumum;
         $kendala10 = kendala::findFirst([
             'id_ncx = :id_ncx: AND id_level = :id_level:',
             'bind' => [

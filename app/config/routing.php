@@ -164,7 +164,7 @@ $di->set(
             ]
         );
 
-        $router->addPost(
+        $router->addGet(
             '/logout',
             [
                 'controller' => 'index',

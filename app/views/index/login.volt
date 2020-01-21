@@ -61,11 +61,15 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
+                    <a href="{{ url('register') }}">Daftar</a>
+                </li>
+
+                <!-- <li>
                     <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
                     <a href="{{ url('data') }}">Data</a>
-                </li>
+                </li> -->
             </ul>
 
 

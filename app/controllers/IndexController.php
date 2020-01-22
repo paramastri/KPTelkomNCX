@@ -784,21 +784,21 @@ class IndexController extends Controller
 
         $billing_nol_con = $this->request->getPost('billing_nol_con');
         $asset_con = $this->request->getPost('asset_con');
-        $approval_sm_con  = $this->request->getPost('approval_sm_con');
-        $approval_ubc_con = $this->request->getPost('approval_ubc_con');
-        $billing_com_con = $this->request->getPost('billing_com_con');
+        // $approval_sm_con  = $this->request->getPost('approval_sm_con');
+        // $approval_ubc_con = $this->request->getPost('approval_ubc_con');
+        // $billing_com_con = $this->request->getPost('billing_com_con');
 
         $kendala10 = $this->request->getPost('kendala10');
         $kendala11 = $this->request->getPost('kendala11');
-        $kendala12 = $this->request->getPost('kendala12');
-        $kendala13 = $this->request->getPost('kendala13');
+        // $kendala12 = $this->request->getPost('kendala12');
+        // $kendala13 = $this->request->getPost('kendala13');
 
         // $detail->id_ncx = $id_ncx;
         $detail->billing_nol_con = $billing_nol_con;
         $detail->asset_con = $asset_con;
-        $detail->approval_sm_con = $approval_sm_con;
-        $detail->approval_ubc_con = $approval_ubc_con;
-        $detail->billing_com_con = $billing_com_con;
+        // $detail->approval_sm_con = $approval_sm_con;
+        // $detail->approval_ubc_con = $approval_ubc_con;
+        // $detail->billing_com_con = $billing_com_con;
         $detail->save();
 
         if($kendala10)
@@ -819,23 +819,23 @@ class IndexController extends Controller
             $kendala->save();
         }
 
-        if($kendala12)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('12');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala12;
-            $kendala->save();
-        }
+        // if($kendala12)
+        // {
+        //     $kendala = new kendala();
+        //     $kendala->id_level = $this->request->getPost('12');
+        //     $kendala->id_ncx = $id_ncx;
+        //     $kendala->kendala = $kendala12;
+        //     $kendala->save();
+        // }
 
-        if($kendala13)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('13');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala13;
-            $kendala->save();
-        }
+        // if($kendala13)
+        // {
+        //     $kendala = new kendala();
+        //     $kendala->id_level = $this->request->getPost('13');
+        //     $kendala->id_ncx = $id_ncx;
+        //     $kendala->kendala = $kendala13;
+        //     $kendala->save();
+        // }
 
     }
 
@@ -1001,67 +1001,40 @@ class IndexController extends Controller
 
         $billing_nol = $this->request->getPost('billing_nol');
         $asset = $this->request->getPost('asset');
-        $approval_sm = $this->request->getPost('approval_sm');
-        $approval_ubc = $this->request->getPost('approval_ubc');
-        $billing_com = $this->request->getPost('billing_com');
+        // $approval_sm = $this->request->getPost('approval_sm');
+        // $approval_ubc = $this->request->getPost('approval_ubc');
+        // $billing_com = $this->request->getPost('billing_com');
 
-        $kendala12 = $this->request->getPost('kendala12');
-        $kendala13 = $this->request->getPost('kendala13');
-        $kendala14 = $this->request->getPost('kendala14');
-        $kendala15 = $this->request->getPost('kendala15');
-        $kendala16 = $this->request->getPost('kendala16');
+        $kendala12 = $this->request->getPost('kendala10');
+        $kendala13 = $this->request->getPost('kendala11');
+        
 
         $detail->billing_nol = $billing_nol;
         $detail->asset = $asset;
-        $detail->approval_sm = $approval_sm;
-        $detail->approval_ubc = $approval_ubc;
-        $detail->billing_com = $billing_com;
+        // $detail->approval_sm = $approval_sm;
+        // $detail->approval_ubc = $approval_ubc;
+        // $detail->billing_com = $billing_com;
         $detail->save();
 
-        if($kendala12)
+        if($kendala10)
         {
             $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('12');
+            $kendala->id_level = $this->request->getPost('10');
             $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala12;
+            $kendala->kendala = $kendala10;
             $kendala->save();
         }
 
-        if($kendala13)
+        if($kendala11)
         {
             $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('13');
+            $kendala->id_level = $this->request->getPost('11');
             $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala13;
+            $kendala->kendala = $kendala11;
             $kendala->save();
         }
 
-        if($kendala14)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('14');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala14;
-            $kendala->save();
-        }
-
-        if($kendala15)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('15');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala15;
-            $kendala->save();
-        }
-
-        if($kendala16)
-        {
-            $kendala = new kendala();
-            $kendala->id_level = $this->request->getPost('16');
-            $kendala->id_ncx = $id_ncx;
-            $kendala->kendala = $kendala16;
-            $kendala->save();
-        }
+        
 
     }
 
@@ -1293,21 +1266,21 @@ class IndexController extends Controller
 
         $billing_nol_con = $this->request->getPost('billing_nol_con');
         $asset_con = $this->request->getPost('asset_con');
-        $approval_sm_con  = $this->request->getPost('approval_sm_con');
-        $approval_ubc_con = $this->request->getPost('approval_ubc_con');
-        $billing_com_con = $this->request->getPost('billing_com_con');
+        // $approval_sm_con  = $this->request->getPost('approval_sm_con');
+        // $approval_ubc_con = $this->request->getPost('approval_ubc_con');
+        // $billing_com_con = $this->request->getPost('billing_com_con');
 
         $kendala10 = $this->request->getPost('kendala10');
         $kendala11 = $this->request->getPost('kendala11');
-        $kendala12 = $this->request->getPost('kendala12');
-        $kendala13 = $this->request->getPost('kendala13');
+        // $kendala12 = $this->request->getPost('kendala12');
+        // $kendala13 = $this->request->getPost('kendala13');
 
         // $detail->id_ncx = $id_ncx;
         $detail->billing_nol_con = $billing_nol_con;
         $detail->asset_con = $asset_con;
-        $detail->approval_sm_con = $approval_sm_con;
-        $detail->approval_ubc_con = $approval_ubc_con;
-        $detail->billing_com_con = $billing_com_con;
+        // $detail->approval_sm_con = $approval_sm_con;
+        // $detail->approval_ubc_con = $approval_ubc_con;
+        // $detail->billing_com_con = $billing_com_con;
         $detail->save();
         
         if($kendala10)
@@ -1360,55 +1333,55 @@ class IndexController extends Controller
             }
         }
 
-        if($kendala12)
-        {
-            $kendala = kendala::findFirst([
-                'id_ncx = :id_ncx: AND id_level = :id_level:',
-                'bind' => [
-                    'id_ncx' => $id_ncx,
-                    'id_level' => '12',
-                ]
-            ]);
+        // if($kendala12)
+        // {
+        //     $kendala = kendala::findFirst([
+        //         'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //         'bind' => [
+        //             'id_ncx' => $id_ncx,
+        //             'id_level' => '12',
+        //         ]
+        //     ]);
 
-            if($kendala)
-            {
-                $kendala->kendala = $kendala12;
-                $kendala->save();
+        //     if($kendala)
+        //     {
+        //         $kendala->kendala = $kendala12;
+        //         $kendala->save();
 
-            }
-            else{
-                $newkendala = new kendala();
-                $newkendala->id_level = $this->request->getPost('12');
-                $newkendala->id_ncx = $id_ncx;
-                $newkendala->kendala = $kendala12;
-                $newkendala->save();
-            }
-        }
+        //     }
+        //     else{
+        //         $newkendala = new kendala();
+        //         $newkendala->id_level = $this->request->getPost('12');
+        //         $newkendala->id_ncx = $id_ncx;
+        //         $newkendala->kendala = $kendala12;
+        //         $newkendala->save();
+        //     }
+        // }
 
-        if($kendala13)
-        {
-            $kendala = kendala::findFirst([
-                'id_ncx = :id_ncx: AND id_level = :id_level:',
-                'bind' => [
-                    'id_ncx' => $id_ncx,
-                    'id_level' => '13',
-                ]
-            ]);
+        // if($kendala13)
+        // {
+        //     $kendala = kendala::findFirst([
+        //         'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //         'bind' => [
+        //             'id_ncx' => $id_ncx,
+        //             'id_level' => '13',
+        //         ]
+        //     ]);
 
-            if($kendala)
-            {
-                $kendala->kendala = $kendala13;
-                $kendala->save();
+        //     if($kendala)
+        //     {
+        //         $kendala->kendala = $kendala13;
+        //         $kendala->save();
 
-            }
-            else{
-                $newkendala = new kendala();
-                $newkendala->id_level = $this->request->getPost('13');
-                $newkendala->id_ncx = $id_ncx;
-                $newkendala->kendala = $kendala13;
-                $newkendala->save();
-            }
-        }
+        //     }
+        //     else{
+        //         $newkendala = new kendala();
+        //         $newkendala->id_level = $this->request->getPost('13');
+        //         $newkendala->id_ncx = $id_ncx;
+        //         $newkendala->kendala = $kendala13;
+        //         $newkendala->save();
+        //     }
+        // }
 
         return $this->response->redirect('data');
     }
@@ -1869,21 +1842,21 @@ class IndexController extends Controller
 
         $billing_nol = $this->request->getPost('billing_nol');
         $asset = $this->request->getPost('asset');
-        $approval_sm  = $this->request->getPost('approval_sm');
-        $approval_ubc = $this->request->getPost('approval_ubc');
-        $billing_com = $this->request->getPost('billing_com');
+        // $approval_sm  = $this->request->getPost('approval_sm');
+        // $approval_ubc = $this->request->getPost('approval_ubc');
+        // $billing_com = $this->request->getPost('billing_com');
 
         $kendala10 = $this->request->getPost('kendala10');
         $kendala11 = $this->request->getPost('kendala11');
-        $kendala12 = $this->request->getPost('kendala12');
-        $kendala13 = $this->request->getPost('kendala13');
+        // $kendala12 = $this->request->getPost('kendala12');
+        // $kendala13 = $this->request->getPost('kendala13');
 
         // $detail->id_ncx = $id_ncx;
         $detail->billing_nol = $billing_nol;
         $detail->asset = $asset;
-        $detail->approval_sm = $approval_sm;
-        $detail->approval_ubc = $approval_ubc;
-        $detail->billing_com = $billing_com;
+        // $detail->approval_sm = $approval_sm;
+        // $detail->approval_ubc = $approval_ubc;
+        // $detail->billing_com = $billing_com;
         $detail->save();
         
         if($kendala10)
@@ -1936,6 +1909,126 @@ class IndexController extends Controller
             }
         }
 
+        // if($kendala12)
+        // {
+        //     $kendala = kendala::findFirst([
+        //         'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //         'bind' => [
+        //             'id_ncx' => $id_ncx,
+        //             'id_level' => '12',
+        //         ]
+        //     ]);
+
+        //     if($kendala)
+        //     {
+        //         $kendala->kendala = $kendala12;
+        //         $kendala->save();
+
+        //     }
+        //     else{
+        //         $newkendala = new kendala();
+        //         $newkendala->id_level = $this->request->getPost('12');
+        //         $newkendala->id_ncx = $id_ncx;
+        //         $newkendala->kendala = $kendala12;
+        //         $newkendala->save();
+        //     }
+        // }
+
+        // if($kendala13)
+        // {
+        //     $kendala = kendala::findFirst([
+        //         'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //         'bind' => [
+        //             'id_ncx' => $id_ncx,
+        //             'id_level' => '13',
+        //         ]
+        //     ]);
+
+        //     if($kendala)
+        //     {
+        //         $kendala->kendala = $kendala13;
+        //         $kendala->save();
+
+        //     }
+        //     else{
+        //         $newkendala = new kendala();
+        //         $newkendala->id_level = $this->request->getPost('13');
+        //         $newkendala->id_ncx = $id_ncx;
+        //         $newkendala->kendala = $kendala13;
+        //         $newkendala->save();
+        //     }
+        // }
+
+        return $this->response->redirect('data');
+    }
+
+    public function addsequenceAction($id)
+    {
+        $this->view->id_ncx = $id;
+        $cek = sequence::findFirst("id_ncx='$id'");
+        if($cek)
+        {
+            $this->view->nomor = count($cek) + 1;
+        }
+        else{
+            $this->view->nomor = 1;   
+        }
+        
+
+    }
+
+    public function storesequenceAction()
+    {
+        $id_ncx = $this->request->getPost('id_ncx');
+        $nomor = $this->request->getPost('nomor');
+        $nilai_termin = $this->request->getPost('nilai_termin');
+        
+        $sequence = new sequence();
+        $sequence->id_ncx = $id_ncx;
+        $sequence->nomor = $nomor;
+        $sequence->nilai_termin = $nilai_termin;
+        $sequence->save();
+
+        $cekco = connectivity::findFirst("id_ncx='$id_ncx'");
+        if($cekco)
+        {
+            return $this->response->redirect('editcotermin'.'/'.$id_ncx);
+        }
+        else{
+            $cekcpe = cpe::findFirst("id_ncx='$id_ncx'");
+            if($cekcpe)
+            {
+                return $this->response->redirect('editcpetermin'.'/'.$id_ncx);
+            }
+            else{
+                return $this->response->redirect('data');
+            }
+        }
+    }
+
+    public function editsequenceAction($id)
+    {
+        $data = sequence::findFirst("id='$id'");
+        $this->view->data = $data;
+    }
+
+    public function storeeditsequenceAction()
+    {
+        $id = $this->request->getPost('id');
+        $detail = sequence::findFirst("id='$id'");
+        $id_ncx  = $this->request->getPost('id_ncx');
+        $approval_sm  = $this->request->getPost('approval_sm');
+        $approval_ubc = $this->request->getPost('approval_ubc');
+        $billing_com = $this->request->getPost('billing_com');
+
+        $kendala12 = $this->request->getPost('kendala12');
+        $kendala13 = $this->request->getPost('kendala13');
+
+        $detail->approval_sm = $approval_sm;
+        $detail->approval_ubc = $approval_ubc;
+        $detail->billing_com = $billing_com;
+        $detail->save();
+
         if($kendala12)
         {
             $kendala = kendala::findFirst([
@@ -1956,6 +2049,7 @@ class IndexController extends Controller
                 $newkendala = new kendala();
                 $newkendala->id_level = $this->request->getPost('12');
                 $newkendala->id_ncx = $id_ncx;
+                $newkendala->id_sequence = $id;
                 $newkendala->kendala = $kendala12;
                 $newkendala->save();
             }
@@ -1981,12 +2075,12 @@ class IndexController extends Controller
                 $newkendala = new kendala();
                 $newkendala->id_level = $this->request->getPost('13');
                 $newkendala->id_ncx = $id_ncx;
+                // $newkendala->id_sequence = $id;
                 $newkendala->kendala = $kendala13;
                 $newkendala->save();
             }
         }
 
-        return $this->response->redirect('data');
     }
 
     public function addseqAction()

@@ -5,4 +5,5 @@ class kendala extends Model{
 	public $id_level;
 	public $id_ncx;
 	public $kendala;
+	public $id_sequence;
 }

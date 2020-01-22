@@ -357,26 +357,34 @@ $di->set(
         );
 
         $router->addGet(
-            '/addseq',
+            '/addsequence/{id}',
             [
                 'controller' => 'index',
-                'action' => 'addseq'
+                'action' => 'addsequence'
+            ]
+        );
+
+        $router->addPost(
+            '/storesequence',
+            [
+                'controller' => 'index',
+                'action' => 'storesequence'
             ]
         );
 
         $router->addGet(
-            '/editseqco/{id}',
+            '/editsequence/{id}',
             [
                 'controller' => 'index',
-                'action' => 'editseqco'
+                'action' => 'editsequence'
             ]
         );
 
-        $router->addGet(
-            '/editseqcpe/{id}',
+        $router->addPost(
+            '/storeeditsequence',
             [
                 'controller' => 'index',
-                'action' => 'editseqcpe'
+                'action' => 'storeeditsequence'
             ]
         );
 

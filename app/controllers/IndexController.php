@@ -545,23 +545,26 @@ class IndexController extends Controller
         ]);
         $this->view->kendala11 = $kendala11;
 
-        $kendala12 = kendala::findFirst([
+        $kendala12s = kendala::find([
             'id_ncx = :id_ncx: AND id_level = :id_level:',
             'bind' => [
                 'id_ncx' => $id,
                 'id_level' => '12',
             ]
         ]);
-        $this->view->kendala12 = $kendala12;
+        $this->view->kendala12s = $kendala12s;
 
-        $kendala13 = kendala::findFirst([
+        $kendala13s = kendala::find([
             'id_ncx = :id_ncx: AND id_level = :id_level:',
             'bind' => [
                 'id_ncx' => $id,
                 'id_level' => '13',
             ]
         ]);
-        $this->view->kendala13 = $kendala13;
+        $this->view->kendala13s = $kendala13s;
+// var_dump($kendala12s); die();
+        $sequences = sequence::find("id_ncx='$id'");
+        $this->view->sequences = $sequences;
 
     }
 

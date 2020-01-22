@@ -219,15 +219,7 @@
                             {% else %}
                             <td>-</td>
                             {% endif %}
-                        </tr> 
-
-                        <tr>
-                          <th>Billing Complete</th>
-                            <td>
-                            {{dataco.billing_com_con}}
-                            </td>
-                            <td>-</td>
-                        </tr> 
+                        </tr>
 
                         <tr>
                           <th>Asset</th>
@@ -241,37 +233,7 @@
                             {% endif %}
                         </tr> 
 
-                        <tr>
-                          <th>Approval SM</th>
-                            <td>
-                            {% if (dataco.approval_sm_con == 1) %}
-                            OK
-                            {% elseif (dataco.approval_sm_con == 2) %}
-                            Belum OK
-                            {% endif %}
-                            </td>
-                            {% if (kendala12) %}
-                            <td>{{kendala12.kendala}}</td>
-                            {% else %}
-                            <td>-</td>
-                            {% endif %}
-                        </tr> 
-
-                        <tr>
-                          <th>Approval UBC</th>
-                            <td>
-                            {% if (dataco.approval_ubc_con == 1) %}
-                            OK
-                            {% elseif (dataco.approval_ubc_con == 2) %}
-                            Belum OK
-                            {% endif %}
-                            </td>
-                            {% if (kendala13) %}
-                            <td>{{kendala13.kendala}}</td>
-                            {% else %}
-                            <td>-</td>
-                            {% endif %}
-                        </tr> 
+                        
                         {% elseif (dataco.jenis_termin_con == 2) %}
                         <tr>
                           <th>Billing Complete</th>
@@ -468,14 +430,6 @@
                         </tr> 
 
                         <tr>
-                          <th>Billing Complete</th>
-                            <td>
-                            {{datacpe.billing_com}}
-                            </td>
-                            <td>-</td>
-                        </tr> 
-
-                        <tr>
                           <th>Asset</th>
                             <td>
                             {{datacpe.asset}}
@@ -486,38 +440,7 @@
                             <td>-</td>
                             {% endif %}
                         </tr> 
-
-                        <tr>
-                          <th>Approval SM</th>
-                            <td>
-                            {% if (datacpe.approval_sm == 1) %}
-                            OK
-                            {% elseif (datacpe.approval_sm == 2) %}
-                            Belum OK
-                            {% endif %}
-                            </td>
-                            {% if (kendala12) %}
-                            <td>{{kendala12.kendala}}</td>
-                            {% else %}
-                            <td>-</td>
-                            {% endif %}
-                        </tr> 
-
-                        <tr>
-                          <th>Approval UBC</th>
-                            <td>
-                            {% if (datacpe.approval_ubc == 1) %}
-                            OK
-                            {% elseif (datacpe.approval_ubc == 2) %}
-                            Belum OK
-                            {% endif %}
-                            </td>
-                            {% if (kendala13) %}
-                            <td>{{kendala13.kendala}}</td>
-                            {% else %}
-                            <td>-</td>
-                            {% endif %}
-                        </tr> 
+ 
                         {% elseif (datacpe.jenis_termin == 2) %}
                         <tr>
                           <th>Billing Complete</th>
@@ -533,7 +456,112 @@
                 </tbody>
             </table>
 
-
+            {% if (data.tipe_order == 1) %}
+                {% if (dataco.jenis_termin_con == 1) %}
+                {% for sequence in sequences %}
+                    Sequence ke - {{sequence.nomor}}
+                    <table class="table table-hover table-bordered" style="">
+                    <tbody>
+                        <tr>
+                          <th>Nilai termin</th>
+                            <td>{{sequence.nilai_termin}}</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                          <th>Approval SM</th>
+                            <td>
+                              {% if (sequence.approval_sm == 1) %}
+                              OK
+                              {% elseif (sequence.approval_sm == 2) %}
+                              Belum OK
+                              {% endif %}
+                            </td>
+                              {% for kendala12 in kendala12s %}
+                                {% if (kendala12.id_sequence == sequence.id) %}
+                                  <td>{{kendala12.kendala}}</td>
+                                {% else %}
+                                  <td>-</td>
+                                {% endif %}
+                              {% endfor %}    
+                        </tr>
+                        <tr>
+                          <th>Approval UBC</th>
+                            <td>
+                              {% if (sequence.approval_ubc == 1) %}
+                              OK
+                              {% elseif (sequence.approval_ubc == 2) %}
+                              Belum OK
+                              {% endif %}
+                            </td>
+                            {% for kendala13 in kendala13s %}
+                              {% if (kendala13.id_sequence == sequence.id) %}
+                                <td>{{kendala13.kendala}}</td>
+                              {% else %}
+                                <td>-</td>
+                              {% endif %}
+                            {% endfor %} 
+                        </tr>
+                        <tr>
+                          <th>Billing Complete</th>
+                            <td>{{sequence.billing_com}}</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                {% endfor %}
+                
+                {% endif %}
+            {% elseif (data.tipe_order == 2) %}
+                {% if (datacpe.jenis_termin == 1) %}
+                {% for sequence in sequences %}
+                    Sequence ke - {{sequence.nomor}}
+                    <table class="table table-hover table-bordered" style="">
+                    <tbody>
+                        <tr>
+                          <th>Nilai termin</th>
+                            <td>{{sequence.nilai_termin}}</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                          <th>Approval SM</th>
+                            <td>
+                              {% if (sequence.approval_sm == 1) %}
+                              OK
+                              {% elseif (sequence.approval_sm == 2) %}
+                              Belum OK
+                              {% endif %}
+                            </td>
+                              {% for kendala12 in kendala12s %}
+                                {% if (kendala12.id_sequence == sequence.id) %}
+                                  <td>{{kendala12.kendala}}</td>
+                                {% endif %}
+                              {% endfor %}    
+                        </tr>
+                        <tr>
+                          <th>Approval UBC</th>
+                            <td>
+                              {% if (sequence.approval_ubc == 1) %}
+                              OK
+                              {% elseif (sequence.approval_ubc == 2) %}
+                              Belum OK
+                              {% endif %}
+                            </td>
+                            {% for kendala13 in kendala13s %}
+                              {% if (kendala13.id_sequence == sequence.id) %}
+                                <td>{{kendala13.kendala}}</td>
+                              {% endif %}
+                            {% endfor %} 
+                        </tr>
+                        <tr>
+                          <th>Billing Complete</th>
+                            <td>{{sequence.billing_com}}</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                {% endfor %}
+                {% endif %}
+            {% endif %}
   </div>
 </div>
 

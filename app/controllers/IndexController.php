@@ -589,6 +589,10 @@ class IndexController extends Controller
     public function coterminAction($id)
     {
         $this->view->data = $id;
+        $data2 = connectivity::findFirst("id_ncx='$id'");
+        $this->view->data2 = $data2;
+        $sequences = sequence::find("id_ncx='$id'");
+        $this->view->sequences = $sequences;
     }
 
     public function cononAction($id)
@@ -605,6 +609,10 @@ class IndexController extends Controller
     public function cpeterminAction($id)
     {
         $this->view->data = $id;
+        $data2 = cpe::findFirst("id_ncx='$id'");
+        $this->view->data2 = $data2;
+        $sequences = sequence::find("id_ncx='$id'");
+        $this->view->sequences = $sequences;
     }
 
     public function cpenonAction($id)
@@ -1255,6 +1263,9 @@ class IndexController extends Controller
             ]
         ]);
         $this->view->kendala13 = $kendala13;
+
+        $sequences = sequence::find("id_ncx='$id'");
+        $this->view->sequences = $sequences;
         
     }
 
@@ -1832,6 +1843,8 @@ class IndexController extends Controller
         ]);
         $this->view->kendala13 = $kendala13;
         
+        $sequences = sequence::find("id_ncx='$id'");
+        $this->view->sequences = $sequences;
     }
 
     public function storeeditcpeterminAction()
@@ -2081,11 +2094,6 @@ class IndexController extends Controller
             }
         }
 
-    }
-
-    public function addseqAction()
-    {
-        
     }
 
     public function editseqcoAction($id)

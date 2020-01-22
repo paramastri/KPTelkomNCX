@@ -180,7 +180,24 @@
         </div>
 
         <div class="tab-pane" id="tab3">
-            ISINYA TABULATOR SEQUENCE :) :)
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nomor</th>
+                  <th scope="col">Nilai Termin</th>
+                  <th scope="col">Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for sequence in sequences %}
+                    <tr>
+                        <th scope="row">{{sequence.nomor}}</th>
+                        <td>{{sequence.nilai_termin}}</td>
+                        <td><a href="../editsequence/{{sequence.id}}">edit</a></td>
+                    </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
             
         </div>
 
@@ -240,6 +257,7 @@
         </ul> -->
         <div style="margin-top: 30px;">
             <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
+            <a href="../addsequence/{{data2.id_ncx}}" class="btn btn-primary">Tambah Sequence</a>
         </div>
     </div>
 </form>

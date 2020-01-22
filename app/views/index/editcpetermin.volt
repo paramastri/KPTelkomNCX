@@ -177,6 +177,7 @@
         {% else %}
         <li><a href="#tab5" data-toggle="tab" style="background-color: #57cf6d">Billing Complete</a></li>
         {% endif %} -->
+        
 
     </ul>
      </div>
@@ -234,24 +235,23 @@
         </div>
 
         <div class="tab-pane" id="tab3">
-
+    
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">Nama/Nomer</th>
-                  <th scope="col">Sequence</th>
+                  <th scope="col">Nomor</th>
                   <th scope="col">Nilai Termin</th>
                   <th scope="col">Edit</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td><a href="">edit</a></td>
-                </tr>
-
+                {% for sequence in sequences %}
+                    <tr>
+                        <th scope="row">{{sequence.nomor}}</th>
+                        <td>{{sequence.nilai_termin}}</td>
+                        <td><a href="../editsequence/{{sequence.id}}">edit</a></td>
+                    </tr>
+                  {% endfor %}
               </tbody>
             </table>
             
@@ -350,6 +350,7 @@
         </ul> -->
         <div style="margin-top: 30px;">
         <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
+        <a href="../addsequence/{{data.id_ncx}}" class="btn btn-primary">Tambah Sequence</a>
     </div>
     </div>
 </form>

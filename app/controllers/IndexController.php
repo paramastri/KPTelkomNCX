@@ -844,6 +844,7 @@ class IndexController extends Controller
         //     $kendala->kendala = $kendala13;
         //     $kendala->save();
         // }
+        return $this->response->redirect('data');
 
     }
 
@@ -859,6 +860,7 @@ class IndexController extends Controller
 
         $detail->billing_com_con = $billing_com_con;
         $detail->save();
+        return $this->response->redirect('data');
     }
 
     public function storecpeAction()
@@ -2029,12 +2031,12 @@ class IndexController extends Controller
         if($dataumum->tipe_order == "1")
         {
             $dataco = connectivity::findFirst("id_ncx='$dataumum->id'");
-            $this->view->dataco = $dataco;
+            $this->view->noorder = $dataco->no_order_con;
         }
         else if($dataumum->tipe_order == "2")
         {
             $datacpe = cpe::findFirst("id_ncx='$dataumum->id'");
-            $this->view->datacpe = $datacpe;
+            $this->view->noorder = $datacpe->no_order;
         }
         
         $kendala12 = kendala::findFirst([

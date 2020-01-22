@@ -131,11 +131,7 @@
 
             <div>
                 <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order:
-                {% if (dataco) %}
-                {{dataco.no_order_con}}
-                {% elseif (datacpe) %}
-                {{dataco.no_order}}
-                {% endif %}
+                {{noorder}}
                 </h4>
                 <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote:
                 {{dataumum.no_quote}}</h4>

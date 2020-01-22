@@ -146,16 +146,16 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
-        {% if (data.billing_nol == "0000-00-00") %}
+        {% if (data.billing_nol == "0000-00-00" OR data.billing_nol == NULL) %}
         <li><a href="#tab1" data-toggle="tab">Billing NOL</a></li>
         {% else %}
-        <li><a href="#tab1" data-toggle="tab" style="background-color: #48ba2f">Billing NOL</a></li>
+        <li><a href="#tab1" data-toggle="tab" style="background-color: #57cf6d">Billing NOL</a></li>
         {% endif %}
 
         {% if (data.asset) == "" %}
         <li><a href="#tab2" data-toggle="tab">Asset</a></li>
         {% else %}
-        <li><a href="#tab2" data-toggle="tab" style="background-color: #48ba2f">Asset</a></li>
+        <li><a href="#tab2" data-toggle="tab" style="background-color: #57cf6d">Asset</a></li>
         {% endif %}
 
         <li><a href="#tab3" data-toggle="tab">Sequence</a></li>

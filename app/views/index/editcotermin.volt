@@ -146,7 +146,7 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
-        {% if (data.billing_nol_con == "0000-00-00") %}
+        {% if (data.billing_nol_con == "0000-00-00" OR data.billing_nol_con == NULL) %}
         <li><a href="#tab1" data-toggle="tab">Billing NOL</a></li>
         {% else %}
         <li><a href="#tab1" data-toggle="tab" style="background-color: #57cf6d">Billing NOL</a></li>

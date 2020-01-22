@@ -15,6 +15,10 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../style5.css">
 
+     <!-- tabulator -->
+    <link href="{{ url("tabulator.min.css") }}" rel="stylesheet">
+    <script src="{{ url("tabulator.min.js") }}"></script>
+
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -154,7 +158,9 @@
         <li><a href="#tab2" data-toggle="tab" style="background-color: #57cf6d">Asset</a></li>
         {% endif %}
 
-        {% if (data.approval_sm_con != "1" AND (data.approval_sm_con) != "2")  %}
+        <li><a href="#tab3" data-toggle="tab">Sequence</a></li>
+
+        <!-- {% if (data.approval_sm_con != "1" AND (data.approval_sm_con) != "2")  %}
         <li><a href="#tab3" data-toggle="tab">Approval SM</a></li>
         {% else %}
         <li><a href="#tab3" data-toggle="tab" style="background-color: #57cf6d">Approval SM</a></li>
@@ -170,7 +176,7 @@
         <li><a href="#tab5" data-toggle="tab">Billing Complete</a></li>
         {% else %}
         <li><a href="#tab5" data-toggle="tab" style="background-color: #57cf6d">Billing Complete</a></li>
-        {% endif %}
+        {% endif %} -->
 
     </ul>
      </div>
@@ -180,7 +186,7 @@
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
 <form action="{{ url("storeeditcotermin") }}" method="post">
-    <div style="width: 30%; margin: 0 auto;" class="tab-content">
+    <div style="width: 60%; margin: 0 auto;" class="tab-content">
         <div class="tab-pane" id="tab1">
                 <div class="form-group">
                     <label style="margin-top: 0px;">Billing NOL</label>
@@ -226,7 +232,29 @@
             
         </div>
 
-        <div class="tab-pane" id="tab3">
+        <div class="tab-pane" id="tab3" style="width: 100%;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nama/Nomer</th>
+                  <th scope="col">Sequence</th>
+                  <th scope="col">Nilai Termin</th>
+                  <th scope="col">Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td><a href="">edit</a></td>
+                </tr>
+              </tbody>
+            </table>
+            
+        </div>
+
+        <!-- <div class="tab-pane" id="tab3">
                <div>
                     <label style="margin-top: 0px;">Approval SM</label>
                 </div>
@@ -307,7 +335,7 @@
                 </div>
 
                 
-        </div>
+        </div> -->
      
 
         <!-- <ul class="pager wizard">

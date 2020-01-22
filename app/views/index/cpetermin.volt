@@ -136,9 +136,10 @@
     <ul>
         <li><a href="#tab1" data-toggle="tab">Billing NOL</a></li>
         <li><a href="#tab2" data-toggle="tab">Asset</a></li>
-        <li><a href="#tab3" data-toggle="tab">Approval SM</a></li>
+        <li><a href="#tab3" data-toggle="tab">Sequence</a></li>
+      <!--   <li><a href="#tab3" data-toggle="tab">Approval SM</a></li>
         <li><a href="#tab4" data-toggle="tab">Approval UBC</a></li>
-        <li><a href="#tab5" data-toggle="tab">Billing Complete</a></li>
+        <li><a href="#tab5" data-toggle="tab">Billing Complete</a></li> -->
 
     </ul>
      </div>
@@ -180,6 +181,11 @@
         </div>
 
         <div class="tab-pane" id="tab3">
+            ISINYA TABULATOR SEQUENCE :) :)
+            
+        </div>
+
+       <!--  <div class="tab-pane" id="tab3">
                <div>
                     <label style="margin-top: 0px;">Approval SM</label>
                 </div>
@@ -224,7 +230,7 @@
                 </div>
 
                 <input type="hidden" name="16" value="16">
-        </div>
+        </div> -->
      
 
         <!-- <ul class="pager wizard">

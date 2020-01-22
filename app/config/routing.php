@@ -356,6 +356,30 @@ $di->set(
             ]
         );
 
+        $router->addGet(
+            '/addseq',
+            [
+                'controller' => 'index',
+                'action' => 'addseq'
+            ]
+        );
+
+        $router->addGet(
+            '/editseqco/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editseqco'
+            ]
+        );
+
+        $router->addGet(
+            '/editseqcpe/{id}',
+            [
+                'controller' => 'index',
+                'action' => 'editseqcpe'
+            ]
+        );
+
 
 
         return $router;

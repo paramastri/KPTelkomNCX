@@ -1246,23 +1246,23 @@ class IndexController extends Controller
         ]);
         $this->view->kendala11 = $kendala11;
 
-        $kendala12 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '12',
-            ]
-        ]);
-        $this->view->kendala12 = $kendala12;
+        // $kendala12 = kendala::findFirst([
+        //     'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //     'bind' => [
+        //         'id_ncx' => $id,
+        //         'id_level' => '12',
+        //     ]
+        // ]);
+        // $this->view->kendala12 = $kendala12;
 
-        $kendala13 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '13',
-            ]
-        ]);
-        $this->view->kendala13 = $kendala13;
+        // $kendala13 = kendala::findFirst([
+        //     'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //     'bind' => [
+        //         'id_ncx' => $id,
+        //         'id_level' => '13',
+        //     ]
+        // ]);
+        // $this->view->kendala13 = $kendala13;
 
         $sequences = sequence::find("id_ncx='$id'");
         $this->view->sequences = $sequences;
@@ -1825,23 +1825,23 @@ class IndexController extends Controller
         ]);
         $this->view->kendala11 = $kendala11;
 
-        $kendala12 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '12',
-            ]
-        ]);
-        $this->view->kendala12 = $kendala12;
+        // $kendala12 = kendala::findFirst([
+        //     'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //     'bind' => [
+        //         'id_ncx' => $id,
+        //         'id_level' => '12',
+        //     ]
+        // ]);
+        // $this->view->kendala12 = $kendala12;
 
-        $kendala13 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '13',
-            ]
-        ]);
-        $this->view->kendala13 = $kendala13;
+        // $kendala13 = kendala::findFirst([
+        //     'id_ncx = :id_ncx: AND id_level = :id_level:',
+        //     'bind' => [
+        //         'id_ncx' => $id,
+        //         'id_level' => '13',
+        //     ]
+        // ]);
+        // $this->view->kendala13 = $kendala13;
         
         $sequences = sequence::find("id_ncx='$id'");
         $this->view->sequences = $sequences;
@@ -2020,9 +2020,42 @@ class IndexController extends Controller
     }
 
     public function editsequenceAction($id)
-    {
+    {     
         $data = sequence::findFirst("id='$id'");
+        $dataumum = ncx::findFirst("id='$data->id_ncx'");
         $this->view->data = $data;
+        $this->view->dataumum = $dataumum;
+
+        if($dataumum->tipe_order == "1")
+        {
+            $dataco = connectivity::findFirst("id_ncx='$dataumum->id'");
+            $this->view->dataco = $dataco;
+        }
+        else if($dataumum->tipe_order == "2")
+        {
+            $datacpe = cpe::findFirst("id_ncx='$dataumum->id'");
+            $this->view->datacpe = $datacpe;
+        }
+        
+        $kendala12 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level: AND id_sequence = :id_sequence:',
+            'bind' => [
+                'id_ncx' => $data->id_ncx,
+                'id_level' => '12',
+                'id_sequence' => $id,
+            ]
+        ]);
+        $this->view->kendala12 = $kendala12;
+
+        $kendala13 = kendala::findFirst([
+            'id_ncx = :id_ncx: AND id_level = :id_level: AND id_sequence = :id_sequence:',
+            'bind' => [
+                'id_ncx' => $data->id_ncx,
+                'id_level' => '13',
+                'id_sequence' => $id,
+            ]
+        ]);
+        $this->view->kendala13 = $kendala13;
     }
 
     public function storeeditsequenceAction()
@@ -2045,10 +2078,11 @@ class IndexController extends Controller
         if($kendala12)
         {
             $kendala = kendala::findFirst([
-                'id_ncx = :id_ncx: AND id_level = :id_level:',
+                'id_ncx = :id_ncx: AND id_level = :id_level: AND id_sequence = :id_sequence:',
                 'bind' => [
                     'id_ncx' => $id_ncx,
                     'id_level' => '12',
+                    'id_sequence' => $id,
                 ]
             ]);
 
@@ -2071,10 +2105,11 @@ class IndexController extends Controller
         if($kendala13)
         {
             $kendala = kendala::findFirst([
-                'id_ncx = :id_ncx: AND id_level = :id_level:',
+                'id_ncx = :id_ncx: AND id_level = :id_level: AND id_sequence = :id_sequence:',
                 'bind' => [
                     'id_ncx' => $id_ncx,
                     'id_level' => '13',
+                    'id_sequence' => $id,
                 ]
             ]);
 
@@ -2088,68 +2123,27 @@ class IndexController extends Controller
                 $newkendala = new kendala();
                 $newkendala->id_level = $this->request->getPost('13');
                 $newkendala->id_ncx = $id_ncx;
-                // $newkendala->id_sequence = $id;
+                $newkendala->id_sequence = $id;
                 $newkendala->kendala = $kendala13;
                 $newkendala->save();
             }
         }
+        $cekco = connectivity::findFirst("id_ncx='$id_ncx'");
+        if($cekco)
+        {
+            return $this->response->redirect('editcotermin'.'/'.$id_ncx);
+        }
+        else{
+            $cekcpe = cpe::findFirst("id_ncx='$id_ncx'");
+            if($cekcpe)
+            {
+                return $this->response->redirect('editcpetermin'.'/'.$id_ncx);
+            }
+            else{
+                return $this->response->redirect('data');
+            }
+        }
 
-    }
-
-    public function editseqcoAction($id)
-    {
-        $dataumum = ncx::findFirst("id='$id'");
-        $data = connectivity::findFirst("id_ncx='$id'");
-        $this->view->data = $data;
-        $this->view->dataumum = $dataumum;
-       
-
-        $kendala12 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '12',
-            ]
-        ]);
-        $this->view->kendala12 = $kendala12;
-
-        $kendala13 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '13',
-            ]
-        ]);
-        $this->view->kendala13 = $kendala13;
-        
-    }
-
-    public function editseqcpeAction($id)
-    {
-        $dataumum = ncx::findFirst("id='$id'");
-        $data = cpe::findFirst("id_ncx='$id'");
-        $this->view->data = $data;
-        $this->view->dataumum = $dataumum;
-        
-
-        $kendala12 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '12',
-            ]
-        ]);
-        $this->view->kendala12 = $kendala12;
-
-        $kendala13 = kendala::findFirst([
-            'id_ncx = :id_ncx: AND id_level = :id_level:',
-            'bind' => [
-                'id_ncx' => $id,
-                'id_level' => '13',
-            ]
-        ]);
-        $this->view->kendala13 = $kendala13;
-        
     }
 
 }

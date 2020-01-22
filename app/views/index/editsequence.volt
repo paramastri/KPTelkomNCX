@@ -130,9 +130,16 @@
             </nav>
 
             <div>
-                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: {{data.no_order_con}}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order:
+                {% if (dataco) %}
+                {{dataco.no_order_con}}
+                {% elseif (datacpe) %}
+                {{dataco.no_order}}
+                {% endif %}
+                </h4>
                 <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote:
                 {{dataumum.no_quote}}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;"> Sequence {{data.nomor}} </h4>
             </div>
 
             <body>
@@ -156,19 +163,19 @@
 
         <li><a href="#tab3" data-toggle="tab">Sequence</a></li> -->
 
-        {% if (data.approval_sm_con != "1" AND (data.approval_sm_con) != "2")  %}
+        {% if (data.approval_sm != "1" AND (data.approval_sm) != "2")  %}
         <li><a href="#tab3" data-toggle="tab">Approval SM</a></li>
         {% else %}
         <li><a href="#tab3" data-toggle="tab" style="background-color: #57cf6d">Approval SM</a></li>
         {% endif %}
 
-        {% if (data.approval_ubc_con != "1" AND (data.approval_ubc_con) != "2") %}
+        {% if (data.approval_ubc != "1" AND (data.approval_ubc) != "2") %}
         <li><a href="#tab4" data-toggle="tab">Approval UBC</a></li>
         {% else %}
         <li><a href="#tab4" data-toggle="tab" style="background-color: #57cf6d">Approval UBC</a></li>
         {% endif %}
 
-        {% if (data.billing_com_con) == "0000-00-00" %}
+        {% if (data.billing_com == "0000-00-00" OR data.billing_com == NULL) %}
         <li><a href="#tab5" data-toggle="tab">Billing Complete</a></li>
         {% else %}
         <li><a href="#tab5" data-toggle="tab" style="background-color: #57cf6d">Billing Complete</a></li>
@@ -181,7 +188,7 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-<form action="{{ url("storeeditcotermin") }}" method="post">
+<form action="{{ url("storeeditsequence") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
         <!-- <div class="tab-pane" id="tab1">
                 <div class="form-group">
@@ -238,12 +245,12 @@
                     <label style="margin-top: 0px;">Approval SM</label>
                 </div>
 
-                <select name="approval_sm_con" class="form-control form-control-sm" style="width: 100%;" >
-                    {% if (data.approval_sm_con == 1) %}
+                <select name="approval_sm" class="form-control form-control-sm" style="width: 100%;" >
+                    {% if (data.approval_sm == 1) %}
                         <option value="0"></option>
                         <option value="1" selected>OK</option>
                         <option value="2">Belum OK</option>
-                    {% elseif (data.approval_sm_con == 2) %}
+                    {% elseif (data.approval_sm == 2) %}
                         <option value="0"></option>
                         <option value="1">OK</option>
                         <option value="2" selected>Belum OK</option>
@@ -275,12 +282,12 @@
                     <label style="margin-top: 0px;">Approval UBC</label>
                 </div>
 
-                <select name="approval_ubc_con" class="form-control form-control-sm" style="width: 100%;" >
-                {% if (data.approval_ubc_con == 1) %}
+                <select name="approval_ubc" class="form-control form-control-sm" style="width: 100%;" >
+                {% if (data.approval_ubc == 1) %}
                     <option value="0"></option>
                     <option value="1" selected>OK</option>
                     <option value="2">Belum OK</option>
-                {% elseif (data.approval_ubc_con == 2) %}
+                {% elseif (data.approval_ubc == 2) %}
                     <option value="0"></option>
                     <option value="1">OK</option>
                     <option value="2" selected>Belum OK</option>
@@ -291,7 +298,8 @@
                 {% endif %}
                   
                 </select>
-
+                <input type="hidden" name="id" value="{{data.id}}">
+                <input type="hidden" name="id_ncx" value="{{data.id_ncx}}">
                 <input type="hidden" name="13" value="13">
                 {% if (kendala13) %}
                     <div class="form-group">
@@ -310,7 +318,7 @@
         <div class="tab-pane" id="tab5">
                 <div>
                     <label style="margin-top: 0px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="billing_com_con" value="{{data.billing_com_con}}">
+                    <input type="date" class="form-control" name="billing_com" value="{{data.billing_com}}">
                 </div>
 
                 

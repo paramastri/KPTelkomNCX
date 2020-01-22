@@ -12,7 +12,13 @@ class IndexController extends Controller
 {
 	public function indexAction()
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        $_isUser = $this->session->get('user')['tipe'];
         
+        if (!$_isUser && !$_isAdmin)
+        {
+            $this->response->redirect('login');
+        }
     }
 
     public function storeformAction()
@@ -135,8 +141,60 @@ class IndexController extends Controller
 
     }
 
+    public function datauserAction()
+    {
+
+    }
+
 
     public function newlistdataAction()
+    {
+        $listdatas = ncx::find();
+        $data = array();
+        foreach ($listdatas as $key => $listdata)
+        {
+            $listdata2 = connectivity::findFirst("id_ncx='$listdata->id'");
+            if($listdata2)
+            {
+                $noorder = $listdata2->no_order_con;
+            }
+            else
+            {
+                $listdata3 = cpe::findFirst("id_ncx='$listdata->id'");
+                $noorder = $listdata3->no_order;
+            }
+
+            $cekkendala = kendala::findFirst([
+                "id_ncx='$listdata->id'",
+                'order' => 'id_level DESC',
+                'limit' => 1,
+            ]);
+
+            $ceklevel = level::findFirst("id='$cekkendala->id_level'");
+
+            $data[] = array(
+                'id_ncx' => $listdata->id_ncx,
+                'nama_cc' => $listdata->nama_cc,
+                'nama_pekerjaan' => $listdata->nama_pekerjaan,
+                'mitra' => $listdata->mitra,
+                'nilai_nrc' => $listdata->nilai_nrc,
+                'nilai_mrc' => $listdata->nilai_mrc,
+                'status_ncx' => $listdata->status_ncx,
+                'no_quote' =>$listdata->no_quote,
+                'tipe_order' => $listdata->tipe_order,
+                'no_order' => $noorder,
+                'link' => $listdata->id,
+                'progress' => $ceklevel->nama_level,
+                'kendala' => $cekkendala->kendala,
+            );
+        
+
+        }
+        $content = json_encode($data);
+        return $this->response->setContent($content);
+    }
+
+    public function listdatauserAction()
     {
         $listdatas = ncx::find();
         $data = array();
@@ -429,6 +487,11 @@ class IndexController extends Controller
 
     }
 
+    public function listdatauserviewAction()
+    {
+
+    }
+
 
     public function detailAction($id)
     {
@@ -625,15 +688,26 @@ class IndexController extends Controller
 
     public function loginAction()
     {
-        
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        $_isUser = $this->session->get('user')['tipe'];
+        if ($_isAdmin == 1) {
+            $this->response->redirect('data');
+        }
+        if($_isUser)
+        {
+            $this->response->redirect('');
+        }
     }
 
-    public function storeloginAction(){
+    public function storeloginAction()
+    {
         $username = $this->request->getPost('username');
         $pass = $this->request->getPost('password');
         // echo $pass;
         // die();
-            $user = user::findFirst("username = '$username'");
+        if($this->request->getPost('tipe')=="admin")
+        {
+            $user = admin::findFirst("username = '$username'");
             // echo $user->password;
             // die();
             if ($user){
@@ -643,20 +717,72 @@ class IndexController extends Controller
                         [
                             'id' => $user->id,
                             'username' => $user->username,
+                            'tipe' => '1'
                         ]
                     );
 
-                    (new Response())->redirect('indexbaru')->send();
+                    (new Response())->redirect('admin/data')->send();
                 }
                 else{
                     $this->flashSession->error("Gagal masuk sebagai admin. Silakan cek kembali username dan password anda.");
-                    $this->response->redirect('login');
+                    $this->response->redirect('user/login');
                 }
             }
             else{
                 $this->flashSession->error("Gagal masuk sebagai admin. Silakan cek kembali username dan password anda.");
-                    $this->response->redirect('login');
+                    $this->response->redirect('user/login');
             }
+        }
+
+        elseif($this->request->getPost('tipe')=="user")
+        {
+            // $user = user::findFirst(
+            //  [   
+            //      'columns' =>'*',
+            //      'conditions' =>'username = ?1 AND status = ?2',
+            //  ]
+
+            //  'bind' => [
+            //      1 => $username,
+            //      2 => '1',
+            //  ]
+
+            // );
+            $user = user::findFirst("username = '$username'");
+            if ($user){
+                // if($user->status == 1 ){
+                    if($this->security->checkHash($pass, $user->password)){
+                        $this->session->set(
+                            'user',
+                            [
+                                'id' => $user->id,
+                                'username' => $user->username,
+                                'tipe' => '2',
+                            ]
+                        );
+
+                        (new Response())->redirect('user/datauser')->send();
+                    }
+                    else{
+                        $this->flashSession->error("Gagal masuk sebagai user. Silakan cek kembali username dan password anda.");
+                        $this->response->redirect('user/login');
+                    }
+                //}
+                // else {
+                //  // echo"belum verifikasi";
+                //  // die();
+                //  $this->flashSession->error("Gagal masuk sebagai user. Belum diverifikasi, silakan hubungi admin.");
+                    
+                //     $this->response->redirect('user/login');
+                // }
+           }
+            else{
+                $this->flashSession->error("Gagal masuk sebagai user. Silakan cek kembali username dan password anda.");
+                $this->response->redirect('user/login');
+            }
+
+        }
+
     }
 
     public function registerAction()
@@ -678,6 +804,32 @@ class IndexController extends Controller
 
             $user->save();
             $this->response->redirect('login');
+        }
+    }
+
+    public function registeradminAction()
+    {
+        
+    }
+
+    public function storeregisteradminAction()
+    {
+        $admin = new admin();
+        $admin->username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
+        // echo $password;
+        // die();
+        $admin->password = $this->security->hash($password);
+        $user = admin::findFirst("username = '$admin->username'");
+        if ($user) { 
+            $this->flashSession->error("Gagal register. Username telah digunakan.");
+            return $this->response->redirect('register');
+        }
+        else
+        {
+            $admin->save();
+            $this->response->redirect('login');
+
         }
     }
 

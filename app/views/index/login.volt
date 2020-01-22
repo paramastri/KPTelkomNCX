@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Progres NCX</title>
+    <title>Status Dokumen OBL</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" href="favicon.png" type="png" sizes="16x16">
 
@@ -52,39 +52,34 @@
         <nav id="sidebar">
             <img style="height: 100px; margin-top: 30px;" src="logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
-            <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%; font-size: 12pt;">Website Progres NCX</h6>
+              
+                <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Status OBL</h6>
             </div>
 
-
-          
-
-            <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
+  
+            <ul style="margin-left: 10px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('register') }}">Daftar</a>
+                    <a href="{{ url('user/register') }}">Daftar</a>
                 </li>
-
                 <!-- <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
+                    <a href="{{ url('detailnomor') }}">Upload Surat</a>
+                </li>
+                <li>
+                    <a href="{{ url('halamanadmin') }}">Beranda Admin</a>
+                </li> -->
+                <!-- <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Masuk </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('register') }}">Daftar</a>
+                            <a href="">Daftar</a>
                         </li>
                         <li>
-                            <a href="{{ url('user/logout') }}">Keluar</a>
+                            <a href="">Masuk</a>
                         </li>
                     </ul>
                 </li> -->
-
-                <!-- <li>
-                    <a href="{{ url('') }}">Form</a>
-                </li>
-                <li>
-                    <a href="{{ url('data') }}">Data</a>
-                </li> -->
             </ul>
-
-
         </nav>
 
 
@@ -99,7 +94,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Masuk sebagai Admin</h2>
+                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Masuk</h2>
                     <!--  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button> -->
@@ -126,6 +121,20 @@
 
                     <input type="password" class="form-control" placeholder="Masukkan password" name="password" required>
 
+                </div>
+
+                <div>
+                    <label style="margin-top: 0px;">Masuk Sebagai</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                  <input value="user" type="radio" class="custom-control-input" id="defaultChecked" name="tipe" checked>
+                  <label class="custom-control-label" for="defaultChecked">User</label>
+                </div>
+
+                <div class="custom-control custom-radio" >
+                  <input value="admin" type="radio" class="custom-control-input" id="defaultUnchecked" name="tipe">
+                  <label class="custom-control-label" for="defaultUnchecked">Admin</label>
                 </div>
 
 

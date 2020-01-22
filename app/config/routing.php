@@ -51,6 +51,30 @@ $di->set(
         );
 
         $router->addGet(
+            '/datauser',
+            [
+                'controller' => 'index',
+                'action' => 'datauser'
+            ]
+        );
+
+        $router->addGet(
+            '/listdatauser',
+            [
+                'controller' => 'index',
+                'action' => 'listdatauser'
+            ]
+        );
+
+        $router->addGet(
+            '/listdatauserview',
+            [
+                'controller' => 'index',
+                'action' => 'listdatauserview'
+            ]
+        );
+
+        $router->addGet(
             '/detail/{id}',
             [
                 'controller' => 'index',
@@ -163,6 +187,22 @@ $di->set(
                 'action' => 'storeregister'
             ]
         );
+
+        $router->addGet(
+            '/registeradmin',
+            [
+                'controller' => 'index',
+                'action' => 'registeradmin'
+            ]
+        );
+
+        $router->addPost(
+            '/registeradmin',
+            [
+                'controller' => 'index',
+                'action' => 'storeregisteradmin'
+            ]
+        );        
 
         $router->addGet(
             '/logout',

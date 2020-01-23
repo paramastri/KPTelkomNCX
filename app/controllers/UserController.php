@@ -16,7 +16,7 @@ class UserController extends Controller
         }
         if($_isUser)
         {
-            $this->response->redirect('');
+            $this->response->redirect('dokumen/datauser');
         }
     }
 
@@ -108,7 +108,15 @@ class UserController extends Controller
 
     public function registerAction()
     {
-        
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        $_isUser = $this->session->get('user')['tipe'];
+        if ($_isAdmin == 1) {
+            $this->response->redirect('dokumen/data');
+        }
+        if($_isUser)
+        {
+            $this->response->redirect('dokumen/datauser');
+        }
     }
 
     public function storeregisterAction(){

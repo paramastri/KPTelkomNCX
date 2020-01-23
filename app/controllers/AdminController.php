@@ -9,7 +9,11 @@ class AdminController extends Controller
 {
     public function registeradminAction()
     {
-        
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
     }
 
     public function storeregisteradminAction()

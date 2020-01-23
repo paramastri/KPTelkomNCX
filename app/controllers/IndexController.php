@@ -12,13 +12,15 @@ class IndexController extends Controller
 {
 	public function indexAction()
     {
-        // $_isAdmin = $this->session->get('admin')['tipe'];
-        // $_isUser = $this->session->get('user')['tipe'];
-        
-        // if (!$_isUser && !$_isAdmin)
-        // {
-        //     $this->response->redirect('user/login');
+       $_isAdmin = $this->session->get('admin')['tipe'];
+        $_isUser = $this->session->get('user')['tipe'];
+        // if ($_isAdmin == 1) {
+        //     $this->response->redirect('admin/list');
         // }
+        if (!$_isUser && !$_isAdmin)
+        {
+            $this->response->redirect('user/login');
+        }
     }
 
     public function storeformAction()

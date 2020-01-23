@@ -9,12 +9,24 @@ class CpeController extends Controller
 {
     public function cpeAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $this->view->data = $id;
         
     }
 
     public function cpeterminAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $this->view->data = $id;
         $data2 = cpe::findFirst("id_ncx='$id'");
         $this->view->data2 = $data2;
@@ -24,6 +36,12 @@ class CpeController extends Controller
 
     public function cpenonAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $this->view->data = $id;
     }
     
@@ -256,6 +274,12 @@ class CpeController extends Controller
 
     public function editcpeAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $dataumum = ncx::findFirst("id='$id'");
         $data = cpe::findFirst("id_ncx='$id'");
         $this->view->data = $data;
@@ -669,6 +693,12 @@ class CpeController extends Controller
 
     public function editcpenonAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $dataumum = ncx::findFirst("id='$id'");
         $data = cpe::findFirst("id_ncx='$id'");
         $this->view->data = $data;
@@ -690,6 +720,12 @@ class CpeController extends Controller
 
     public function editcpeterminAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+        
         $dataumum = ncx::findFirst("id='$id'");
         $data = cpe::findFirst("id_ncx='$id'");
         $this->view->data = $data;

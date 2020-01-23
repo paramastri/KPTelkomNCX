@@ -9,7 +9,11 @@ class DokumenController extends Controller
 {
     public function dataAction()
     {
-
+         $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
     }
 
     public function newlistdataAction()
@@ -61,7 +65,11 @@ class DokumenController extends Controller
 
     public function datauserAction()
     {
-
+         $_isUser = $this->session->get('user')['tipe'];
+        if (!$_isUser) 
+        {
+            $this->response->redirect('user/login');
+        }
     }
 
     public function listdatauserAction()
@@ -354,6 +362,12 @@ class DokumenController extends Controller
 
     public function detailAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $listdata = ncx::findFirst("id='$id'");
         $listdata2 = connectivity::findFirst("id_ncx='$id'");
         $listdata3 = cpe::findFirst("id_ncx='$id'");
@@ -551,6 +565,12 @@ class DokumenController extends Controller
 
     public function editAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $data = ncx::findFirst("id='$id'");
         $this->view->data = $data;
         $dataco = connectivity::findFirst("id_ncx='$id'");
@@ -617,6 +637,12 @@ class DokumenController extends Controller
 
     public function addsequenceAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $this->view->id_ncx = $id;
         $cek = sequence::findFirst("id_ncx='$id'");
         if($cek)
@@ -660,7 +686,13 @@ class DokumenController extends Controller
     }
 
     public function editsequenceAction($id)
-    {     
+    {   
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $data = sequence::findFirst("id='$id'");
         $dataumum = ncx::findFirst("id='$data->id_ncx'");
         $this->view->data = $data;

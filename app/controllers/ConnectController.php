@@ -9,12 +9,24 @@ class ConnectController extends Controller
 {
     public function coAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $this->view->data = $id;
         
     }
 
     public function coterminAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $this->view->data = $id;
         $data2 = connectivity::findFirst("id_ncx='$id'");
         $this->view->data2 = $data2;
@@ -24,6 +36,12 @@ class ConnectController extends Controller
 
     public function cononAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $this->view->data = $id;
     }
 
@@ -183,6 +201,12 @@ class ConnectController extends Controller
 
     public function editcoAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $dataumum = ncx::findFirst("id='$id'");
         $data = connectivity::findFirst("id_ncx='$id'");
         $this->view->data = $data;
@@ -289,6 +313,12 @@ class ConnectController extends Controller
 
     public function editcononAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+
         $dataumum = ncx::findFirst("id='$id'");
         $data = connectivity::findFirst("id_ncx='$id'");
         $this->view->data = $data;
@@ -311,6 +341,12 @@ class ConnectController extends Controller
 
     public function editcoterminAction($id)
     {
+        $_isAdmin = $this->session->get('admin')['tipe'];
+        if (!$_isAdmin) 
+        {
+            $this->response->redirect('user/login');
+        }
+        
         $dataumum = ncx::findFirst("id='$id'");
         $data = connectivity::findFirst("id_ncx='$id'");
         $this->view->data = $data;

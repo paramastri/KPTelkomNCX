@@ -88,13 +88,13 @@
                     <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('/dokumen/data') }}">Data</a>
+                    <a href="{{ url('dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('/user/logout') }}">Keluar</a>
+                            <a href="{{ url('user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -161,7 +161,7 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-<form action="{{ url("/dokumen/storeedit") }}" method="post">
+<form action="{{ url("dokumen/storeedit") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
 

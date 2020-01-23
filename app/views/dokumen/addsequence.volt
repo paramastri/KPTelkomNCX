@@ -87,13 +87,13 @@
                     <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('/dokumen/data') }}">Data</a>
+                    <a href="{{ url('dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('/user/logout') }}">Keluar</a>
+                            <a href="{{ url('user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -128,7 +128,7 @@
 
             <div>
             <h3 style="margin-left: 90px;">Sequence {{nomor}}</h3>
-            <form  action="{{ url("/dokumen/storesequence") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form  action="{{ url("dokumen/storesequence") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
 
                 <div class="form-group">
                     <label>Nilai Termin</label>

@@ -60,7 +60,7 @@
             <ul style="margin-left: 10px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('user/login') }}">Masuk</a>
+                    <a href="{{ url('/user/login') }}">Masuk</a>
                 </li>
 
                 <!-- <li>
@@ -109,7 +109,7 @@
             <p><?php echo $this->flashSession->output() ?></p>
             
             </div>
-            <form action="{{ url("register") }}" method = "post" style="margin-left: 90px; margin-top: 30px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form action="{{ url("/user/register") }}" method = "post" style="margin-left: 90px; margin-top: 30px; width: 30%; font-family:'GothamRounded-Medium';">
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" class="form-control" placeholder="Masukkan username" name="username" required>

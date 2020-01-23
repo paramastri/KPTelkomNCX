@@ -4,7 +4,6 @@
 <head>
     <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
 
     <meta charset="utf-8">
@@ -49,21 +48,21 @@
         var dvPassport = document.getElementById("dvPassport");
         dvPassport.style.display = ddlPassport.value == "1" ? "block" : "none";
         dvPassport2.style.display = ddlPassport.value == "2" ? "block" : "none";
-        }
+    }
 
-        function ShowHideDivTer() {
-            var ddlPassport = document.getElementById("ddlPassportTer");
-            var dvPassport = document.getElementById("dvPassportTer");
-            dvPassportTer.style.display = ddlPassport.value == "1" ? "block" : "none";
-            dvPassportTer2.style.display = ddlPassport.value == "2" ? "block" : "none";
-        }
+    function ShowHideDivTer() {
+        var ddlPassport = document.getElementById("ddlPassportTer");
+        var dvPassport = document.getElementById("dvPassportTer");
+        dvPassportTer.style.display = ddlPassport.value == "1" ? "block" : "none";
+        dvPassportTer2.style.display = ddlPassport.value == "2" ? "block" : "none";
+    }
 
-        function ShowHideDivTerr() {
-            var ddlPassport = document.getElementById("ddlPassportTerr");
-            var dvPassport = document.getElementById("dvPassportTerr");
-            dvPassportTerr.style.display = ddlPassport.value == "1" ? "block" : "none";
-            dvPassportTerr2.style.display = ddlPassport.value == "2" ? "block" : "none";
-        }
+    function ShowHideDivTerr() {
+        var ddlPassport = document.getElementById("ddlPassportTerr");
+        var dvPassport = document.getElementById("dvPassportTerr");
+        dvPassportTerr.style.display = ddlPassport.value == "1" ? "block" : "none";
+        dvPassportTerr2.style.display = ddlPassport.value == "2" ? "block" : "none";
+    }
     </script>
 
 </head>
@@ -78,23 +77,23 @@
         <nav id="sidebar">
             <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
-            <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%; font-size: 12pt;">Website Progres NCX</h6>
+            <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
             </div>
 
 
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('indexbaru') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="{{ url('/dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('logout') }}">Keluar</a>
+                            <a href="{{ url('/user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -127,65 +126,33 @@
                 </div>
             </nav>
 
-            <body>
-    <div class="container">
-        <div id="rootwizard">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-    <ul>
-        <li><a href="#tab1" data-toggle="tab">Billing Complete</a></li>
+            <div>
+            <h3 style="margin-left: 90px;">Sequence {{nomor}}</h3>
+            <form  action="{{ url("/dokumen/storesequence") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
 
-
-    </ul>
-     </div>
-      </div>
-    </div>
-<!--     <div id="bar" class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
-    </div> -->
-<form action="{{ url("storeconon") }}" method="post">
-    <div style="width: 30%; margin: 0 auto;" class="tab-content">
-
-        <div class="tab-pane" id="tab1">
-                <div>
-                    <label style="margin-top: 0px;">Billing Complete</label>
-                    <input type="hidden" name="id_ncx" value="{{data}}">
-                    <input type="date" class="form-control" name="billing_com_con" >
+                <div class="form-group">
+                    <label>Nilai Termin</label>
+                    <input type="hidden" class="form-control" name="id_ncx" value="{{id_ncx}}">
+                    <input type="hidden" class="form-control" name="nomor" value="{{nomor}}">
+                    <input type="text" class="form-control" placeholder="Masukkan Nilai Termin" name="nilai_termin" required>
                 </div>
-        </div>
+
+                
+
+                <!-- End -->
 
 
-        <!-- <ul class="pager wizard">
-            <li class="previous first" style="display:none;"><a href="#">First</a></li>
-            <li class="previous"><a href="#">Previous</a></li>
-            <li class="next last" style="display:none;"><a href="#">Last</a></li>
-            <li class="next"><a href="#">Next</a></li>
-        </ul> -->
-        <div style="margin-top: 30px;">
-        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
-    </div>
-    </div>
-</form>
-</div>
-    </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="../jquery.bootstrap.wizard.js"></script>
-    <script>
-        $(document).ready(function() {
-    $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
-        var $total = navigation.find('li').length;
-        var $current = index+1;
-        var $percent = ($current/$total) * 100;
-        $('#rootwizard .progress-bar').css({width:$percent+'%'});
-    }});
-});
-    </script>
-  </body>
+                <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">No Agreement Berakhir</h3>
+
+ -->
+                
+
+                <button value = "" style="margin-top: 40px; margin-bottom: 30px;" type="submit" class="btn btn-success">Simpan</button>
+
+            
+        </form>
+            </div>
 
 
   

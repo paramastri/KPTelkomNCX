@@ -59,19 +59,19 @@
             <ul style="margin-left: 10px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('admin/form') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('admin/data') }}">Data</a>
+                    <a href="{{ url('/dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('admin/register') }}">Daftar</a>
+                            <a href="{{ url('/admin/registeradmin') }}">Daftar</a>
                         </li>
                         <li>
-                            <a href="{{ url('/logout') }}">Keluar</a>
+                            <a href="{{ url('/user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -82,13 +82,13 @@
             <ul style="margin-left: 10px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('user/datauser') }}">Data</a>
+                    <a href="{{ url('/dokumen/datauser') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('user')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('/logout') }}">Keluar</a>
+                            <a href="{{ url('/user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -124,7 +124,7 @@
             <p><?php echo $this->flashSession->output() ?></p>
             
             </div>
-            <form action="{{ url("registeradmin") }}" method = "post" style="margin-left: 90px; margin-top: 30px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form action="{{ url("/admin/registeradmin") }}" method = "post" style="margin-left: 90px; margin-top: 30px; width: 30%; font-family:'GothamRounded-Medium';">
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" class="form-control" placeholder="Masukkan username" name="username" required>

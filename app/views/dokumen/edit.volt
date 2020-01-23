@@ -85,16 +85,16 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('indexbaru') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="{{ url('/dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('logout') }}">Keluar</a>
+                            <a href="{{ url('/user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -104,6 +104,8 @@
 
 
         </nav>
+
+
 
 
 
@@ -127,46 +129,30 @@
                 </div>
             </nav>
 
-            <div>
+             <div>
                 <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: 
-                {{data.no_order_con}}</h4>
-                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote: 
-                {{dataumum.no_quote}}</h4>
+                {% if (data.tipe_order == 1) %}
+                {% if (dataco) %}
+                {{dataco.no_order_con}}
+                {% endif %}
+                {% elseif (data.tipe_order == 2) %}
+                {% if (datacpe) %}
+                {{datacpe.no_order}}
+                {% endif %}
+                {% endif %}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote: {{data.no_quote}}</h4>
             </div>
 
-            <body>
+            <body >
     <div class="container">
         <div id="rootwizard">
     <div class="navbar">
       <div class="navbar-inner">
-        <div class="container">
+        <div  class="container">
     <ul>
-        {% if (data.no_agreement_con == "") %}
-        <li><a href="#tab1" data-toggle="tab">No Agreement</a></li>
-        {% else %}
-        <li><a href="#tab1" data-toggle="tab" style="background-color: #57cf6d">No Agreement</a></li>
-        {% endif %}
+        <li><a href="#tab1" data-toggle="tab">Umum</a></li>
+        <!-- <li><a href="#tab2" data-toggle="tab">Tipe Order</a></li> -->
 
-        {% if (data.no_order_con == "") %}
-        <li><a href="#tab2" data-toggle="tab">No Order</a></li>
-        {% else %}
-        <li><a href="#tab2" data-toggle="tab" style="background-color: #57cf6d">No Order</a></li>
-        {% endif %}
-
-        {% if (data.baso_con != "1" AND data.baso_con != "2") %}
-        <li><a href="#tab3" data-toggle="tab">BASO</a></li>
-        {% else %}
-        <li><a href="#tab3" data-toggle="tab" style="background-color: #57cf6d">BASO</a></li>
-        {% endif %}
-        
-        {% if (data.jenis_termin_con != "1" AND data.jenis_termin_con != "2") %}
-        <li><a href="#tab4" data-toggle="tab">Termin/Non</a></li>
-        {% else %}
-        <li><a href="#tab4" data-toggle="tab" style="background-color: #57cf6d">Termin/Non</a></li>
-        {% endif %}
-        
-        
-        
 
     </ul>
      </div>
@@ -175,99 +161,92 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-<form action="{{ url("storeeditco") }}" method="post">
+<form action="{{ url("/dokumen/storeedit") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
+
+
         <div class="tab-pane" id="tab1">
-      
                 <div class="form-group">
-                    <label style="margin-top: 15px;">No Agreement</label>
-                    <input type="hidden" name="id_ncx" value="{{data.id_ncx}}">
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_agreement_con" value="{{data.no_agreement_con}}">
+                    <label>Nama CC</label>
+                    <input type="hidden" name="id" value="{{data.id}}">
+                    <input type="text" class="form-control" placeholder="Masukkan Nama CC" name="nama_cc" value="{{data.nama_cc}}" required>
                 </div>
-        </div>
 
-
-        <div class="tab-pane" id="tab2">
                 <div class="form-group">
-                    <label style="margin-top: 15px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con" value="{{data.no_order_con}}">
-                </div>
-        </div>
-
-
-
-        <div class="tab-pane" id="tab3">
-                <div>
-                    <label style="margin-top: 15px;">BASO</label>
-                </div>
-                <select name="baso_con" class="form-control form-control-sm" style="width: 100%;" >
-                    {% if (data.baso_con == 1) %}
-                        <option value="0"></option>
-                        <option value="1" selected>OK</option>
-                        <option value="2">Belum OK</option>
-                    {% elseif (data.baso_con == 2) %}
-                        <option value="0"></option>
-                        <option value="1">OK</option>
-                        <option value="2" selected>Belum OK</option>
-                    {% else %}
-                        <option value="0"></option>
-                        <option value="1">OK</option>
-                        <option value="2">Belum OK</option>
-                    {% endif %}
-                  
-                </select> 
-
-                <label style="margin-top: 20px;">Unggah Dokumen</label>
-                <input style="font-size: 10pt; margin-bottom: 30px;" type="file" name="file">  
-
-                <input type="hidden" name="9" value="9">
-
-                
-
-                {% if (kendala9) %}
-                    <div class="form-group">
-                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                        <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3">{{kendala9.kendala}}</textarea>
-                    </div>
-                {% else %}
-                    <div class="form-group">
-                        <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                        <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                {% endif %}
-        </div>
-
-        <div class="tab-pane" id="tab4">
-                <div>
-                    <label>Termin/Non</label>
+                    <label>Nama Pekerjaan</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Nama Pekerjaan" name="nama_pekerjaan" value="{{data.nama_pekerjaan}}" required>
                 </div>
 
-                <select name="jenis_termin_con" class="form-control form-control-sm" style="width: 100%;" >
-                  {% if (data.jenis_termin_con == 1) %}
-                    <option value="0"></option>
-                    <option value="1" selected>Termin</option>
-                    <option value="2">Non Termin</option>
-                {% elseif (data.jenis_termin_con == 2) %}
-                    <option value="0"></option>
-                    <option value="1">Termin</option>
-                    <option value="2" selected>Non Termin</option>
-                {% else %}
-                    <option value="0"></option>
-                    <option value="1">Termin</option>
-                    <option value="2">Non Termin</option>
-                {% endif %}
-                  
-                </select>
+                <div class="form-group">
+                    <label>Mitra</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Mitra" name="mitra" value="{{data.mitra}}" required>
+                </div>
 
-               <!-- <div class="form-group">
+                <div class="form-group">
+                    <label style="margin-top: 0px;">Nilai NRC</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nilai NRC" name="nilai_nrc" value="{{data.nilai_nrc}}" >
+                </div>
+
+                <div class="form-group">
+                    <label>Nilai MRC</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Nilai MRC" name="nilai_mrc" value="{{data.nilai_mrc}}" >
+                </div>
+
+                <div class="form-group">
+                    <label>Status NCX</label>
+                    <input  type="text" class="form-control" placeholder="Masukkan Status NCX" name="status_ncx" value="{{data.status_ncx}}" >
+                </div>
+
+                <!-- <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
                     <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div> -->
 
-        </div>
-     
+                <div class="form-group">
+                    <label>No Quote</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Nomor Quote" name="no_quote" value="{{data.no_quote}}" >
+                </div>
 
+                <div class="form-group">
+                    <label>Tipe Order</label>
+                    <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                        {% if (data.tipe_order == 1) %}
+                            <option value="0"></option>
+                            <option value="1" selected>Connectivity</option>
+                            <option value="2">CPE</option>
+                        {% elseif (data.tipe_order == 2) %}
+                            <option value="0"></option>
+                            <option value="1">Connectivity</option>
+                            <option value="2" selected>CPE</option>
+                        {% else %}
+                            <option value="0"></option>
+                            <option value="1">Connectivity</option>
+                            <option value="2">CPE</option>
+                        {% endif %}
+                        
+                    </select>
+                </div>
+        </div>
+
+      <!--  <div class="tab-pane" id="tab2">
+                <div>
+                    <label>Tipe Order</label>
+                </div>
+
+                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                  <option value="0"></option>
+                  <option value="1">Connectivity</option>
+                  <option value="2">CPE</option>
+                </select>
+
+                <div class="form-group">
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div>
+
+        </div> -->
+     
 
         <!-- <ul class="pager wizard">
             <li class="previous first" style="display:none;"><a href="#">First</a></li>
@@ -275,12 +254,11 @@
             <li class="next last" style="display:none;"><a href="#">Last</a></li>
             <li class="next"><a href="#">Next</a></li>
         </ul> -->
-        <div style="margin-top: 30px;">
-            <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
-        </div>
+    <div style="margin-top: 30px;">
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
+    </div>
     </div>
 </form>
-
 </div>
     </div>
 

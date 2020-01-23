@@ -85,16 +85,16 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('indexbaru') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="{{ url('/dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('logout') }}">Keluar</a>
+                            <a href="{{ url('/user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -104,6 +104,7 @@
 
 
         </nav>
+
 
 
 
@@ -127,6 +128,13 @@
                 </div>
             </nav>
 
+             <div>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: {{data.no_order}}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote: 
+                {{dataumum.no_quote}}</h4>
+            </div>
+
+
             <body>
     <div class="container">
         <div id="rootwizard">
@@ -144,14 +152,14 @@
 <!--     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div> -->
-<form action="{{ url("storecpenon") }}" method="post">
+<form action="{{ url("/cpe/storeeditcpenon") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
                 <div>
                     <label style="margin-top: 0px;">Billing Complete</label>
-                    <input type="hidden" name="id_ncx" value="{{data}}">
-                    <input type="date" class="form-control" name="billing_com" >
+                    <input type="hidden" name="id_ncx" value="{{data.id_ncx}}">
+                    <input type="date" class="form-control" name="billing_com" value="{{data.billing_com}}">
                 </div>
         </div>
      

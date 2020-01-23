@@ -60,7 +60,7 @@
             <ul style="margin-left: 10px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('user/register') }}">Daftar</a>
+                    <a href="{{ url('/user/register') }}">Daftar</a>
                 </li>
                 <!-- <li>
                     <a href="{{ url('detailnomor') }}">Upload Surat</a>
@@ -109,7 +109,7 @@
             
             </div>
         <div>
-            <form action="{{ url("login") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form action="{{ url("/user/login") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
                 <div class="form-group">
                     <label>Username</label>
 

@@ -88,16 +88,16 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('indexbaru') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="{{ url('/dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('logout') }}">Keluar</a>
+                            <a href="{{ url('/user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -161,14 +161,14 @@
                     title: "Lihat Detail", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",
                         label: "Lihat Detail",
-                        urlPrefix: "{{ url('detail/') }}",
+                        urlPrefix: "{{ url('/dokumen/detail/') }}",
                         // target: "_blank",
                     }
                 },
                 
             ],
         });
-        table.setData("{{ url('/listdatauser') }}");
+        table.setData("{{ url('/dokumen/listdatauser') }}");
     </script>
         </div>
 

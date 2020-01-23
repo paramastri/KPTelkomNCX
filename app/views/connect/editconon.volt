@@ -85,16 +85,16 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('indexbaru') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('data') }}">Data</a>
+                    <a href="{{ url('/dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('logout') }}">Keluar</a>
+                            <a href="{{ url('/user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -127,6 +127,12 @@
                 </div>
             </nav>
 
+            <div>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order: {{data.no_order_con}}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote:
+                {{dataumum.no_quote}}</h4>
+            </div>
+
             <body>
     <div class="container">
         <div id="rootwizard">
@@ -134,80 +140,26 @@
       <div class="navbar-inner">
         <div class="container">
     <ul>
-        <li><a href="#tab1" data-toggle="tab">No Agreement</a></li>
-        <li><a href="#tab2" data-toggle="tab">No Order</a></li>
-        <li><a href="#tab3" data-toggle="tab">BASO</a></li>
-        <li><a href="#tab4" data-toggle="tab">Termin/Non</a></li>
+        <li><a href="#tab1" data-toggle="tab">Billing Complete</a></li>
+
 
     </ul>
      </div>
       </div>
     </div>
-    <div id="bar" class="progress">
+<!--     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
-    </div>
-<form action="{{ url("storeco") }}" method="post">
+    </div> -->
+<form action="{{ url("/connect/storeeditconon") }}" method="post">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">
-      
-                <div class="form-group">
-                    <label style="margin-top: 15px;">No Agreement</label>
-                    <input type="hidden" name="id_ncx" value="{{data}}">
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_agreement_con">
-                </div>
-        </div>
-
-
-        <div class="tab-pane" id="tab2">
-                <div class="form-group">
-                    <label style="margin-top: 15px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con">
-                </div>
-        </div>
-
-
-
-        <div class="tab-pane" id="tab3">
                 <div>
-                    <label style="margin-top: 15px;">BASO</label>
-                </div>
-
-                <select name="baso_con" class="form-control form-control-sm" style="width: 100%;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-                <label style="margin-top: 20px;">Unggah Dokumen</label>
-                <input style="font-size: 10pt; margin-bottom: 30px;" type="file" name="file">  
-
-                <input type="hidden" name="9" value="9">
-
-                <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala9" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <label style="margin-top: 0px;">Billing Complete</label>
+                    <input type="hidden" name="id_ncx" value="{{data.id_ncx}}">
+                    <input type="date" class="form-control" name="billing_com_con" value="{{data.billing_com_con}}">
                 </div>
         </div>
-
-        <div class="tab-pane" id="tab4">
-                <div>
-                    <label>Termin/Non</label>
-                </div>
-
-                <select name="jenis_termin_con" class="form-control form-control-sm" style="width: 100%;" >
-                  <option value="0"></option>
-                  <option value="1">Termin</option>
-                  <option value="2">Non Termin</option>
-                </select>
-
-               <!-- <div class="form-group">
-                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
-                </div> -->
-
-        </div>
-     
 
 
         <!-- <ul class="pager wizard">
@@ -217,11 +169,10 @@
             <li class="next"><a href="#">Next</a></li>
         </ul> -->
         <div style="margin-top: 30px;">
-            <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
-        </div>
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
+    </div>
     </div>
 </form>
-
 </div>
     </div>
 

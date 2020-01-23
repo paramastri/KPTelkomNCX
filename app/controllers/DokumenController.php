@@ -59,6 +59,11 @@ class DokumenController extends Controller
         return $this->response->setContent($content);
     }
 
+    public function datauserAction()
+    {
+
+    }
+
     public function listdatauserAction()
     {
         $listdatas = ncx::find();

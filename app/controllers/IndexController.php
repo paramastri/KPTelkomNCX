@@ -136,10 +136,7 @@ class IndexController extends Controller
         
     }
 
-    public function datauserAction()
-    {
-
-    }
+    
 
     public function listAction()
     {

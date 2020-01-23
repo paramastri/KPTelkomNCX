@@ -127,7 +127,7 @@
             </nav>
 
             <div>
-            <h3>Sequence {{nomor}}</h3>
+            <h3 style="margin-left: 90px;">Sequence {{nomor}}</h3>
             <form  action="{{ url("storesequence") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
 
                 <div class="form-group">

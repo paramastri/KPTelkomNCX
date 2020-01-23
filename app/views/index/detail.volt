@@ -167,8 +167,11 @@
                     </tr>
                 </tbody>
             </table>
+            
 
 </div>
+
+
 
   <div class="col-8">
 
@@ -188,7 +191,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                          <th>BASO</th>
+                          <th>BASO <a href="" class="btn btn-primary">Download File BASO</a> </th>
                             <td>
                             {% if (dataco.baso_con == 1) %}
                             OK
@@ -396,7 +399,7 @@
                         </tr>
 
                         <tr>
-                          <th>BASO</th>
+                          <th>BASO <a href="" class="btn btn-primary">Download File BASO</a> </th>
                             <td>
                                 {% if (datacpe.baso == 1) %}
                                 OK
@@ -459,7 +462,7 @@
             {% if (data.tipe_order == 1) %}
                 {% if (dataco.jenis_termin_con == 1) %}
                 {% for sequence in sequences %}
-                    Sequence ke - {{sequence.nomor}}
+                    <h6 style="color: #a81616;">Sequence ke - {{sequence.nomor}}</h6>
                     <table class="table table-hover table-bordered" style="">
                     <tbody>
                         <tr>
@@ -514,7 +517,7 @@
             {% elseif (data.tipe_order == 2) %}
                 {% if (datacpe.jenis_termin == 1) %}
                 {% for sequence in sequences %}
-                    Sequence ke - {{sequence.nomor}}
+                    <h6 style="color: #a81616;">Sequence ke - {{sequence.nomor}}</h6>
                     <table class="table table-hover table-bordered" style="">
                     <tbody>
                         <tr>

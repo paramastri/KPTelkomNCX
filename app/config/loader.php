@@ -7,7 +7,7 @@ $loader->registerDirs(
         APP_PATH . '/controllers/',
         APP_PATH . '/models/',
         APP_PATH . '/config/route-group/',
-        APP_PATH . '/validations/'
+        APP_PATH . '/validation/'
     ]
 );
 

@@ -785,5 +785,42 @@ class DokumenController extends Controller
         }
 
     }
+
+    public function downloadAction($id)
+    {
+        $dokumen_co = connectivity::findFirst("id_ncx='$id'");
+        if($dokumen_co)
+        {
+            $upload_dir = __DIR__ . '/../../public/uploads/';
+            $path = $upload_dir.$dokumen_co->file;
+            $filetype = filetype($path);
+            $filesize = filesize($path);
+            // header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+            // header('Content-Description: File Download');
+            header('Content-type: '.$filetype);
+            header('Content-length: ' . $filesize);
+            header('Content-Transfer-Encoding: binary');
+            header('Accept-Ranges: bytes');
+            header('Content-Disposition: attachment; filename="'.$dokumen_co->file.'"');
+            readfile($path);
+
+        }
+        else{
+            $dokumen_cpe = cpe::findFirst("id_ncx='$id'");
+            $upload_dir = __DIR__ . '/../../public/uploads/';
+            $path = $upload_dir.$dokumen_cpe->file;
+            $filetype = filetype($path);
+            $filesize = filesize($path);
+            // header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+            // header('Content-Description: File Download');
+            header('Content-type: '.$filetype);
+            header('Content-length: ' . $filesize);
+            header('Content-Transfer-Encoding: binary');
+            header('Accept-Ranges: bytes');
+            header('Content-Disposition: attachment; filename="'.$dokumen_cpe->file.'"');
+            readfile($path);
+        }
+        
+     }
     
 }

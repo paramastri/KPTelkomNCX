@@ -191,7 +191,11 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                          <th>BASO <a href="" class="btn btn-primary">Download File BASO</a> </th>
+                          <th>BASO
+                          {% if (dataco.file) %}
+                          <a href="../../dokumen/download/{{data.id}}" class="btn btn-primary">Download File BASO</a>
+                          {% endif %}
+                          </th>
                             <td>
                             {% if (dataco.baso_con == 1) %}
                             OK
@@ -399,7 +403,10 @@
                         </tr>
 
                         <tr>
-                          <th>BASO <a href="" class="btn btn-primary">Download File BASO</a> </th>
+                          <th>BASO
+                          {% if (datacpe.file) %}
+                          <a href="../../dokumen/download/{{data.id}}" class="btn btn-primary">Download File BASO</a>
+                          {% endif %} </th>
                             <td>
                                 {% if (datacpe.baso == 1) %}
                                 OK

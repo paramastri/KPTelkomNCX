@@ -115,6 +115,13 @@ class DokumenRoutes extends RouterGroup{
             ]
         );
         
+        $this->addGet(
+            '/download/{id}',
+            [
+                'controller' => 'dokumen',
+                'action' => 'download'
+            ]
+        );
 
     }
     

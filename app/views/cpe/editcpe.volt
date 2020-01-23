@@ -134,7 +134,7 @@
                 <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote:
                 {{dataumum.no_quote}}</h4>
             </div>
-
+<p><?php echo $this->flashSession->output() ?></p>
 
             <body>
 
@@ -228,7 +228,7 @@
     <div id="bar" class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-<form action="{{ url("cpe/storeeditcpe") }}" method="post">
+<form action="{{ url("cpe/storeeditcpe") }}" method="post" enctype="multipart/form-data">
     <div style="width: 30%; margin: 0 auto;" class="tab-content">
 
         <div class="tab-pane" id="tab1">

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Status Dokumen NCX</title>
+    <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
 
@@ -53,7 +53,7 @@
             <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
               
-                <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Dokumen NCX</h6>
+                <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Status NCX</h6>
             </div>
 
   

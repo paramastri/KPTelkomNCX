@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Progres NCX</title>
+    <title>Progres NCX - 404!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" href="favicon.png" type="png" sizes="16x16">
 
@@ -12,7 +12,7 @@
 
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="../style5.css">
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -47,53 +47,6 @@
 <body>
 
 
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-         <nav id="sidebar">
-            <img style="height: 100px; margin-top: 30px;" src="logo.png" class="rounded mx-auto d-block">
-            <div class="sidebar-header">
-            <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
-            </div>
-
-
-            <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
-
-                <li>
-                    <a href="#">Form</a>
-                </li>
-                <li>
-                    <a href="#">Data</a>
-                </li>
-            </ul>
-
-
-
-
-        </nav>
-
-
-
-
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="">
-
-                    <button style="margin-right: 30px;" type="button" id="sidebarCollapse" class="navbar-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Error</h2>
-                    <!--  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button> -->
-
-
-
-                </div>
-            </nav>
-
             <div>
                 <h1 style="margin-top: 15%;text-align: center; font-weight: bold; font-family:'GothamRounded-Medium'; font-size: 100pt;">404</h1>
                 <h4 style="margin: 0 auto; text-align: center; font-weight: bold; font-family:'GothamRounded-Medium';">Maaf halaman yang anda cari tidak ditemukan.</h4>
@@ -104,7 +57,7 @@
             <div class="container">
               <div class="row">
                 <div class="col text-center">
-                  <a style="margin-top: 30px;" href="{{ url('') }}" class="btn btn-danger">Kembali</a>
+                  <a style="margin-top: 30px;" href="{{ url('user/login') }}" class="btn btn-danger">Kembali</a>
                 </div>
               </div>
             </div>

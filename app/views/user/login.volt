@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Status Dokumen NCX</title>
+    <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
 
@@ -59,9 +59,9 @@
   
             <ul style="margin-left: 10px;" class="list-unstyled">
 
-                <li>
+                <!-- <li>
                     <a href="{{ url('user/register') }}">Daftar</a>
-                </li>
+                </li> -->
                 <!-- <li>
                     <a href="{{ url('detailnomor') }}">Upload Surat</a>
                 </li>

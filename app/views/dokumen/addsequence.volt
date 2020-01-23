@@ -4,7 +4,7 @@
 <head>
     <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
+    <link rel="icon" href="../../favicon.png" type="png" sizes="16x16">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../style5.css">
+    <link rel="stylesheet" href="../../style5.css">
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -75,7 +75,7 @@
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-            <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
+            <img style="height: 100px; margin-top: 30px;" src="../../logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
             <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
             </div>

@@ -5,7 +5,7 @@
     <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
+    <link rel="icon" href="../../favicon.png" type="png" sizes="16x16">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../style5.css">
+    <link rel="stylesheet" href="../../style5.css">
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -76,7 +76,7 @@
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-            <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
+            <img style="height: 100px; margin-top: 30px;" src="../../logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
             <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%; font-size: 12pt;">Website Progres NCX</h6>
             </div>
@@ -193,7 +193,7 @@
                     <tr>
                         <th scope="row">{{sequence.nomor}}</th>
                         <td>{{sequence.nilai_termin}}</td>
-                        <td><a href="../editsequence/{{sequence.id}}">edit</a></td>
+                        <td><a href="../../dokumen/editsequence/{{sequence.id}}">edit</a></td>
                     </tr>
                   {% endfor %}
               </tbody>
@@ -257,7 +257,7 @@
         </ul> -->
         <div style="margin-top: 30px;">
             <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
-            <a href="../addsequence/{{data2.id_ncx}}" class="btn btn-primary">Tambah Sequence</a>
+            <a href="../../dokumen/addsequence/{{data2.id_ncx}}" class="btn btn-primary">Tambah Sequence</a>
         </div>
     </div>
 </form>
@@ -268,7 +268,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="../jquery.bootstrap.wizard.js"></script>
+    <script src="../../jquery.bootstrap.wizard.js"></script>
     <script>
         $(document).ready(function() {
     $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {

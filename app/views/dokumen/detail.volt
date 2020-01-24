@@ -511,8 +511,7 @@
                               {% for kendala12 in kendala12s %}
                                 {% if (kendala12.id_sequence == sequence.id) %}
                                   <td>{{kendala12.kendala}}</td>
-                                {% else %}
-                                  <td>-</td>
+                                {% break %}
                                 {% endif %}
                               {% endfor %}    
                         </tr>
@@ -528,6 +527,7 @@
                             {% for kendala13 in kendala13s %}
                               {% if (kendala13.id_sequence == sequence.id) %}
                                 <td>{{kendala13.kendala}}</td>
+                                {% break %}
                               {% else %}
                                 <td>-</td>
                               {% endif %}
@@ -568,6 +568,7 @@
                               {% for kendala12 in kendala12s %}
                                 {% if (kendala12.id_sequence == sequence.id) %}
                                   <td>{{kendala12.kendala}}</td>
+                                  {% break %}
                                 {% endif %}
                               {% endfor %}    
                         </tr>
@@ -583,6 +584,7 @@
                             {% for kendala13 in kendala13s %}
                               {% if (kendala13.id_sequence == sequence.id) %}
                                 <td>{{kendala13.kendala}}</td>
+                                {% break %}
                               {% endif %}
                             {% endfor %} 
                         </tr>

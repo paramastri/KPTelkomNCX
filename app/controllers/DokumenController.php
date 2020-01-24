@@ -890,12 +890,14 @@ class DokumenController extends Controller
                         $temp = explode(".", $_FILES["file"]["name"]);
                         $file->moveTo($upload_dir . $file->getName());
                         $lama = $upload_dir.$file->getName();
-                        $baru = $upload_dir.$temp[0].'-'.'['.$record_ncx->id.']'.'.'.end($temp);
+                        $without_extension = basename($_FILES["file"]["name"], '.'.end($temp));
+                        // echo $without_extension; die();
+                        $baru = $upload_dir.$without_extension.'-'.'['.$record_ncx->id.']'.'.'.end($temp);
                         // echo ($baru); die();
                         rename($lama, $baru); 
                     }
 
-                    $record_co->file = $temp[0].'-'.'['.$record_ncx->id.']'.'.'.end($temp);
+                    $record_co->file = $without_extension.'-'.'['.$record_ncx->id.']'.'.'.end($temp);
                     $record_co->save();
                 }
                 return $this->response->redirect('connect/editco' . '/' . $id_ncx);

@@ -36,6 +36,7 @@ class DokumenController extends Controller
             $cekkendala = kendala::findFirst([
                 "id_ncx='$listdata->id'",
                 'order' => 'id_level DESC',
+                'order' => 'id DESC',
                 'limit' => 1,
             ]);
 

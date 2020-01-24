@@ -22,25 +22,110 @@ class DokumenController extends Controller
         $data = array();
         foreach ($listdatas as $key => $listdata)
         {
+            $complete = 0;
+            $counter = 0;
             $listdata2 = connectivity::findFirst("id_ncx='$listdata->id'");
             if($listdata2)
             {
+                
                 $noorder = $listdata2->no_order_con;
+                
+                if($listdata2->jenis_termin_con == "1")
+                {
+                    
+                    $sequences = sequence::find("id_ncx='$listdata->id'");
+                    $jumlah = count($sequences);
+                    foreach($sequences as $sequence)
+                    {
+                        if($sequence->billing_com == "0000-00-00" OR $sequence->billing_com == NULL)
+                        {
+                            
+                        }
+                        else{
+                            $counter++;
+                        }
+                    }
+                    if($counter == $jumlah)
+                    {
+                        $complete = 1;
+                    }
+                    else{
+                        $complete = 0;
+                    }
+
+                }
+                else if ($listdata2->jenis_termin_con == "2"){
+                    
+                    $cek_billcom = $listdata2->billing_com_con;
+                    if($cek_billcom == "0000-00-00" OR $cek_billcom == NULL)
+                    {
+                        $complete = 0;
+                    }
+                    else{
+                        $complete = 1;
+                    }
+                }
+                
             }
             else
             {
                 $listdata3 = cpe::findFirst("id_ncx='$listdata->id'");
                 $noorder = $listdata3->no_order;
+                if($listdata3->jenis_termin == "1")
+                {
+                    $sequences = sequence::find("id_ncx='$listdata->id'");
+                    $jumlah = count($sequences);
+                    foreach($sequences as $sequence)
+                    {
+                        if($sequence->billing_com == "0000-00-00" OR $sequence->billing_com == NULL)
+                        {
+                            
+                        }
+                        else{
+                            $counter++;
+                        }
+                    }
+                    if($counter == $jumlah)
+                    {
+                        $complete = 1;
+                    }
+                    else{
+                        $complete = 0;
+                    }
+
+                }
+                else if ($listdata3->jenis_termin == "2"){
+                    $cek_billcom = $listdata3->billing_com;
+                    if($cek_billcom == "0000-00-00" OR $cek_billcom == NULL)
+                    {
+                        $complete = 0;
+                    }
+                    else{
+                        $complete = 1;
+                    }
+                }
             }
 
-            $cekkendala = kendala::findFirst([
-                "id_ncx='$listdata->id'",
-                'order' => 'id_level DESC',
-                'order' => 'id DESC',
-                'limit' => 1,
-            ]);
+            if($complete == 0)
+            {
+                $cekkendala = kendala::findFirst([
+                    "id_ncx='$listdata->id'",
+                    'order' => 'id_level DESC',
+                    'order' => 'id DESC',
+                    'limit' => 1,
+                ]);
+    
+                $ceklevel = level::findFirst("id='$cekkendala->id_level'");
 
-            $ceklevel = level::findFirst("id='$cekkendala->id_level'");
+                $kendala = $cekkendala->kendala;
+                $progress = $ceklevel->nama_level;
+            }
+            else if ($complete == 1){
+                $kendala = "complete";
+                $progress = "complete";
+            }
+
+            
 
             $data[] = array(
                 'id_ncx' => $listdata->id_ncx,
@@ -54,8 +139,8 @@ class DokumenController extends Controller
                 'tipe_order' => $listdata->tipe_order,
                 'no_order' => $noorder,
                 'link' => $listdata->id,
-                'progress' => $ceklevel->nama_level,
-                'kendala' => $cekkendala->kendala,
+                'progress' => $progress,
+                'kendala' => $kendala,
             );
         
 

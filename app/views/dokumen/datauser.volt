@@ -79,7 +79,7 @@
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-            <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
+            <a href="http://haloges.com/"><img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block"></a>
             <div class="sidebar-header">
             <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
             </div>
@@ -149,9 +149,9 @@
                 {title: "Mitra", field: "mitra", headerFilter:"input"},
                 {title: "NRC", field: "nilai_nrc", headerFilter:"input"},
                 {title: "MRC", field: "nilai_mrc", headerFilter:"input"},
-                {title: "Status NCX", field: "status_ncx", headerFilter:"input"},
-                {title: "No Quote", field: "no_quote", headerFilter:"input"},
                 {title: "No Order", field: "no_order", headerFilter:"input"},
+                {title: "No Quote", field: "no_quote", headerFilter:"input"},
+                {title: "Status NCX", field: "status_ncx", headerFilter:"input"},
                 {title: "progress", field: "progress", headerFilter:"input"},
                 {title: "kendala", field: "kendala", headerFilter:"input"},
                 {

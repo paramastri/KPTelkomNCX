@@ -21,6 +21,10 @@ class IndexController extends Controller
         {
             $this->response->redirect('user/login');
         }
+        if ($_isUser)
+        {
+            $this->response->redirect('dokumen/datauser');
+        }
 
     }
 

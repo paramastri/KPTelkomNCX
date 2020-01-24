@@ -149,9 +149,9 @@
                 {title: "Mitra", field: "mitra", headerFilter:"input"},
                 {title: "NRC", field: "nilai_nrc", headerFilter:"input"},
                 {title: "MRC", field: "nilai_mrc", headerFilter:"input"},
-                {title: "Status NCX", field: "status_ncx", headerFilter:"input"},
-                {title: "No Quote", field: "no_quote", headerFilter:"input"},
                 {title: "No Order", field: "no_order", headerFilter:"input"},
+                {title: "No Quote", field: "no_quote", headerFilter:"input"},
+                {title: "Status NCX", field: "status_ncx", headerFilter:"input"},
                 {title: "progress", field: "progress", headerFilter:"input"},
                 {title: "kendala", field: "kendala", headerFilter:"input"},
                 {

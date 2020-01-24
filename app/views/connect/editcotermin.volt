@@ -238,6 +238,7 @@
                 <tr>
                   <th scope="col">Nomor</th>
                   <th scope="col">Nilai Termin</th>
+                  <th scope="col">Tanggal BC</th>
                   <th scope="col">Edit</th>
                 </tr>
               </thead>
@@ -246,6 +247,12 @@
                     <tr>
                         <th scope="row">{{sequence.nomor}}</th>
                         <td>{{sequence.nilai_termin}}</td>
+                        <td>
+                        {% if (sequence.billing_com == "0000-00-00" OR sequence.billing_com == NULL) %}
+                        {% else %}
+                        {{sequence.billing_com}}
+                        {% endif %}
+                        </td>
                         <td><a href="../../dokumen/editsequence/{{sequence.id}}">edit</a></td>
                     </tr>
                   {% endfor %}

@@ -123,6 +123,23 @@ class DokumenRoutes extends RouterGroup{
             ]
         );
 
+        $this->addGet(
+            '/upload/{id}',
+            [
+                'controller' => 'dokumen',
+                'action' => 'upload'
+            ]
+        );
+
+        $this->addPost(
+            '/storeupload',
+            [
+                'controller' => 'dokumen',
+                'action' => 'storeupload'
+            ]
+        );
+        
+
     }
     
 }

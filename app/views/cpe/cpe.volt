@@ -336,8 +336,12 @@
                   <option value="2">Belum OK</option>
                 </select>
 
-                <label style="margin-top: 20px;">Unggah Dokumen</label>
-                <input style="font-size: 10pt; margin-bottom: 30px;" type="file" name="file">  
+                <!-- <label style="margin-top: 20px;">Unggah Dokumen</label>
+                <input style="font-size: 10pt; margin-bottom: 30px;" type="file" name="file">   -->
+
+                <div style="margin-top: 30px;">
+                    <a value="" href="../../dokumen/upload/{{data}}" style="margin-bottom: 30px; color: white;"  class="btn btn-primary">Unggah</a>
+                </div>
 
                 <input type="hidden" name="9" value="9">
 

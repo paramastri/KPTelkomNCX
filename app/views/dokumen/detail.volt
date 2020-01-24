@@ -85,7 +85,7 @@
             <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
             </div>
 
-
+            {% if (session.get('admin')['username']) %}
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
@@ -103,6 +103,25 @@
                     </ul>
                 </li>
             </ul>
+            {% else %}
+            <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
+
+                <li>
+                    <a href="{{ url('') }}">Form</a>
+                </li>
+                <li>
+                    <a href="{{ url('dokumen/data') }}">Data</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('user')['username'] }}</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="{{ url('user/logout') }}">Keluar</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            {% endif %}
 
 
 
@@ -467,6 +486,7 @@
             </table>
 
             {% if (data.tipe_order == 1) %}
+                {% if (dataco) %}
                 {% if (dataco.jenis_termin_con == 1) %}
                 {% for sequence in sequences %}
                     <h6 style="color: #a81616;">Sequence ke - {{sequence.nomor}}</h6>
@@ -521,7 +541,9 @@
                 {% endfor %}
                 
                 {% endif %}
+                {% endif %}
             {% elseif (data.tipe_order == 2) %}
+                {% if (datacpe) %}
                 {% if (datacpe.jenis_termin == 1) %}
                 {% for sequence in sequences %}
                     <h6 style="color: #a81616;">Sequence ke - {{sequence.nomor}}</h6>
@@ -570,6 +592,7 @@
                     </tbody>
                     </table>
                 {% endfor %}
+                {% endif %}
                 {% endif %}
             {% endif %}
   </div>

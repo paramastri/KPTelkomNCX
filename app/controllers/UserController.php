@@ -82,7 +82,7 @@ class UserController extends Controller
                             ]
                         );
 
-                        (new Response())->redirect('user/datauser')->send();
+                        (new Response())->redirect('dokumen/datauser')->send();
                     }
                     else{
                         $this->flashSession->error("Gagal masuk sebagai user. Silakan cek kembali username dan password anda.");

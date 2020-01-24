@@ -170,35 +170,7 @@ class CpeController extends Controller
             $kendala->save();
         }
 
-        if (true == $this->request->hasFiles() && $this->request->isPost()) {
-            // echo("ada file"); die();
-            $val2 = new FileValidation();
-            $messages2 = $val2->validate($_FILES);
-            if (count($messages2)) {
-                $this->flashSession->error("GAGAL UPLOAD. Pastikan format file .pdf dan ukuran tidak melebihi 5 MB");
-                return $this->response->redirect('cpe/editcpe' . '/' . $id_ncx);
-            }
-            else{
-                $record_cpe = cpe::findFirst("id_ncx='$id_ncx'");
-                $record_ncx = ncx::findFirst("id='$id_ncx'");
-                $upload_dir = __DIR__ . '/../../public/uploads/';
-      
-                if (!is_dir($upload_dir)) {
-                mkdir($upload_dir, 0755);
-                }
-                foreach ($this->request->getUploadedFiles() as $file) {
-                    $temp = explode(".", $_FILES["file"]["name"]);
-                    $file->moveTo($upload_dir . $file->getName());
-                    $lama = $upload_dir.$file->getName();
-                    $baru = $upload_dir.$record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
-                    rename($lama, $baru); 
-                }
-
-                $record_cpe->file = $record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
-                $record_cpe->save();
-            }
-            
-        }
+        
 
         if($jenis_termin == 1)
         {
@@ -645,35 +617,7 @@ class CpeController extends Controller
 
         }
 
-        if (true == $this->request->hasFiles() && $this->request->isPost()) {
-            // echo("ada file"); die();
-            $val2 = new FileValidation();
-            $messages2 = $val2->validate($_FILES);
-            if (count($messages2)) {
-                $this->flashSession->error("GAGAL UPLOAD. Pastikan format file .pdf dan ukuran tidak melebihi 5 MB");
-                return $this->response->redirect('cpe/editcpe' . '/' . $id_ncx);
-            }
-            else{
-                $record_cpe = cpe::findFirst("id_ncx='$id_ncx'");
-                $record_ncx = ncx::findFirst("id='$id_ncx'");
-                $upload_dir = __DIR__ . '/../../public/uploads/';
-      
-                if (!is_dir($upload_dir)) {
-                mkdir($upload_dir, 0755);
-                }
-                foreach ($this->request->getUploadedFiles() as $file) {
-                    $temp = explode(".", $_FILES["file"]["name"]);
-                    $file->moveTo($upload_dir . $file->getName());
-                    $lama = $upload_dir.$file->getName();
-                    $baru = $upload_dir.$record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
-                    rename($lama, $baru); 
-                }
-
-                $record_cpe->file = $record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
-                $record_cpe->save();
-            }
-            
-        }
+        
 
         if($jenis_termin == 1)
         {

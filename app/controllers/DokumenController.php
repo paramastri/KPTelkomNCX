@@ -363,7 +363,8 @@ class DokumenController extends Controller
     public function detailAction($id)
     {
         $_isAdmin = $this->session->get('admin')['tipe'];
-        if (!$_isAdmin) 
+        $_isUser = $this->session->get('user')['tipe'];
+        if (!$_isAdmin && !$_isUser) 
         {
             $this->response->redirect('user/login');
         }
@@ -372,15 +373,10 @@ class DokumenController extends Controller
         $listdata2 = connectivity::findFirst("id_ncx='$id'");
         $listdata3 = cpe::findFirst("id_ncx='$id'");
         $this->view->data = $listdata;
-        if($listdata2)
-        {
-            $this->view->dataco = $listdata2;        
-        }
-        elseif($listdata3)
-        {
-            $this->view->datacpe = $listdata3;
 
-        }
+        $this->view->dataco = $listdata2; 
+        $this->view->datacpe = $listdata3;
+
 
         $kendala1 = kendala::findFirst([
             'id_ncx = :id_ncx: AND id_level = :id_level:',
@@ -854,5 +850,91 @@ class DokumenController extends Controller
         }
         
      }
+
+     public function uploadAction($id)
+    {
+        
+        $data = ncx::findFirst("id='$id'");
+        $this->view->data = $data;
+        $dataco = connectivity::findFirst("id_ncx='$id'");
+        $this->view->dataco = $dataco;
+        $datacpe = cpe::findFirst("id_ncx='$id'");
+        $this->view->datacpe = $datacpe;
+     }
+
+    public function storeuploadAction()
+    {
+        
+        if (true == $this->request->hasFiles() && $this->request->isPost()) {
+
+            $id_ncx = $this->request->getPost('id_ncx');
+            $record_ncx = ncx::findFirst("id='$id_ncx'");
+            if($record_ncx->tipe_order == "1")
+            {
+                $val2 = new FileValidation();
+                $messages2 = $val2->validate($_FILES);
+                if (count($messages2)) {
+                    $this->flashSession->error("GAGAL UPLOAD. Pastikan format file .pdf dan ukuran tidak melebihi 5 MB");
+                    
+                }
+                else{
+                    $record_co = connectivity::findFirst("id_ncx='$id_ncx'");
+                    // $record_ncx = ncx::findFirst("id='$id_ncx'");
+                    $upload_dir = __DIR__ . '/../../public/uploads/';
+          
+                    if (!is_dir($upload_dir)) {
+                    mkdir($upload_dir, 0755);
+                    }
+                    foreach ($this->request->getUploadedFiles() as $file) {
+                        $temp = explode(".", $_FILES["file"]["name"]);
+                        $file->moveTo($upload_dir . $file->getName());
+                        $lama = $upload_dir.$file->getName();
+                        $baru = $upload_dir.$record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
+                        rename($lama, $baru); 
+                    }
+
+                    $record_co->file = $record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
+                    $record_co->save();
+                }
+                return $this->response->redirect('connect/editco' . '/' . $id_ncx);
+
+            }
+
+            else if ($record_ncx->tipe_order == "2")
+            {
+                $val2 = new FileValidation();
+                $messages2 = $val2->validate($_FILES);
+                if (count($messages2)) {
+                    $this->flashSession->error("GAGAL UPLOAD. Pastikan format file .pdf dan ukuran tidak melebihi 5 MB");
+                    
+                }
+                else{
+                    $record_cpe = cpe::findFirst("id_ncx='$id_ncx'");
+                    $record_ncx = ncx::findFirst("id='$id_ncx'");
+                    $upload_dir = __DIR__ . '/../../public/uploads/';
+          
+                    if (!is_dir($upload_dir)) {
+                    mkdir($upload_dir, 0755);
+                    }
+                    foreach ($this->request->getUploadedFiles() as $file) {
+                        $temp = explode(".", $_FILES["file"]["name"]);
+                        $file->moveTo($upload_dir . $file->getName());
+                        $lama = $upload_dir.$file->getName();
+                        $baru = $upload_dir.$record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
+                        rename($lama, $baru); 
+                    }
+
+                    $record_cpe->file = $record_ncx->nama_cc.'-'.$record_ncx->id.'.'.end($temp);
+                    $record_cpe->save();
+                }
+                return $this->response->redirect('cpe/editcpe' . '/' . $id_ncx);
+
+            }
+
+            // echo("ada file"); die();
+            
+            
+        }
+     }     
     
 }

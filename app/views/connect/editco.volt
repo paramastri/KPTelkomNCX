@@ -223,7 +223,8 @@
 
                 <div style="margin-top: 30px;">
                     {% if (data.file) %}
-                    <p>File sudah diunggah. Unggah lagi untuk memperbarui</p>
+                    <p>File sudah diunggah. <br>
+                    nama file : {{data.file}}</p>
                     {% endif %}
                     <a value="" href="../../dokumen/upload/{{data.id_ncx}}" style="margin-bottom: 30px; color: white;"  class="btn btn-primary">Unggah</a>
                     

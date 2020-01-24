@@ -213,6 +213,7 @@
                           <th>BASO
                           {% if (dataco.file) %}
                           <a href="../../dokumen/download/{{data.id}}" class="btn btn-primary">Download File BASO</a>
+                          <br>nama file : {{dataco.file}}</p>
                           {% endif %}
                           </th>
                             <td>
@@ -425,6 +426,7 @@
                           <th>BASO
                           {% if (datacpe.file) %}
                           <a href="../../dokumen/download/{{data.id}}" class="btn btn-primary">Download File BASO</a>
+                          <br>nama file : {{datacpe.file}}</p>
                           {% endif %} </th>
                             <td>
                                 {% if (datacpe.baso == 1) %}

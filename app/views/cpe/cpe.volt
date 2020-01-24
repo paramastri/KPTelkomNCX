@@ -340,6 +340,10 @@
                 <input style="font-size: 10pt; margin-bottom: 30px;" type="file" name="file">   -->
 
                 <div style="margin-top: 30px;">
+                    {% if (data.file) %}
+                    <p>File sudah diunggah. <br>
+                    nama file : {{data.file}}</p>
+                    {% endif %}
                     <a value="" href="../../dokumen/upload/{{data}}" style="margin-bottom: 30px; color: white;"  class="btn btn-primary">Unggah</a>
                 </div>
 

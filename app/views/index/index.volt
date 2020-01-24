@@ -4,6 +4,7 @@
 <head>
     <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="icon" href="favicon.png" type="png" sizes="16x16">
 
     <meta charset="utf-8">
@@ -48,21 +49,21 @@
         var dvPassport = document.getElementById("dvPassport");
         dvPassport.style.display = ddlPassport.value == "1" ? "block" : "none";
         dvPassport2.style.display = ddlPassport.value == "2" ? "block" : "none";
-    }
+        }
 
-    function ShowHideDivTer() {
-        var ddlPassport = document.getElementById("ddlPassportTer");
-        var dvPassport = document.getElementById("dvPassportTer");
-        dvPassportTer.style.display = ddlPassport.value == "1" ? "block" : "none";
-        dvPassportTer2.style.display = ddlPassport.value == "2" ? "block" : "none";
-    }
+        function ShowHideDivTer() {
+            var ddlPassport = document.getElementById("ddlPassportTer");
+            var dvPassport = document.getElementById("dvPassportTer");
+            dvPassportTer.style.display = ddlPassport.value == "1" ? "block" : "none";
+            dvPassportTer2.style.display = ddlPassport.value == "2" ? "block" : "none";
+        }
 
-    function ShowHideDivTerr() {
-        var ddlPassport = document.getElementById("ddlPassportTerr");
-        var dvPassport = document.getElementById("dvPassportTerr");
-        dvPassportTerr.style.display = ddlPassport.value == "1" ? "block" : "none";
-        dvPassportTerr2.style.display = ddlPassport.value == "2" ? "block" : "none";
-    }
+        function ShowHideDivTerr() {
+            var ddlPassport = document.getElementById("ddlPassportTerr");
+            var dvPassport = document.getElementById("dvPassportTerr");
+            dvPassportTerr.style.display = ddlPassport.value == "1" ? "block" : "none";
+            dvPassportTerr2.style.display = ddlPassport.value == "2" ? "block" : "none";
+        }
     </script>
 
 </head>
@@ -77,23 +78,23 @@
         <nav id="sidebar">
             <img style="height: 100px; margin-top: 30px;" src="logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
-            <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
+            <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%; font-size: 12pt;">Website Progres NCX</h6>
             </div>
 
-
+            
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('indexbaru') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('') }}">Data</a>
+                    <a href="{{ url('dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('logout') }}">Keluar</a>
+                            <a href="{{ url('user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -126,9 +127,30 @@
                 </div>
             </nav>
 
-            <div>
-            <form  action="storeform" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
+            <body >
+    <div class="container">
+        <div id="rootwizard">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div  class="container">
+    <ul>
+        <li><a href="#tab1" data-toggle="tab">Umum</a></li>
+        <!-- <li><a href="#tab2" data-toggle="tab">Tipe Order</a></li> -->
 
+
+    </ul>
+     </div>
+      </div>
+    </div>
+    <div id="bar" class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+    </div>
+<form action="{{ url("dokumen/store") }}" method="post">
+    <div style="width: 30%; margin: 0 auto;" class="tab-content">
+
+
+
+        <div class="tab-pane" id="tab1">
                 <div class="form-group">
                     <label>Nama CC</label>
                     <input type="text" class="form-control" placeholder="Masukkan Nama CC" name="nama_cc" required>
@@ -159,10 +181,10 @@
                     <input  type="text" class="form-control" placeholder="Masukkan Status NCX" name="status_ncx" >
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
-                    <input type="text" class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" name="kendala">
-                </div>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
+                </div> -->
 
                 <div class="form-group">
                     <label>No Quote</label>
@@ -170,302 +192,64 @@
                 </div>
 
                 <div class="form-group">
-                    <label>No Agreement</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nomor Agreement" name="no_agreement" >
+                    <label>Tipe Order</label>
+                    <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
+                        <option value="0"></option>
+                        <option value="1">Connectivity</option>
+                        <option value="2">CPE</option>
+                    </select>
                 </div>
+        </div>
 
-            
-
-
+      <!--  <div class="tab-pane" id="tab2">
                 <div>
                     <label>Tipe Order</label>
                 </div>
 
-
-                <select id = "ddlPassport" name="tipe_order" onchange = "ShowHideDiv()" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
+                <select name="tipe_order" class="form-control form-control-sm" style="width: 100%;" >
                   <option value="0"></option>
                   <option value="1">Connectivity</option>
                   <option value="2">CPE</option>
                 </select>
 
-
-                 <div id="div0" style="display: none;"></div>
-
-
-                <!-- Connectivity -->
-
-    <div id="dvPassport" style="display: none">
-                <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">Connectivity</h3> -->
-
-
                 <div class="form-group">
-                    <label style="margin-top: 15px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order_con" >
+                    <label style="margin-top: 0px;" for="exampleFormControlTextarea1">Kendala</label>
+                    <textarea class="form-control" name="kendala" placeholder="Masukkan Kendala..." id="exampleFormControlTextarea1" rows="3" ></textarea>
                 </div>
 
-                <div>
-                    <label style="margin-top: 10px;">BASO</label>
-                </div>
+        </div> -->
+     
 
-                <select name="baso_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-                
-                <div>
-                    <label style="margin-top: 25px;">Termin/Non Termin</label>
-                </div>
-
-                <select id = "ddlPassportTer" onchange = "ShowHideDivTer()" name="jenis_termin_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
-                  <option value="0"></option>
-                  <option value="1">Termin</option>
-                  <option value="2">Non Termin</option>
-                </select>
-
-    
-
-                <!--  Kalau Termin -->
-            <div id="dvPassportTer" style="display: none">    
-                <div class="form-group">
-                    <label style="margin-top: 20px;">Billing NOL</label>
-                    <input type="date" class="form-control" name="billing_nol_con" >
-                </div>
-
-                <div class="form-group">
-                    <label>Asset</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Asset" name="asset_con" >
-                </div>       
-
-                <div>
-                    <label style="margin-top: 5px;">Approval SM</label>
-                </div>
-
-                <select name="approval_sm_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">Approval UBC</label>
-                </div>
-
-                <select name="approval_ubc_con" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-                <div>
-                    <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="billing_com_con" >
-                </div>
-
-  
-            </div>
-
-
-               <!--  Kalau Non Termin -->
-            <div id="dvPassportTer2" style="display: none">   
-
-                <div>
-                    <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="billing_com_con" >
-                </div>
-
- 
-            </div>
-        </div>
-
-                <!-- -- -->
-
-
-                <!-- CPE -->
-  <div id="dvPassport2" style="display: none">
-
-                <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">CPE</h3> -->
-
-                <div>
-                    <label style="margin-top: 20px;">DOK P6</label>
-                </div>
-
-                <select name="dok_p6" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">DOK P8</label>
-                </div>
-
-                <select name="dok_p8" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">DOK KL/WO</label>
-                </div>
-
-                <select name="dok_kl_wo" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">DOK SM/CRM</label>
-                </div>
-
-                <select name="approval_sm_crm" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div class="form-group">
-                    <label style="margin-top: 20px;">No Order</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Order" name="no_order" >
-                </div>    
-
-
-                <div>
-                    <label style="margin-top: 20px;">WFM Mitra</label>
-                </div>
-
-                <select name="wfm_mitra" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">Sudah Masuk</option>
-                  <option value="2">Belum Masuk</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">Approval WFM oleh Mitra</label>
-                </div>
-
-                <select name="approval_wfm" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">NDE Closed WFM</label>
-                </div>
-
-                <select name="status_nde" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">Approval DES PJM</label>
-                </div>
-
-                <select name="approval_des" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-                <div>
-                    <label style="margin-top: 20px;">BASO</label>
-                </div>
-
-                <select name="baso" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-                <div>
-                    <label style="margin-top: 25px;">Termin/Non Termin</label>
-                </div>
-
-                <select name="jenis_termin" id = "ddlPassportTerr" onchange = "ShowHideDivTerr()" name="" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" required>
-                  <option value="0"></option>
-                  <option value="1">Termin</option>
-                  <option value="2">Non Termin</option>
-                </select>
-
+        <!-- <ul class="pager wizard">
+            <li class="previous first" style="display:none;"><a href="#">First</a></li>
+            <li class="previous"><a href="#">Previous</a></li>
+            <li class="next last" style="display:none;"><a href="#">Last</a></li>
+            <li class="next"><a href="#">Next</a></li>
+        </ul> -->
+    <div style="margin-top: 30px;">
+        <button value="" style="margin: 0 auto;" type="submit" class="btn btn-success">Simpan</button>
+    </div>
+    </div>
+</form>
 </div>
+    </div>
 
-                <!--  Kalau Termin -->
-<div id="dvPassportTerr" style="display: none">
-                <div class="form-group">
-                    <label style="margin-top: 20px;">Billing NOL</label>
-                    <input type="date" class="form-control" name="billing_nol" >
-                </div>
-
-                <div class="form-group">
-                    <label style="margin-top: 20px;">Asset</label>
-                    <input  type="text" class="form-control" placeholder="Masukkan Nomor Asset" name="asset" >
-                </div>       
-
-                <div>
-                    <label style="margin-top: 5px;">Approval SM</label>
-                </div>
-
-                <select name="approval_sm" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-
-                <div>
-                    <label style="margin-top: 20px;">Approval UBC</label>
-                </div>
-
-                <select name="approval_ubc" class="form-control form-control-sm" style="width: 100%; font-size: 15pt;" >
-                  <option value="0"></option>
-                  <option value="1">OK</option>
-                  <option value="2">Belum OK</option>
-                </select> 
-
-                <div>
-                    <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="billing_com" >
-                </div>
-
-        </div>
-
-                <!-- Kalau Non Termin -->
-<div id="dvPassportTerr2" style="display: none">
-                <div>
-                    <label style="margin-top: 20px;">Billing Complete</label>
-                    <input type="date" class="form-control" name="billing_com" >
-                </div>
-
-</div>
-
-
-                <!-- End -->
-
-
-
-                <!-- <h3 style="margin-top: 30px; margin-bottom: 30px; color: red;">No Agreement Berakhir</h3>
-
- -->
-                
-
-                <button value = "" style="margin-top: 40px; margin-bottom: 30px;" type="submit" class="btn btn-primary">Selesai</button>
-
-            
-        </form>
-            </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="jquery.bootstrap.wizard.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
+        var $total = navigation.find('li').length;
+        var $current = index+1;
+        var $percent = ($current/$total) * 100;
+        $('#rootwizard .progress-bar').css({width:$percent+'%'});
+    }});
+});
+    </script>
+  </body>
 
 
   

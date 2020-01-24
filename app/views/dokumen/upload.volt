@@ -4,7 +4,7 @@
 <head>
     <title>Progres NCX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="../favicon.png" type="png" sizes="16x16">
+    <link rel="icon" href="../../favicon.png" type="png" sizes="16x16">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../style5.css">
+    <link rel="stylesheet" href="../../style5.css">
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -75,7 +75,7 @@
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-            <img style="height: 100px; margin-top: 30px;" src="../logo.png" class="rounded mx-auto d-block">
+            <img style="height: 100px; margin-top: 30px;" src="../../logo.png" class="rounded mx-auto d-block">
             <div class="sidebar-header">
             <h6 style="text-align: center; color: black; background-color: white; border-radius: 30px; width: 90%;">Website Progres NCX</h6>
             </div>
@@ -84,16 +84,16 @@
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
                 <li>
-                    <a href="{{ url('indexbaru') }}">Form</a>
+                    <a href="{{ url('') }}">Form</a>
                 </li>
                 <li>
-                    <a href="{{ url('') }}">Data</a>
+                    <a href="{{ url('dokumen/data') }}">Data</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ session.get('admin')['username'] }}</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ url('logout') }}">Keluar</a>
+                            <a href="{{ url('user/logout') }}">Keluar</a>
                         </li>
                     </ul>
                 </li>
@@ -116,7 +116,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Form Progres NCX</h2>
+                    <h2 style="font-family:'GothamRounded-Medium'; float: right;">Unggah Dokumen BASO</h2>
                     <!--  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button> -->
@@ -125,16 +125,28 @@
 
                 </div>
             </nav>
+            <div>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px;">No Order:
+                {% if (data.tipe_order == 1) %}
+                {% if (dataco) %}
+                {{dataco.no_order_con}}
+                {% endif %}
+                {% elseif (data.tipe_order == 2) %}
+                {% if (datacpe) %}
+                {{datacpe.no_order}}
+                {% endif %}
+                {% endif %}</h4>
+                <h4 style="font-family:'GothamRounded-Medium'; margin-left: 70px; margin-bottom: 30px;">No Quote:
+                {{data.no_quote}}</h4>
+            </div>
 
             <div>
-            <h3 style="margin-left: 90px;">Sequence {{nomor}}</h3>
-            <form  action="{{ url("storesequence") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';">
+            <form  action="{{ url("dokumen/storeupload") }}" method = "post" style="margin-left: 90px; margin-top: 50px; width: 30%; font-family:'GothamRounded-Medium';" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label>Nilai Termin</label>
-                    <input type="hidden" class="form-control" name="id_ncx" value="{{id_ncx}}">
-                    <input type="hidden" class="form-control" name="nomor" value="{{nomor}}">
-                    <input type="text" class="form-control" placeholder="Masukkan Nilai Termin" name="nilai_termin" required>
+                <label style="margin-top: 20px;">Unggah BASO</label>
+                <input type="hidden" value={{data.id}} name="id_ncx">
+                <input style="font-size: 10pt; margin-bottom: 30px;" type="file" name="file">   
                 </div>
 
                 

@@ -18,6 +18,7 @@ class cpe extends Model{
 	public $billing_nol;
 	public $billing_com;
 	public $asset;
+	public $file;
 	// public $approval_sm;
 	// public $approval_ubc;
 	// public $billcom_nonter_cpe;

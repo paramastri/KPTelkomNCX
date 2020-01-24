@@ -144,8 +144,8 @@
             placeholder: "Tidak Ada Data",
             columns: [
                 {title: "No", field: "no", formatter: "rownum", width: 10},
-                {title: "Nama CC", field: "nama_cc", headerFilter:"input"},
-                {title: "Nama Pekerjaan", field: "nama_pekerjaan", headerFilter:"input"},
+                {title: "CC", field: "nama_cc", headerFilter:"input"},
+                {title: "Pekerjaan", field: "nama_pekerjaan", headerFilter:"input"},
                 {title: "Mitra", field: "mitra", headerFilter:"input"},
                 {title: "NRC", field: "nilai_nrc", headerFilter:"input"},
                 {title: "MRC", field: "nilai_mrc", headerFilter:"input"},

@@ -106,9 +106,9 @@
             {% else %}
             <ul style="margin-left: 10px; margin-top: 30px;" class="list-unstyled">
 
-                <li>
+        <!--         <li>
                     <a href="{{ url('') }}">Form</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="{{ url('dokumen/data') }}">Data</a>
                 </li>
